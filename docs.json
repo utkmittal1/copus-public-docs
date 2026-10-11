@@ -8,6 +8,14 @@
     "light": "#b4552e",
     "dark": "#a03a22"
   },
+  "logo": {
+    "light": "/images/brand/copus-lockup.svg",
+    "dark": "/images/brand/copus-lockup-dark.svg"
+  },
+  "favicon": {
+    "light": "/images/brand/favicon.svg",
+    "dark": "/images/brand/favicon-dark.svg"
+  },
   "appearance": {
     "default": "system"
   },
