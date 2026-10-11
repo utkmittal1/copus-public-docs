@@ -106,7 +106,7 @@ The Gmail, Google Calendar and Google Drive tools that send email, change your c
 
 In Manual, Copus asks you before it runs a tool set to **Ask**. In Autopilot, Copus runs the tool without asking. See [Approvals and permissions](/control/approvals-and-permissions).
 
-In tasks Copus starts on its own, Copus runs every tool you switched on without asking, including tools set to **Ask**. Gmail and Google Calendar are the exception. In those tasks, Copus withholds the Gmail and Google Calendar write tools. Copus sends a reply only when you select **Send**, and creates an event only when you select **Create event**. See [Work Copus starts before you ask](/working/before-you-ask).
+In tasks Copus starts on its own, Copus uses only read tools. When you select **Do it** or **Refine**, or type a message in one of those tasks, Copus can use the write tools you switched on, and asks you before each one, even for tools set to **Auto**. Copus sends a reply only when you select **Send**, and creates an event only when you select **Create event**. See [Work Copus starts before you ask](/working/before-you-ask).
 
 <Warning>
   Copus leaves some tools switched off, including several tools that delete things. When Copus says in a task that it can't do something the app supports, open that integration's panel and switch the tool on.

@@ -18,7 +18,7 @@ Jump to the group your problem sits in:
 
 <AccordionGroup>
   <Accordion title="The Home page shows Sign in to an AI provider">
-    You haven't signed in to an AI provider or saved a model API key, so Copus has nothing to run a task on. Until you do, the Home page shows the **Sign in to an AI provider** step in place of the message box. Select **Sign in**, then sign in to Claude Code or Codex, or paste an API key for Anthropic, OpenAI, or DeepSeek. You can also do this in **Settings** > **AI Providers**. [AI providers](/concepts/ai-providers) covers what each option needs.
+    You haven't signed in to an AI provider or saved a model API key, so Copus has nothing to run a task on. Until you do, the Home page shows the **Sign in to an AI provider** step in place of the message box. Select **Sign in**, then sign in to Claude Code or Codex, or paste an API key for Anthropic or OpenAI. You can also do this in **Settings** > **AI Providers**. [AI providers](/concepts/ai-providers) covers what each option needs.
   </Accordion>
 
   <Accordion title="A red banner says your default provider is signed out">
@@ -85,8 +85,8 @@ Jump to the group your problem sits in:
 ## When a tool will not run
 
 <AccordionGroup>
-  <Accordion title="An action was Auto-denied">
-    When nobody answers an approval card in time, Copus denies the action. Copus removes the card's buttons, marks the card **Auto-denied**, and tells you to ask again if you still want the action. Copus skipped the action. Ask for the same thing again and answer the new card, then select the × on the expired card to clear it.
+  <Accordion title="An action was not answered">
+    When nobody answers an approval card within 10 minutes, Copus skips the action and tells the task you weren't there. The card then reads **Not answered** and shows **Check in**. Select **Check in**, and Copus looks at the task again and asks you again if the action still makes sense.
 
     In work that runs with nobody watching, Copus never waits for an answer. In that work, Copus refuses your own Chrome and credential files as soon as they come up. In a task on **Autopilot** with you present, Copus answers most approval questions itself. Copus still asks you about credential files and your own Chrome, and waits for your answer. [Approvals and permissions](/control/approvals-and-permissions) explains the two modes.
   </Accordion>
