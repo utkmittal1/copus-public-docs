@@ -103,7 +103,7 @@ When the action has a scope, Copus names it on the middle button. Approve a `pip
 Once you've used that button, Copus lists everything you allowed in the conversation's **Allowed tools** panel, each as a chip. Remove a chip and Copus asks about that action again. What you allow holds for that one conversation, including after you close Copus and come back to it. Copus never applies it to another conversation.
 
 <Warning>
-  If you leave a request unanswered, Copus denies it after a set time. The card then reads **Auto-denied**, and the task carries on as though you had selected **Deny**. If you leave a task mid-approval, you come back to find that action refused. Select the × on the card to clear it from the conversation.
+  Copus waits 10 minutes for your answer to a request. After that, Copus skips the action and marks the card **Not answered**. Select **Check in** on the card when you're back, and Copus picks the task back up and asks you again. In a task Copus started, Copus also moves the task to **Needs you** on the Home page.
 </Warning>
 
 ## Set each tool on its own
@@ -129,7 +129,7 @@ On **Autopilot**, Copus answers the ordinary questions for you. A task on **Auto
 **Email, calendar changes and Drive sharing always wait for you.** Copus shows you a card in the conversation for an email, an event you create, change or cancel, an answer to an invite, a Drive share or removal, and a comment on a Drive file. You review the card, and the action happens when you select its button. A scheduled task can email and invite only the people you approved for it. See [Scheduled tasks](/autonomous/autonomous-tasks).
 
 <Note>
-  Tasks Copus starts on its own follow a rule of their own. Copus runs these tasks on **Autopilot**, and gives them only the reading tools for Gmail and Google Calendar. Copus sends a reply only after you select **Send** on the task, and creates an event only after you select **Create event**. In your other connected apps, Copus uses every tool switched on for that app, and uses a tool set to **Ask** without asking you first. See [Work Copus starts before you ask](/working/before-you-ask).
+  Copus runs the tasks it starts on its own on **Autopilot**, and still asks you before every change in a connected app, including a change made with a tool set to **Auto**. When a task Copus started needs to change something in one of your connected apps, Copus moves the task to **Needs you** and asks you after you select **Check in**. After you select **Do it** or **Refine**, or type a message in the task, Copus asks before each change, and the card offers only **Allow** and **Deny**. Copus sends a reply only after you select **Send** on the task, and creates an event only after you select **Create event**. See [Work Copus starts before you ask](/working/before-you-ask).
 </Note>
 
 ## Next steps
