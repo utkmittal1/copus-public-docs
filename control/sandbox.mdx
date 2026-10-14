@@ -1,11 +1,11 @@
 ---
 title: "The sandbox"
-description: "macOS lets every task Copus runs write only in its own folder and the folders you add, and shuts the folders where credentials live. See what a task can write and read, and where the sandbox stops."
+description: "macOS lets every task Copus runs write only in its own folder and the folders you add, and read only the folders that task needs. See what a task can write and read, and where the sandbox stops."
 ---
 
-The sandbox is a write boundary macOS holds around every task Copus runs. A task writes only inside its own folder and the folders you added to it. It reads across the rest of your Mac, apart from the folders where credentials live. A task can also reach the network.
+The sandbox is a boundary macOS holds around every task Copus runs. A task writes only inside its own folder and the folders you added to it. In your home folder, it reads only its own folders, the folders you added, the files you attached, and your Desktop, Documents, Downloads and Pictures folders. A task can also reach the network.
 
-macOS enforces that boundary. Copus hands macOS the list of what a task may write, and macOS applies that list to the program it starts and to everything that program starts after it: a file tool, a command, a script Copus wrote and ran, a helper that script launched. macOS holds this boundary whatever program runs inside it.
+macOS enforces that boundary. Copus hands macOS the list of what a task may write and read, and macOS applies that list to the program it starts and to everything that program starts after it: a file tool, a command, a script Copus wrote and ran, a helper that script launched. macOS holds this boundary whatever program runs inside it.
 
 This page covers how to:
 
@@ -30,7 +30,7 @@ A task writes inside its own folder, which depends on where the task sits. A con
 
 To find where each folder sits on disk, see [Tasks and the workspace](/concepts/sessions-and-workspace).
 
-A task can also write to a few places outside its folder. The Mac's temporary folders are scratch space every program uses. Claude Code and Codex each keep a configuration folder, where they write state as they run and renew their own sign-in. Copus's browser keeps two folders, one holding the logins for sites you have signed in to and one holding its own working files. Copus leaves the browser program itself unwritable, so a task can't replace the program that browses for it.
+A task can also write to a few places outside its folder. Copus gives each task a temporary folder of its own for scratch work. A task can't write to the Mac's shared temporary folders, such as `/tmp`. Claude Code and Codex each keep a configuration folder, where they write state as they run and renew their own sign-in. Copus's browser keeps two folders, one holding the logins for sites you have signed in to and one holding its own working files. Copus leaves the browser program itself unwritable, so a task can't replace the program that browses for it.
 
 <Note>
   Copus points Python's package installer at a `.python` folder inside the task's own boundary, so a task can install a package it needs and the install lands where its other files land.
@@ -47,7 +47,7 @@ macOS matches those names on the filename alone, wherever the file sits. The rul
 
 ## What a task can read
 
-A task reads files across your Mac. Copus reads without asking, and you can't set reading to ask.
+A task reads its own folder, the files you attach, and the folders you added to it. A task in a project also reads the project's folder, the folders you added to the project, and its sources. Every task reads your Desktop, Documents, Downloads and Pictures folders too, but can't write or change files in these folders unless you explicitly add a folder within these to your session or project. macOS shuts the rest of your home folder, such as `Movies`, `Library`, and the hidden folders whose names start with a dot. To let a task read another folder, add it to the task or its project. Copus can then change the files in it as well. Outside your home folder, a task reads the system and the programs you installed. Copus reads without asking, and you can't set reading to ask.
 
 macOS shuts these folders in your home folder to a task and to every process it starts: `.ssh`, `.aws`, `.azure`, `.gnupg`, `.kube`, `.docker`, `.gradle`, `.m2`, `.huggingface`, `.kaggle`, and `.config/gcloud` and `.config/gh`, the settings folders for the `gcloud` and `gh` command-line tools.
 
@@ -71,13 +71,13 @@ Copus asks you before a task reads a credential file anywhere else on your Mac, 
 
 ## Why Copus confines writing and not reading
 
-A task has to read your own material to do your work. A document you attached to a message, a spreadsheet in your Downloads folder, and output another task produced last week all sit outside the task's own folder. If Copus confined reads to that folder, a task could write files and still couldn't read the files you asked it about.
+A task has to read your own material to do your work. A document you attached to a message, a spreadsheet in your Downloads folder, and a report in your Documents folder all sit outside the task's own folder. If Copus confined reads to that folder, a task could write files and still couldn't read the files you asked it about. So every task can read your Desktop, Documents, Downloads and Pictures folders, and you add any other folder a task needs.
 
-Copus puts each limit where a task could do damage. Writing is where a task can destroy something, so Copus confines writing to the task's own folder and the folders you add. Reading is where a task can leak something, so macOS shuts the credential folders, and Copus asks you before a task reads a credential file anywhere else.
+Copus puts each limit where a task could do damage. Writing is where a task can destroy something, so Copus confines writing to the task's own folder and the folders you add. Reading is where a task can leak something, so macOS shuts the rest of your home folder and the credential folders, and Copus asks you before a task reads a credential file anywhere else.
 
 ## Where the sandbox stops
 
-The sandbox controls where a task may write, and which folders a task may never read. The cases below fall outside the sandbox.
+The sandbox controls where a task may write and what it may read. It also keeps a task away from your keychain and your other apps. A task can't ask macOS for a keychain value, open or control another app, read the clipboard, use the microphone, read your Mac's Calendar or Reminders, ask for your location, or start a program that keeps running after the task. The cases below fall outside the sandbox.
 
 **The network is open.** A command a task runs can reach the internet. Copus controls that by asking before every command outside its read-only list, which is why you can't set **Run commands** to run on its own. On **Autopilot**, Copus answers that question itself.
 
