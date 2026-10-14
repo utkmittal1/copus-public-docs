@@ -26,6 +26,7 @@ Copus keeps what it manages in one folder called `CopusData`, inside your home f
 | `logs/` | One log file, `copus.jsonl` |
 | `knowledge/models/` | The model Copus indexes your documents with |
 | `speech/models/` | The model Copus transcribes dictation with |
+| `speech/voice/` | The voice Copus speaks with in voice mode |
 | `runtime/` | The Python Copus runs scripts with, its own browser, and the logins for sites you signed in to |
 | `skills/` | Skills you added yourself |
 | `.claude/` and `.codex/` | What Claude Code and Codex write as they run, including their sign-ins |
@@ -33,6 +34,8 @@ Copus keeps what it manages in one folder called `CopusData`, inside your home f
 For a project you pointed at a folder of your own, Copus keeps that project's files in a subfolder it creates inside your folder, and every task in the project writes inside that subfolder. See [Projects](/concepts/projects) for the layout, and [Tasks and the workspace](/concepts/sessions-and-workspace) for what a task's own folder holds.
 
 Copus builds the search index for your Knowledge Sources on this machine. It reads your documents, splits them into passages, and indexes them with a model it downloads once and runs here. Copus also searches that index on your Mac. See [Knowledge](/context/knowledge-sources).
+
+Speech stays on your devices too. Copus turns what you say into text, for dictation and for voice mode, with a speech model it runs on your Mac. It speaks its replies with a voice model it also runs on your Mac. The iPhone app does both on the phone. Your audio never leaves the device you speak into. Only the words you said reach your AI provider, as text, the same as a typed message.
 
 ### What the log file records
 
