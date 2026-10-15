@@ -1,6 +1,6 @@
 ---
 title: "Scheduled tasks"
-description: "A scheduled task is work Copus repeats on a schedule you agreed. Ask for a scheduled task in a conversation, and Copus writes the instructions, runs the task at the time you settled, and delivers each result where the instructions say."
+description: "A scheduled task is work Copus repeats on a schedule you agreed. Ask for a scheduled task in a conversation, and Copus writes the instructions, runs the task at the time you settled, and keeps each result in the task's folder."
 ---
 
 A scheduled task is work Copus repeats on a schedule. It holds three things: instructions saying what each run should produce, a schedule saying when, and a folder the task keeps from one run to the next. Copus opens a fresh conversation for each run and gives it the instructions as its message.
@@ -66,7 +66,7 @@ Copus gives each run four things.
 Copus keeps the conversation you set the task up in out of every run, because that conversation can hold questions that have nothing to do with the task. Copus also keeps out the task's own conversation, the one you open with **Update task** on the task page.
 
 <Note>
-  Copus runs every scheduled run on **Autopilot**, because nobody is watching it. Copus acts without stopping for an ordinary approval. Copus decides from the instructions and what recent runs did, and records what it decided in the run's summary. When you write the instructions, say what Copus should do when something is ambiguous. A run can email and invite only the people you approved for the task. A run can't give anyone access to your Drive files or comment on them. If the instructions call for anyone else, Copus sends nothing, and the run stops to name who it needed. Copus also withholds the Chrome you're signed in to from every run, and refuses a credential file outright, because nobody is there to approve either. [Approvals and permissions](/control/approvals-and-permissions) covers both modes.
+  Copus runs every scheduled run on **Autopilot**, because nobody is watching it. Copus acts without stopping for an ordinary approval. Copus decides from the instructions and what recent runs did, and records what it decided in the run's summary. When you write the instructions, say what Copus should do when something is ambiguous. A run can email and invite only the people you approved for the task. If the instructions call for anyone else, Copus sends nothing, and the run stops to name who it needed. Apart from emailing and inviting them, a run only reads your connected apps, so it can't post to Slack, update a Notion page, or share or comment on your Drive files. Copus also withholds the Chrome you're signed in to from every run, and refuses a stored secret or a credential file outright, because nobody is there to approve them. [Approvals and permissions](/control/approvals-and-permissions) covers these rules.
 </Note>
 
 ## Where your tasks live
@@ -109,7 +109,7 @@ Copus keeps a folder for each task that outlives any single run. Open the task a
 
 The first kind is what the task reuses. If each run needs the same data pull or the same chart, Copus writes a script once and stores it there, so later runs reuse the script. Copus makes judgment calls fresh in each run, such as which items matter, what the numbers mean, and what to say about them.
 
-The second kind is what earlier runs delivered. Copus puts each run's result in the folder as well as sending it wherever the instructions say.
+The second kind is what earlier runs delivered. Copus puts each run's result in the folder, and emails it to the people you approved when the instructions ask for that.
 
 You can open and edit anything in that folder yourself, and Copus uses your changes on the next run. The folder sits under `CopusData/projects` in your home folder. Copus always keeps a scheduled task's folder there, even when you set it up from a conversation inside a project.
 
@@ -154,6 +154,6 @@ Select **Task actions** in the header, then **Rename** or **Delete**. **Delete**
     Dictating a request, and steering a job while it runs.
   </Card>
   <Card title="Integrations" icon="link" href="/connections/integrations">
-    The apps a run can read from and deliver to.
+    The apps a run can read from.
   </Card>
 </CardGroup>

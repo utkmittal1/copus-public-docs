@@ -37,7 +37,7 @@ Copus works on the other two kinds without you there. A **multi-step task** is f
 
 When you ask Copus to have a piece of work reviewed, or agree when Copus offers a review, Copus starts a separate task titled **Review:** followed by the file's name. Copus lists the review task with your other tasks.
 
-Copus runs the review task on the same provider and model as the task that asked for it, and starts it without that task's conversation. In the review task, Copus reads the files named in the request, checks them against the listed sources and standards, and sends its findings back to the task that asked. Copus leaves the work itself unchanged during a review. A review task runs without your standing instructions and your response style.
+Copus runs the review task on the same provider and model as the task that asked for it, and starts it without that task's conversation. In the review task, Copus reads the files named in the request, checks them against the listed sources and standards, and sends its findings back to the task that asked. Copus leaves the work itself unchanged during a review. A review task runs without your standing instructions and your response style. Copus runs a review task on **Autopilot** with nobody watching, whatever mode the task that asked for it is in, and you can't switch its mode.
 
 ## The workspace a task writes to
 
@@ -100,10 +100,10 @@ Two settings apply to one task alone.
 
 **Instructions.** Select **Instructions** in the task's top bar and write standing guidance for this task, such as "answer in French" or "keep every figure to two decimal places." Copus saves the text as you type, and reads the instructions again with every message. Instructions you want in every task belong on the **Instructions** page in the sidebar. See [Instructions and profile](/context/instructions-and-profile).
 
-**Approval mode.** Each conversation runs in **Manual** or **Autopilot**, set from the controls under the message box. In **Manual**, Copus asks you by default before it sends, posts, or changes anything in a connected app, and before it runs a command that changes something on your Mac. In **Autopilot**, Copus does these without asking. A new task starts in **Manual**. To start every new task in **Autopilot** instead, open **Settings**, select **Built-in tools**, and change **New tasks start in**. A task in a project you pointed at a folder of your own starts in **Manual** either way. See [Approvals and permissions](/control/approvals-and-permissions).
+**Approval mode.** Each conversation runs in **Manual**, on **Autopilot**, or on **Full access**, set from the controls under the message box. In **Manual**, Copus asks you by default before it sends, posts, or changes anything in a connected app, and before it runs a command that changes something on your Mac. On **Autopilot**, Copus runs commands and makes most changes without asking, and still asks before it sends, posts, deletes, or shares something in a connected app. On **Full access**, Copus runs nearly everything without asking. A new task starts in **Manual**. To start every new task in another mode instead, open **Settings**, select **Built-in tools**, and change **New tasks start in**. A task in a project you pointed at a folder of your own starts in **Manual** either way. See [Approvals and permissions](/control/approvals-and-permissions).
 
 <Note>
-  A multi-step task's steps and a scheduled task's runs start on **Autopilot**, because nobody is there to answer. When a step or a run tries to read a file that looks like a credential, Copus refuses for the same reason.
+  A multi-step task's steps and a scheduled task's runs run on **Autopilot**, because nobody is there to answer. When a step or a run tries to read a file that looks like a credential, Copus refuses for the same reason. A task's own conversation and a task Copus starts on its own also stay on **Autopilot**, and you can't switch their mode.
 </Note>
 
 ## Rename, pin, move, or delete a task

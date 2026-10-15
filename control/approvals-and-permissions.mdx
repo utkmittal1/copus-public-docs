@@ -3,30 +3,33 @@ title: "Approvals and permissions"
 description: "Copus runs some actions on its own and holds others until you answer. Choose how much a task does without asking, and learn what Copus always checks with you first."
 ---
 
-An approval is a request Copus puts in front of you before it acts. You decide which actions need an approval with two settings. You run each conversation in **Manual** or **Autopilot**, which you pick from the controls under the message box. Separately, Copus holds a list of tools, the individual things it can do, such as reading a file, running a command, or sending through Gmail. In **Settings**, you choose whether Copus asks before it uses each tool.
+An approval is a request Copus puts in front of you before it acts. You decide which actions need an approval with two settings. You run each conversation in **Manual**, on **Autopilot**, or on **Full access**, which you pick from the controls under the message box. Separately, Copus holds a list of tools, the individual things it can do, such as reading a file, running a command, or sending through Gmail. In **Settings**, you choose whether Copus asks before it uses each tool.
 
 This page covers how to:
 
 - [Choose how much Copus does without asking](#choose-how-much-copus-does-without-asking), in one conversation or in every new task
-- [See what Copus does without asking](#what-copus-does-without-asking), in both modes
+- [See what Copus does without asking](#what-copus-does-without-asking), in every mode
 - [Understand why file writes run without asking](#why-file-writes-run-without-asking), even in Manual
 - [Learn what Copus asks about](#what-copus-asks-about)
 - [Learn what Copus asks every time](#what-copus-asks-every-time), whatever you set
 - [Answer a request](#answer-a-request), and take an approval back
 - [Set each tool on its own](#set-each-tool-on-its-own)
-- [Learn the limits that hold in both modes](#limits-that-hold-in-both-modes), and the rule for tasks Copus starts on its own
+- [Learn the limits that hold in every mode](#limits-that-hold-in-every-mode), and the rule for tasks Copus starts on its own
 
 ## Choose how much Copus does without asking
 
-In **Manual**, Copus asks you by default before it sends, posts, or changes anything in a connected app, and before it runs a command that changes something on your Mac. In **Autopilot**, Copus does these without asking. Sending email, changing your calendar, and sharing or commenting on Drive files are the exception. In both modes, Copus shows you a card for those first, and nothing goes out until you select the button on it.
+In **Manual**, Copus asks you by default before it sends, posts, or changes anything in a connected app, and before it runs a command that changes something on your Mac. On **Autopilot**, Copus runs commands and makes most changes without asking. It still asks before it sends, posts, deletes, or shares something in a connected app, and before it changes anything in GitHub. On **Full access**, Copus runs nearly everything without asking. Sending email, changing your calendar, and sharing or commenting on Drive files are the exception. In every mode, Copus shows you a card for those first, and nothing goes out until you select the button on it.
 
-A new task starts in **Manual**. Switch it to **Autopilot** and only that conversation changes. The next task starts in **Manual** again. To start every new task on **Autopilot** instead, open **Settings**, select **Built-in tools**, and change **New tasks start in**. Copus asks you to confirm in a dialog headed **Start every new task on Autopilot?**.
+A new task starts in **Manual**. Switch it to **Autopilot** and only that conversation changes. The next task starts in **Manual** again. To start every new task on **Autopilot** or **Full access** instead, open **Settings**, select **Built-in tools**, and change **New tasks start in**. Copus asks you to confirm in a dialog headed **Start every new task on Autopilot?** or **Start every new task on Full access?**.
 
-Copus sets the mode itself for two kinds of conversation. A task in a project you pointed at a folder of your own starts in **Manual** whatever you set, because Copus writes that work into your own files. The [**Ask Copus**](/working/describing-what-you-need#ask-copus-a-quick-question) drawer runs on **Autopilot**, because Copus answers there on the spot.
+Copus sets the mode itself for some conversations. A task in a project you pointed at a folder of your own starts in **Manual** whatever you set, because Copus writes that work into your own files. The [**Ask Copus**](/working/describing-what-you-need#ask-copus-a-quick-question) drawer starts on **Autopilot**, because Copus answers there on the spot, and you can switch it like any task. A scheduled or multi-step task's own conversation, a task Copus starts on its own, and a review task always run on **Autopilot**, and you can't switch their mode.
 
 <Steps>
   <Step title="Switch to Autopilot">
     Select **Autopilot** in the controls under the message box, then confirm with **Turn on Autopilot** in the dialog headed **Turn on Autopilot for this conversation?**. Select **Cancel** to back out.
+  </Step>
+  <Step title="Switch to Full access">
+    Select **Full access** in the same controls, then confirm with **Turn on Full access** in the dialog headed **Turn on Full access for this conversation?**. The dialog lists what Copus still checks with you about. Select **Cancel** to back out.
   </Step>
   <Step title="Switch back to Manual">
     Select **Manual**. Copus applies the change straight away, without asking you to confirm, including to a task already running.
@@ -36,16 +39,33 @@ Copus sets the mode itself for two kinds of conversation. A task in a project yo
 Copus reads the mode fresh for each request, so Copus applies a switch from the next action of a running task.
 
 <Warning>
-  On **Autopilot**, Copus can post to a Slack channel or change a record in any other app you have connected, without showing you the message first. Use **Manual** wherever a message going out would matter.
+  On **Autopilot** and **Full access**, Copus can create or change a record in an app you have connected without showing it to you first. On **Full access**, Copus also posts to a Slack channel without asking. Use **Manual** wherever a change or a message going out would matter.
 </Warning>
 
 <Tip>
   Start a sensitive task on **Manual**, watch the first few actions, then switch to **Autopilot** once you can see what Copus is doing.
 </Tip>
 
+### What Autopilot and Full access still ask
+
+On **Autopilot** and **Full access**, Copus reads, searches, writes files in the task's folders, and runs commands without asking. The table shows what each mode does in your connected apps and in Copus's browser. Where the table says **Asks every time**, the request leaves out **Always allow in this conversation**.
+
+| Copus wants to | Autopilot | Full access |
+|---|---|---|
+| Create or change something in a connected app, such as a Notion page, a Linear issue, or a Drive file | Runs | Runs |
+| Post a Slack message, or comment on a Notion page | Asks every time | Runs |
+| Send, comment, invite, notify, or share something in another connected app, such as Linear or Asana | Asks every time | Asks every time |
+| Delete something in a connected app | Asks every time | Asks every time |
+| Change anything in GitHub, such as opening an issue, commenting, or pushing a file | Asks every time | Asks every time |
+| Use a tool that changes something, in a server you added yourself | Asks, and offers **Always allow in this conversation** | Runs |
+| Create or change a scheduled task | Runs | Asks every time |
+| Open or act on a site Copus's browser holds your sign-in for | Asks once per site, and again after your next message | Asks once per site, and again after your next message |
+
+Copus can't tell what a tool in a server you added yourself changes, so those tools follow their own row, whatever they do.
+
 ## What Copus does without asking
 
-Copus does these without asking, in both modes. It reads a file, searches your files, searches the web, fetches a page, searches your Knowledge Sources, writes a file inside the folders the task can write to, and opens a page in a browser of its own. These actions change nothing outside the task. If Copus asked before each action, you would learn to approve questions without reading them.
+Copus does these without asking, in every mode. It reads a file, searches your files, searches the web, fetches a page, searches your Knowledge Sources, writes a file inside the folders the task can write to, and opens a page in a browser of its own. These actions change nothing outside the task. If Copus asked before each action, you would learn to approve questions without reading them.
 
 Copus also runs a fixed list of read-only programs on its own: `ls`, `pwd`, `cat`, `head`, `tail`, `wc`, `grep`, `rg`, `which`, `whoami`, `date`, `file`, `stat`, `basename`, `dirname`, `echo`, `du`, `df`, and `pdftotext`. All but one of those programs only print what is already there. `pdftotext` writes the text it pulls out of a PDF, inside the folder the task can already write to. Copus runs two more programs without asking in one use each: `sed` when it prints a range of lines, and `pandoc` when it only converts a file. Copus can also create a folder inside the folder it writes to, change directory inside that folder, and run one of its own bundled scripts through the Python it ships.
 
@@ -57,21 +77,21 @@ Copus reads through an integration without asking as well. An integration is the
 
 ## Why file writes run without asking
 
-Copus writes a file inside the task's folders without asking, in both modes. The mode sets how Copus handles a request. Copus writes inside those folders without raising a request, so file writes run the same way in **Manual** and on **Autopilot**.
+Copus writes a file inside the task's folders without asking, in every mode. The mode sets how Copus handles a request. Copus writes inside those folders without raising a request, so file writes run the same way in every mode.
 
 The folder sets which of your files a write can change. For a task outside a project, the folder is that task's workspace, so your other files stay as they are. For a task in a project you pointed at a folder of your own, the folder is that whole folder of yours. Copus creates files in it, and writes over files you already had, without asking. Copus does the same in a folder you added to the task or to its project.
 
-You can limit these writes in two ways. Set **Edit & write files** to **Ask** on the **Built-in tools** page and Copus raises a request before each write. In **Manual**, the task waits until you answer. On **Autopilot**, Copus answers the request itself. Copus also raises a request before a command that deletes files, such as `rm`, because Copus asks before every command outside the read-only list. The command waits for you in **Manual** and runs on **Autopilot**. Otherwise, add a folder, or point a project at a folder, only when you're happy for Copus to change the files in it.
+You can limit these writes in two ways. Set **Edit & write files** to **Ask** on the **Built-in tools** page, and in **Manual** Copus waits for your answer before each write. On **Autopilot** and **Full access**, Copus writes without asking. In **Manual**, Copus also asks before a command that deletes files, such as `rm`, because Copus asks before every command outside the read-only list. On **Autopilot** and **Full access**, the command runs. Otherwise, add a folder, or point a project at a folder, only when you're happy for Copus to change the files in it.
 
 ## What Copus asks about
 
-Copus asks before every command outside the read-only list, and shows you the exact command in the request. It also asks before anything an integration writes, such as a Gmail message, a Slack post, or a new or changed Linear issue.
+In **Manual**, Copus asks before every command outside the read-only list, and shows you the exact command in the request. It also asks before anything an integration writes, such as a Gmail message, a Slack post, or a new or changed Linear issue.
 
-Copus browses ordinary pages in a browser of its own without asking. It asks the moment that browser lands on a site you have signed in to through Copus, because that page is your account. That request is an ordinary approval request, so on **Autopilot** Copus answers it for you.
+Copus browses ordinary pages in a browser of its own without asking. It asks the moment that browser lands on a site you have signed in to through Copus, because that page is your account. On **Autopilot** and **Full access**, Copus asks too, and leaves out **Always allow in this conversation**. Your answer covers that one site until Copus comes back to you.
 
 ## What Copus asks every time
 
-Copus asks three questions every time they come up. On all three, Copus waits for your answer, including on **Autopilot**, and leaves out **Always allow in this conversation**.
+Copus asks three questions every time they come up. On all three, Copus waits for your answer, including on **Autopilot** and **Full access**, and leaves out **Always allow in this conversation**.
 
 **Reading a file that holds credentials.** Copus asks before a task reads any of these:
 
@@ -90,7 +110,7 @@ Copus asks this question about a credential file in a folder of your own. Copus 
 
 **Working in the Chrome you are signed in to.** Copus works in your own Chrome only after you switch on **Use my Chrome for sites I’m signed in to** under **Built-in tools**, which needs a one-time browser extension. Even then Copus asks before it acts on each site, and your answer covers that one site for the rest of the turn. A turn is one round of work: your message, and everything Copus does before it comes back to you. Send the next message and Copus asks again.
 
-Copus applies the opposite rule to work it runs with nobody watching. In that work, Copus refuses your own Chrome, a credential file, a push, a change on GitHub, and a command that throws away changes, the moment the question comes up, because nobody is there to answer. Copus applies this rule to a run of a scheduled task, a multi-step task, the conversation that **Edit with Copus** opens on a scheduled task's page, and every task Copus starts on its own.
+Copus applies the opposite rule to work it runs with nobody watching. In that work, Copus refuses your own Chrome, a credential file, a push, a change on GitHub, and a command that throws away changes, the moment the question comes up, because nobody is there to answer. Copus applies this rule to a run of a scheduled task, a step of a multi-step task, a review task, and the work Copus does on its own in a task it started or in a multi-step task's own conversation. When you type a message in a task Copus started, or in the conversation **Update task** opens on a task's page, you are there to answer, so Copus asks you. The same holds after you select **Do it**, **Refine**, or **Check in** on a task Copus started.
 
 ## What Copus never runs
 
@@ -132,22 +152,22 @@ In **Settings**, select **Built-in tools**. The page lists what Copus can do on 
 
 You can't set **Run commands** to run on its own. A task can read files and reach the network, so Copus's question before a command is the check that stops a task from sending your data somewhere. **Edit & write files** is the one row whose **Auto** or **Ask** setting you can change.
 
-See [Built-in tools](/working/tools) for each capability and its checkbox. See [Integrations](/connections/integrations) for a connected app's own tools, which you set on that app's panel in its **Read** and **Write** groups, each with a checkbox and an **Auto** or **Ask** setting.
+See [Built-in tools](/working/tools) for each capability and its checkbox. See [Integrations](/connections/integrations) for a connected app's own tools, which you set on that app's panel in its **Read** and **Write** groups, each with a checkbox and an **Auto** or **Ask** setting. The **Auto** and **Ask** settings, on those tools and on **Edit & write files**, apply in **Manual**. On **Autopilot** and **Full access**, Copus follows the rules on this page instead.
 
-## Limits that hold in both modes
+## Limits that hold in every mode
 
-On **Autopilot**, Copus answers the ordinary questions for you. A task on **Autopilot** can do only what it could do in **Manual**, and these limits hold in both modes.
+On **Autopilot** and **Full access**, Copus asks you less often. A task in either mode can do only what it could do in **Manual**, and these limits hold in every mode.
 
-**The sandbox holds on Autopilot.** macOS refuses a write outside the folders the task can write to, with no question to you, so **Autopilot** can't allow the write. [The sandbox](/control/sandbox) covers that boundary.
+**The sandbox holds in every mode.** macOS refuses a write outside the folders the task can write to, with no question to you, so neither **Autopilot** nor **Full access** can allow the write. [The sandbox](/control/sandbox) covers that boundary.
 
-**A tool you switched off stays off.** Clear the checkbox beside **Run commands** and Copus builds your next task without it. **Autopilot** can't bring the tool back, because the task doesn't have it.
+**A tool you switched off stays off.** Clear the checkbox beside **Run commands** and Copus builds your next task without it. Neither **Autopilot** nor **Full access** can bring the tool back, because the task doesn't have it.
 
-**Copus asks about credential files and your own Chrome in both modes.** Copus leaves both to you, in **Manual** and on **Autopilot**.
+**Copus asks about credential files and your own Chrome in every mode.** Copus leaves both to you, in **Manual**, on **Autopilot**, and on **Full access**.
 
-**Email, calendar changes and Drive sharing always wait for you.** Copus shows you a card in the conversation for an email, an event you create, change or cancel, an answer to an invite, a Drive share or removal, and a comment on a Drive file. You review the card, and the action happens when you select its button. A scheduled task can email and invite only the people you approved for it. See [Scheduled tasks](/autonomous/autonomous-tasks).
+**Email, calendar changes and Drive sharing always wait for you.** Copus shows you a card in the conversation for an email, an event you create, change or cancel, an answer to an invite, a Drive share or removal, and a comment on a Drive file. You review the card, and the action happens when you select its button. On an email card, select **Save as draft** to put the email in your Gmail drafts instead of sending it. A run of a scheduled task, or a step of a multi-step task, can email and invite only the people you approved for its task. See [Scheduled tasks](/autonomous/autonomous-tasks).
 
 <Note>
-  Copus runs the tasks it starts on its own on **Autopilot**, and still asks you before every change in a connected app, including a change made with a tool set to **Auto**. When a task Copus started needs to change something in one of your connected apps, Copus moves the task to **Needs you** and asks you after you select **Check in**. After you select **Do it** or **Refine**, or type a message in the task, Copus asks before each change, and the card offers only **Allow** and **Deny**. Copus sends a reply only after you select **Send** on the task, and creates an event only after you select **Create event**. See [Work Copus starts before you ask](/working/before-you-ask).
+  Copus runs the tasks it starts on its own on **Autopilot**. While Copus works on such a task by itself, it only reads your connected apps. Copus sends a reply, creates an event, or makes any other Google change only after you select the button on the task, such as **Send** or **Create event**. After you select **Do it**, **Refine**, or **Check in**, or type a message in the task, Copus works there as it does on **Autopilot** in a task you start. See [Work Copus starts before you ask](/working/before-you-ask).
 </Note>
 
 ## Next steps
