@@ -53,9 +53,9 @@ appears once and resolves to a real `.mdx`.
 | Staying in control | `control/` | Your data stays local, Approvals and permissions, The sandbox |
 | Reference | `reference/` | Integrations catalog, Troubleshooting and FAQ |
 
-The six diagrams live in `images/diagrams/` as SVG: `core-loop.svg`,
+The five diagrams live in `images/diagrams/` as SVG: `core-loop.svg`,
 `session-workspace.svg`, `memory-levels.svg`, `ai-provider-context.svg`,
-`long-running-task.svg`, and `sandbox.svg`. Each one
+and `long-running-task.svg`. Each one
 is embedded on exactly one page. There are no screenshots anywhere, which is
 deliberate. A screenshot goes stale the moment the UI moves.
 

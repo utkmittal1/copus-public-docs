@@ -65,9 +65,6 @@ Copus asks you before a task reads a credential file anywhere else on your Mac, 
   The shut folders and files are the places credentials usually sit. A secret can live in a file with any name, in any folder, so the list can't cover every secret. The list stops a task from reading a token by accident while it looks around. Treat the list as a guard against accidents rather than as a guarantee.
 </Warning>
 
-<Frame>
-  <img src="/images/diagrams/sandbox.svg" alt="A task sits inside a box. Writes stay inside the box. Reads reach the task's own folders, the folders you added, other tasks' files, and your Desktop, Documents, Downloads and Pictures. The rest of your home folder and credential stores are blocked." />
-</Frame>
 
 ## Why Copus confines writing and not reading
 
