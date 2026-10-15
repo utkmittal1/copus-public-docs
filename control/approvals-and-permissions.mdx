@@ -99,12 +99,11 @@ Copus asks three questions every time they come up. On all three, Copus waits fo
 - A `.pem`, `.key`, `.p12`, or `.pfx` file.
 - A key file named `id_rsa`, `id_dsa`, `id_ecdsa`, or `id_ed25519`.
 - A file named `credentials`, `credentials.json`, or `auth.json`, or a file named `secret` or `secrets` that ends in `.json`, `.yaml`, `.yml`, or `.toml`.
-- Anything in your keychain folder, `~/Library/Keychains`.
-- The sign-ins Copus keeps in `CopusData`: the `.claude` and `.codex` folders, and the folders where Copus's browser keeps the logins for sites you signed in to. Copus reads one kind of file in the `.claude` folder without asking: the files where Claude Code saves a command's output when the output is too long to show.
+- The credentials Copus stores in `CopusData`: your Claude and ChatGPT credentials, and the sign-ins you make in Copus's browser. Copus reads one kind of file there without asking: the files where Claude Code saves a command's output when it is too long to show.
 
 Copus adds whatever a task reads to the conversation and sends the conversation to your AI provider, so Copus leaves this read to you. Copus checks both routes to a file: the file a tool names, and the file a command names in its arguments.
 
-Copus asks this question about a credential file in a folder of your own. Copus refuses a file inside one of the folders it keeps shut, such as `~/.ssh` or `~/.aws`, without asking you. For every folder and file Copus keeps shut, see [The sandbox](/control/sandbox).
+Copus asks this question about a credential file in a folder of your own. Copus refuses a file inside one of the folders it keeps shut, such as `~/.ssh`, `~/.aws` or your keychain folder, without asking you. For every folder and file Copus keeps shut, see [The sandbox](/control/sandbox).
 
 **Publishing work or throwing away changes.** Copus asks before a command that publishes work to a shared repository, such as `git push`, or changes something on GitHub through the `gh` command, such as opening a pull request. It also asks before a command that throws away changes you haven't committed in git, such as `git reset --hard`, `git restore`, or `git clean -f`. Copus asks only about a command it can read. A script that runs one of these commands inside it runs without the question.
 
