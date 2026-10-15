@@ -152,7 +152,7 @@ Select **+ Add Custom** at the top of the **Integrations** page, which opens **A
 </Tip>
 
 <Note>
-  The other transport, **Local**, is for an MCP server that runs on your own Mac. For **Local**, you supply a **Launch config (JSON)**: the command that starts the server, its arguments, and any values the server needs. Use **Local** when the service gives you that configuration. When Copus can't run the command, Copus says so in the panel and saves nothing.
+  The other transport, **Local**, is for an MCP server that runs on your own Mac. For **Local**, you supply a **Launch config (JSON)**: the command that starts the server, its arguments, and any values the server needs. Use **Local** when the service gives you that configuration. When Copus can't run the command, Copus says so in the panel and saves nothing. Copus runs a **Local** server in a sandbox of its own. It starts the server the first time a task uses it, so that first use takes a few seconds longer, and stops it after 5 minutes without use or when the task closes. The server reads only what the task can read, and writes only in the task's folders and its own. A key you gave the server stays readable to the task while the server runs.
 </Note>
 
 ## Next steps
