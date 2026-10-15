@@ -102,11 +102,11 @@ Open a connected integration's panel to see its tools under **Tools**, in two gr
 
 Open a group to see one entry per tool, with a checkbox and an **Auto** or **Ask** control. Clear a tool's checkbox to switch the tool off, or change its control.
 
-The Gmail, Google Calendar and Google Drive tools that send email, change your calendar, share a file or comment on one show **Always ask** in place of that control. For these, Copus shows you a card in the conversation, and the action happens only when you select the button on it. Clear one of these checkboxes and Copus can't do that action at all, even from a card.
+The Gmail, Google Calendar and Google Drive tools that send email, save a draft, change your calendar, share a file or comment on one show **Always ask** in place of that control. For these, Copus shows you a card in the conversation, and the action happens only when you select the button on it. Clear one of these checkboxes and Copus can't do that action in a conversation at all, even from a card. A task Copus starts on its own still offers these actions on its result, whatever the checkboxes say.
 
-In Manual, Copus asks you before it runs a tool set to **Ask**. In Autopilot, Copus runs the tool without asking. See [Approvals and permissions](/control/approvals-and-permissions).
+The **Auto** and **Ask** settings apply in **Manual**, where Copus asks you before it runs a tool set to **Ask**. On **Autopilot** and **Full access**, Copus follows its own rules for each kind of change instead. A tool you switch off stays off in every mode. See [Approvals and permissions](/control/approvals-and-permissions).
 
-In tasks Copus starts on its own, Copus asks you before it uses any write tool, including a tool set to **Auto**. When a task Copus started needs to change something in one of your connected apps, Copus moves the task to **Needs you** and asks you after you select **Check in**. Copus sends a reply only when you select **Send**, and creates an event only when you select **Create event**. See [Work Copus starts before you ask](/working/before-you-ask).
+When Copus works with nobody watching, such as in a scheduled task's run, a multi-step task's step, or a task Copus started, Copus uses only an app's read tools, whatever each tool's setting. A run or a step can still email and invite the people you approved for its task. In a task Copus started, Copus sends a reply, creates an event, or makes any other Google change only when you select the button on the task, such as **Send** or **Create event**. See [Work Copus starts before you ask](/working/before-you-ask).
 
 <Warning>
   Copus leaves some tools switched off, including several tools that delete things. When Copus says in a task that it can't do something the app supports, open that integration's panel and switch the tool on.
@@ -165,7 +165,7 @@ Select **+ Add Custom** at the top of the **Integrations** page, which opens **A
     Store a credential for something Copus has no integration for.
   </Card>
   <Card title="Approvals and permissions" icon="shield-check" href="/control/approvals-and-permissions">
-    What Copus asks before it acts, in Manual and in Autopilot.
+    What Copus asks before it acts, in each approval mode.
   </Card>
   <Card title="Built-in tools" icon="wrench" href="/working/tools">
     The capabilities Copus carries without any app connected.

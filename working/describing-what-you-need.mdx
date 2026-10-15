@@ -66,14 +66,14 @@ Use the queue to correct course. Queue the correction, such as "use the Q3 numbe
 
 ## Choose how much the conversation does without asking
 
-Each conversation has an approval mode that sets how much Copus does without asking you. Set it from the dropdown under the message box, whose tooltip reads **Approval mode: Manual** or **Approval mode: Autopilot**. It covers the whole conversation, not one message.
+Each conversation has an approval mode that sets how much Copus does without asking you. Set it from the dropdown under the message box, whose tooltip reads **Approval mode:** followed by the mode, such as **Approval mode: Manual**. It covers the whole conversation, not one message. In a conversation that always runs on **Autopilot**, such as a scheduled task's own conversation, Copus shows **Autopilot** in place of the dropdown, with the tooltip **This conversation always runs on Autopilot**.
 
-In **Manual**, Copus asks you by default before it sends, posts, or changes anything in a connected app, and before it runs a command that changes something on your Mac. In **Autopilot**, Copus does these without asking for the rest of the conversation. When you choose **Autopilot**, Copus asks you to confirm, under the heading **Turn on Autopilot for this conversation?**. Switching back to **Manual** takes effect straight away, with nothing to confirm.
+In **Manual**, Copus asks you by default before it sends, posts, or changes anything in a connected app, and before it runs a command that changes something on your Mac. On **Autopilot**, Copus runs commands and makes most changes without asking for the rest of the conversation, and still asks before it sends, posts, deletes, or shares something in a connected app. On **Full access**, Copus runs nearly everything without asking. When you choose **Autopilot** or **Full access**, Copus asks you to confirm, under the heading **Turn on Autopilot for this conversation?** or **Turn on Full access for this conversation?**. Switching back to **Manual** takes effect straight away, with nothing to confirm.
 
 A new task starts in the mode set by **New tasks start in**, which is **Manual** until you change it. Open **Settings**, select **Built-in tools**, and set it there. Copus confirms that choice too. A task in a project you pointed at a folder of your own starts in **Manual** either way, because that work writes into your folder rather than Copus's own. [Approvals and permissions](/control/approvals-and-permissions) covers what each mode allows.
 
 <Warning>
-  Autopilot does not lift the limits macOS puts on what a task may touch, and it changes nothing about what Copus is refused outright. Two actions ask you every time, however the conversation is set: reading a file that holds sign-in credentials, and working in the Chrome you are signed in to yourself. A scheduled task's runs, a multi-step task's steps, and [work Copus starts on its own](/working/before-you-ask) have nobody to ask. Copus never offers that work the Chrome you are signed in to, and refuses a credential file outright rather than asking.
+  Neither **Autopilot** nor **Full access** lifts the limits macOS puts on what a task may touch, and neither changes what Copus is refused outright. Two actions ask you every time, however the conversation is set: reading a file that holds sign-in credentials, and working in the Chrome you are signed in to yourself. A scheduled task's runs, a multi-step task's steps, and [work Copus starts on its own](/working/before-you-ask) have nobody to ask. Copus never offers that work the Chrome you are signed in to, and refuses a credential file outright rather than asking.
 </Warning>
 
 <Note>
@@ -90,7 +90,7 @@ The ring appears once a task has a conversation to measure.
 
 The **Ask Copus** drawer holds one standing conversation for quick questions, kept apart from your tasks. To open the drawer, select **Ask Copus** at the bottom right of the window, or press `⌘⇧H`. The drawer works on every screen except Settings, once you have set up an AI provider.
 
-In the drawer, Copus answers directly and briefly, without the questions and plan it uses for a larger task. Copus creates a file only when you ask for a file. The drawer runs in **Autopilot** on the AI provider that was your default when you sent its first message, until you select **Clear**. The drawer keeps attachments, dictation, and **Stop** from the message box. You can't add a folder in the drawer.
+In the drawer, Copus answers directly and briefly, without the questions and plan it uses for a larger task. Copus creates a file only when you ask for a file. The drawer starts on **Autopilot**, and you can switch its mode under its message box like any task. It runs on the AI provider that was your default when you sent its first message, until you select **Clear**. The drawer keeps attachments, dictation, and **Stop** from the message box. You can't add a folder in the drawer.
 
 When an answer arrives while the drawer is closed, Copus marks the **Ask Copus** button with a dot. The drawer's conversation stays out of your **Tasks** list. To start over, select **Clear**. Copus deletes the conversation and its files, and keeps any facts it saved to your global memory. To change the drawer's width, select **Widen the panel** or **Narrow the panel**.
 

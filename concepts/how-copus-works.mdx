@@ -77,13 +77,13 @@ See [Your data stays local](/control/your-data-stays-local).
 
 ## Choose how much Copus does without asking
 
-A task you start has an approval mode: **Manual** or **Autopilot**. You switch the mode in the controls under the message box. In **Manual**, Copus asks you by default before it sends, posts, or changes anything in a connected app, and before it runs a command that changes something on your Mac. In **Autopilot**, Copus does these without asking for the rest of the conversation. A new task starts in **Manual** unless you change **New tasks start in** under **Settings** > **Built-in tools**.
+A task you start has an approval mode: **Manual**, **Autopilot**, or **Full access**. You switch the mode in the controls under the message box. In **Manual**, Copus asks you by default before it sends, posts, or changes anything in a connected app, and before it runs a command that changes something on your Mac. On **Autopilot**, Copus runs commands and makes most changes without asking for the rest of the conversation, and still asks before it sends, posts, deletes, or shares something in a connected app. On **Full access**, Copus runs nearly everything without asking. A new task starts in **Manual** unless you change **New tasks start in** under **Settings** > **Built-in tools**.
 
 <Warning>
-  On **Autopilot**, Copus can post a message or change a record in a connected app without showing it to you first. Use **Manual** for any task that might post a message or change a record. Email, calendar changes, and Drive sharing and comments are the exception. In both modes, Copus shows you a card for those first, and nothing goes out until you select the button on it.
+  On **Autopilot**, Copus can change a record in a connected app without showing it to you first. On **Full access**, Copus can also post a Slack message without asking. Use **Manual** for any task that might post a message or change a record. Email, calendar changes, and Drive sharing and comments are the exception. In every mode, Copus shows you a card for those first, and nothing goes out until you select the button on it.
 </Warning>
 
-Copus also starts tasks on its own, from your mail and calendar. In those tasks, Copus asks you before it changes anything in your connected apps, and you send every reply and create every event yourself.
+Copus also starts tasks on its own, from your mail and calendar. In those tasks, Copus changes nothing in your connected apps by itself, and you send every reply and create every event yourself.
 
 In a task you start, Copus always asks before it reads a file that holds credentials or works in your own Chrome, in every approval mode. In work that runs without you, Copus refuses both. [Approvals and permissions](/control/approvals-and-permissions) covers each approval button.
 
@@ -93,7 +93,7 @@ In a task you start, Copus always asks before it reads a file that holds credent
 
 **Scheduled tasks.** For work you want repeated, such as a weekly report, Copus runs the same task on a schedule you set. See [Scheduled tasks](/autonomous/autonomous-tasks).
 
-Copus runs both without asking you, as it does with work it starts from your mail.
+Copus runs both without asking you, as it does with work it starts from your mail. In both, Copus only reads your connected apps, apart from emailing and inviting the people you approved for the task.
 
 ## Limitations
 

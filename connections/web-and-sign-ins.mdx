@@ -42,12 +42,12 @@ Each answer covers a different scope.
 | **Allow** | The rest of that one request on that site. Your next message starts the question over |
 | **Always allow in this conversation** | That kind of action for the rest of the conversation, on any site. Copus saves your answer, and the answer still applies after you quit and reopen the app |
 
-On **Autopilot**, Copus approves the action itself and stops asking in that conversation.
+On **Autopilot** and **Full access**, Copus asks too, and leaves out **Always allow in this conversation**.
 
-Copus decides page by page whether to ask, by checking whether it holds a sign-in for that site. For that reason, **Built-in tools** in **Settings** shows **Always runs** beside browsing, where other capabilities offer **Auto** and **Ask**. See [Approvals and permissions](/control/approvals-and-permissions) for Manual, Autopilot, and what each answer means.
+Copus decides page by page whether to ask, by checking whether it holds a sign-in for that site. For that reason, **Built-in tools** in **Settings** shows **Always runs** beside browsing, where other capabilities offer **Auto** and **Ask**. See [Approvals and permissions](/control/approvals-and-permissions) for the approval modes and what each answer means.
 
 <Note>
-  A scheduled task's runs, a multi-step task's steps, and the tasks Copus starts on its own use Copus's own browser with the sign-ins you've already saved. Copus keeps these tasks out of your own Chrome and away from the sign-in card, because nobody is there to answer. To let such a task reach a site that needs a sign-in, sign in to that site from a conversation of your own first.
+  A scheduled task's runs, a multi-step task's steps, and the tasks Copus starts on its own use Copus's own browser. Copus keeps these tasks out of your own Chrome and away from the sign-in card, because nobody is there to answer. While nobody is watching, Copus also refuses to open a site it holds a sign-in for, so a run or a step can't use a sign-in you saved.
 </Note>
 
 ## Sign in to a site
@@ -100,7 +100,7 @@ Copus also offers this from a card above the message box, right after you sign i
 </Note>
 
 <Warning>
-  Copus asks you before every request it makes in your Chrome, even in Autopilot. Copus offers no **Always allow in this conversation** for your own browser. Your yes covers the rest of that one request on that site, and your next message starts the question over. A scheduled task's runs, a multi-step task's steps, and the tasks Copus starts on its own stay out of your own Chrome, because nobody is there to answer.
+  Copus asks you before every request it makes in your Chrome, even on **Autopilot** and **Full access**. Copus offers no **Always allow in this conversation** for your own browser. Your yes covers the rest of that one request on that site, and your next message starts the question over. A scheduled task's runs, a multi-step task's steps, and the tasks Copus starts on its own stay out of your own Chrome, because nobody is there to answer.
 </Warning>
 
 ## Which browser Copus uses
@@ -111,9 +111,9 @@ Copus also offers this from a card above the message box, right after you sign i
 | Visible | No, except the sign-in window | Yes, it is your browser |
 | Signed in to | Only sites you signed into through the sign-in card | Whatever that Chrome profile is signed into |
 | Asks first | On a site Copus holds a sign-in for | Every request |
-| Can you make it stop asking | Yes, with **Always allow in this conversation** or Autopilot | No |
+| Can you make it stop asking | Yes, with **Always allow in this conversation**, in **Manual** only | No |
 | On for a new install | Yes | No |
-| Used by a task running on its own | Yes | No |
+| Used by a task running on its own | Yes, on sites Copus holds no sign-in for | No |
 
 <Note>
   Copus's plain web search and page fetch are a separate tool, **Web search & fetch**, under **Settings**, then **Built-in tools**. That tool uses neither browser. Copus falls back to a browser when a fetch is blocked or misses content the page shows a person.
@@ -123,7 +123,7 @@ Copus also offers this from a card above the message box, right after you sign i
 
 <CardGroup cols={2}>
   <Card title="Approvals and permissions" icon="shield-check" href="/control/approvals-and-permissions">
-    What Copus asks before it acts, and the two approval modes.
+    What Copus asks before it acts, and the three approval modes.
   </Card>
   <Card title="Integrations" icon="link" href="/connections/integrations">
     Reaching an app through its own connection rather than its website.
