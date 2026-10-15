@@ -83,9 +83,11 @@ The sandbox controls where a task may write and what it may read. It also keeps 
 
 **A refused write fails quietly.** macOS refuses the write and hands the task an error. Copus doesn't ask you about the write, so you can't approve it by mistake. Copus either reports the failure in its reply or works around it.
 
-**One task can read another task's files.** A task can read across your Mac, including every other task's folder, so treat anything a task produced as visible to a later task.
+**One task can read another task's files.** A task can read the files any other task made, so treat anything a task produced as visible to a later task. It can't change them unless both tasks are in the same project.
 
 **Tasks in the same project can write each other's files.** They share the project folder by design. A task outside a project can still read another task's files, and can't write them. Two conversations you added the same folder to can both write in it.
+
+**A key you hand a program yourself can be read.** A task can read the settings any program on your Mac started with, so a key you export in a Terminal window is readable while that program runs. You can use [Secrets](/connections/secrets) to securely store and use passwords, tokens, and API keys in Copus.
 
 **Copus protects a stored credential by other means.** Copus keeps the value out of the conversation. See [Secrets](/connections/secrets).
 
