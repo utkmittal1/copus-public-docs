@@ -69,7 +69,7 @@ Copus does these without asking, in every mode. It reads a file, searches your f
 
 Copus also runs a fixed list of read-only programs on its own: `ls`, `pwd`, `cat`, `head`, `tail`, `wc`, `grep`, `rg`, `which`, `whoami`, `date`, `file`, `stat`, `basename`, `dirname`, `echo`, `du`, `df`, and `pdftotext`. All but one of those programs only print what is already there. `pdftotext` writes the text it pulls out of a PDF, inside the folder the task can already write to. Copus runs two more programs without asking in one use each: `sed` when it prints a range of lines, and `pandoc` when it only converts a file. Copus can also create a folder inside the folder it writes to, change directory inside that folder, and run one of its own bundled scripts through the Python it ships.
 
-Copus asks before a `git` command, even one that only reads, such as `git status`. A project's own git settings can make those commands start another program, and a task can change those settings.
+In **Manual**, Copus asks before a `git` command, even one that only reads, such as `git status`. A project's own git settings can make those commands start another program, and a task can change those settings.
 
 Copus keeps that list narrow on purpose. It asks about any command that redirects output, refers to a shell variable, or builds part of itself from the output of another command, because each of those hides what the command will really touch. Copus allows one variable without asking, the variable naming the Python it ships, because that variable stands for a fixed path Copus wrote. Copus runs a chain of commands without asking only where every part of the chain qualifies on its own. If any single program is off the list, Copus asks you about the whole command.
 
