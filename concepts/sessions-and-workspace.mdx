@@ -48,7 +48,7 @@ Copus gives each conversation a workspace, a folder only that conversation write
 
 A task can write files only inside its own folder, and macOS enforces that limit. For a conversation outside a project, that folder is its workspace. For a conversation in a project, that folder is the whole project folder, so conversations in a project can edit each other's files. A conversation can also write in [folders you add to it](#add-a-folder-copus-can-change).
 
-A task can read its own folder, the folders you add, the files you attach, the files other tasks made, and your Desktop, Documents, Downloads and Pictures folders. The rest of your home folder is closed to it. In every approval mode, Copus asks you each time a task tries to read a file that looks like a credential. [The sandbox](/control/sandbox) covers the boundary in full.
+A task can read its own folder, the folders you add, the files you attach, the files other tasks made, and the folders on your **Folders Copus can read** list. That list starts with your Desktop, Documents, Downloads and Pictures folders. The rest of your home folder is closed to it. In every approval mode, Copus asks you each time a task tries to read a file that looks like a credential. [The sandbox](/control/sandbox) covers the boundary in full.
 
 Copus puts the workspace of a conversation outside a project in `CopusData/sessions`, inside your home folder. For a conversation in a project, Copus puts the workspace in that project's `sessions/` folder. For a scheduled task, or a multi-step task outside a project, Copus creates a folder under `CopusData/projects`. For a multi-step task in a project, Copus creates that folder in the project's `tasks/` folder. Copus puts the workspaces of the task's steps and runs in that folder's own `sessions/`.
 
@@ -58,7 +58,7 @@ Copus puts the workspace of a conversation outside a project in `CopusData/sessi
 
 ## Add a folder Copus can change
 
-To have Copus work on files where they already live, such as a code repository or a folder of drafts, add that folder to the conversation. From your next message, Copus can read, create, edit, and delete files in it. To let Copus read files outside your Desktop, Documents, Downloads and Pictures folders, add their folder the same way. Copus can then change those files as well. Copus still keeps its scratch work and finished deliverables in the workspace unless you ask for them in the added folder.
+To have Copus work on files where they already live, such as a code repository or a folder of drafts, add that folder to the conversation. From your next message, Copus can read, create, edit, and delete files in it. To let every task read a folder without changing anything in it, add the folder to your **Folders Copus can read** list instead. In **Settings**, select **Built-in tools**, then select the number of folders under **Read files**, such as "4 folders". Copus still keeps its scratch work and finished deliverables in the workspace unless you ask for them in the added folder.
 
 To add a folder:
 
