@@ -78,6 +78,8 @@ Copus sends every rule to your AI provider with each message. Keep rules for pre
 
 When you mention something worth keeping, such as "I always want sources cited," Copus picks the level and saves the fact while it replies. Copus adds a note to the reply that lists each change, such as **Updated global memory** or **Removed from project memory**. When Copus can't save a fact, the note shows **Not saved to global memory** and gives the reason, such as "you deleted this before" or "already remembered".
 
+In work Copus runs with nobody watching, such as a scheduled task's run or a multi-step task's step, Copus saves only session facts. It saves no rule there, and no global or project fact, including a scheduled task's own facts. The note gives the reason "saved only with you here". Copus's weekly review, and its first read of your mail, still save what they learn about you.
+
 Each saved change in the note has links:
 
 - **Undo**: Copus reverses the change. When you undo a removal, Copus restores the fact. A removal shows **Undo** only.

@@ -68,7 +68,7 @@ A connected app's tools sit on that app's own panel under **Integrations**, wher
 Copus saves each change as you make it.
 
 <Note>
-Copus removes a capability you switched off from its toolset when a task starts. Switch a capability off while a task is already running, and Copus refuses that capability the moment the task tries to use it. **Search knowledge** is the exception. In a conversation already under way, Copus keeps using **Search knowledge** until it opens a new connection for that conversation, when you reopen the task later. These rules apply in **Autopilot** too. [Approvals and permissions](/control/approvals-and-permissions) covers the two approval modes.
+Copus removes a capability you switched off from its toolset when a task starts. Switch a capability off while a task is already running, and Copus refuses that capability the moment the task tries to use it. **Search knowledge** is the exception. In a conversation already under way, Copus keeps using **Search knowledge** until it opens a new connection for that conversation, when you reopen the task later. These rules apply on **Autopilot** and **Full access** too. [Approvals and permissions](/control/approvals-and-permissions) covers the three approval modes.
 </Note>
 
 <Tip>
@@ -86,9 +86,9 @@ The carve-out also follows your switches. Switch **Read files** off, and Copus a
 
 ## Choose the mode new tasks start in
 
-The **Built-in tools** page has one more setting, **New tasks start in**. Every task you start from the message box begins in this mode. The **Ask Copus** drawer always runs in **Autopilot**. A new task starts in **Manual** until you change this setting.
+The **Built-in tools** page has one more setting, **New tasks start in**. Every task you start from the message box begins in this mode. The **Ask Copus** drawer starts on **Autopilot**, and you can switch it from its own message box. A new task starts in **Manual** until you change this setting.
 
-In **Manual**, Copus asks you by default before it sends, posts, or changes anything in a connected app, and before it runs a command that changes something on your Mac. In **Autopilot**, Copus does these without asking. Copus asks you to confirm when you choose **Autopilot**, and switches back to **Manual** with no confirmation.
+In **Manual**, Copus asks you by default before it sends, posts, or changes anything in a connected app, and before it runs a command that changes something on your Mac. On **Autopilot**, Copus runs commands and makes most changes without asking, and still asks before it sends, posts, deletes, or shares something in a connected app. On **Full access**, Copus runs nearly everything without asking. Copus asks you to confirm when you choose **Autopilot** or **Full access**, and switches back to **Manual** with no confirmation.
 
 A task in a project you pointed at a folder of your own still starts in **Manual**, whatever this setting says.
 
@@ -100,7 +100,7 @@ Copus has a browser of its own, and you switch it on with **Browse websites**. W
 
 Before you can tick that checkbox, you complete a one-time setup. Until then, the caption under the checkbox reads **Needs a one-time setup. Copus still asks you each time.** Select **Set up** on the same row. [Web and sign-ins](/connections/web-and-sign-ins) covers the browser extension that setup installs.
 
-Copus asks you before it works in your Chrome on a site. One approval covers the rest of that request on that site, and the approval ends with the request. Copus asks every time, including in Autopilot, and never offers **Always allow in this conversation** for your Chrome. In tasks Copus runs with nobody watching, Copus refuses to use your Chrome. [Web and sign-ins](/connections/web-and-sign-ins) explains both browsers.
+Copus asks you before it works in your Chrome on a site. One approval covers the rest of that request on that site, and the approval ends with the request. Copus asks every time, including on **Autopilot** and **Full access**, and never offers **Always allow in this conversation** for your Chrome. In tasks Copus runs with nobody watching, Copus refuses to use your Chrome. [Web and sign-ins](/connections/web-and-sign-ins) explains both browsers.
 
 <Note>
 The **Browse websites** row reads **Always runs**, and that holds for an ordinary page. On a site where Copus holds a saved sign-in, Copus asks you first, whatever the row says.
@@ -116,7 +116,7 @@ The **Browse websites** row reads **Always runs**, and that holds for an ordinar
     Set up the apps Copus works from.
   </Card>
   <Card title="Approvals and permissions" icon="shield-check" href="/control/approvals-and-permissions">
-    What Copus asks before it acts, and how the two modes differ.
+    What Copus asks before it acts, and how the three modes differ.
   </Card>
   <Card title="Web and sign-ins" icon="globe" href="/connections/web-and-sign-ins">
     Copus's own browser, and letting Copus work in the Chrome you use.

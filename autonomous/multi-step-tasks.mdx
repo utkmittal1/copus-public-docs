@@ -23,7 +23,7 @@ This page covers how to:
     Start a normal task and work out what you want. Gather the sources, settle the rules, and make any files the job will need. Copus carries everything you agree here into the multi-step task.
   </Step>
   <Step title="Select Switch to multi-step">
-    Select **Task actions** in the top bar, then **Switch to multi-step**. You can select it once Copus finishes its reply. The **Switch to multi-step** button on a card Copus offers does the same thing. Copus switches the conversation to **Autopilot** at the same time, because a multi-step task works with nobody watching it. If the conversation has folders you added, Copus first asks you to confirm that the task can change files in them without asking.
+    Select **Task actions** in the top bar, then **Switch to multi-step**. You can select it once Copus finishes its reply. The **Switch to multi-step** button on a card Copus offers does the same thing. Copus switches the conversation to **Autopilot** at the same time, because a multi-step task works with nobody watching it. The conversation stays on **Autopilot** from then on. If the conversation has folders you added, Copus first asks you to confirm that the task can change files in them without asking.
   </Step>
   <Step title="Agree what done looks like">
     This conversation becomes the task's own conversation, and it keeps its title and every message and file already in it. Copus reads back through the conversation, asks about anything still unclear, and tells you what it's about to do. Answer Copus's questions, then tell Copus to go ahead.
@@ -88,8 +88,10 @@ Steps in the same round start together, so each step works without seeing what t
 </Note>
 
 <Note>
-  Copus starts every step on **Autopilot** because nobody is watching, so Copus acts without stopping to ask. When a step can't get past a problem, Copus reports `Needs you` on the step and names what it needs, instead of guessing. A step can't email or invite anyone. When the work needs that, the step says so in its report. Copus also withholds the Chrome you're signed in to from every step, and refuses a credential file outright, because nobody is there to approve either. [Approvals and permissions](/control/approvals-and-permissions) covers both rules.
+  Copus starts every step on **Autopilot** because nobody is watching, so Copus acts without stopping to ask. When a step can't get past a problem, Copus reports `Needs you` on the step and names what it needs, instead of guessing. A step reads your connected apps and changes nothing in them. It can email and invite only the people you approved for the task. Copus also withholds the Chrome you're signed in to from every step, and refuses a credential file outright, because nobody is there to approve either. [Approvals and permissions](/control/approvals-and-permissions) covers both rules.
 </Note>
+
+When the job needs to email or invite people, Copus shows a card headed **Who “task name” may reach** in the task's own conversation. Remove anyone who shouldn't be there, then select **Approve**. Once anyone is approved, select **People** in the top bar of the task's page to see who is on the list, and to add or remove an address.
 
 ## Follow the work and pause it
 
