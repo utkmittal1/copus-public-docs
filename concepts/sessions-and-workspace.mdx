@@ -48,7 +48,7 @@ Copus gives each conversation a workspace, a folder only that conversation write
 
 A task can write files only inside its own folder, and macOS enforces that limit. For a conversation outside a project, that folder is its workspace. For a conversation in a project, that folder is the whole project folder, so conversations in a project can edit each other's files. A conversation can also write in [folders you add to it](#add-a-folder-copus-can-change).
 
-A task can read files across your Mac. In every approval mode, Copus asks you each time a task tries to read a file that looks like a credential. [The sandbox](/control/sandbox) covers the boundary in full.
+A task can read its own folder, the folders you add, the files you attach, the files other tasks made, and your Desktop, Documents, Downloads and Pictures folders. The rest of your home folder is closed to it. In every approval mode, Copus asks you each time a task tries to read a file that looks like a credential. [The sandbox](/control/sandbox) covers the boundary in full.
 
 Copus puts the workspace of a conversation outside a project in `CopusData/sessions`, inside your home folder. For a conversation in a project, Copus puts the workspace in that project's `sessions/` folder. For a scheduled task, or a multi-step task outside a project, Copus creates a folder under `CopusData/projects`. For a multi-step task in a project, Copus creates that folder in the project's `tasks/` folder. Copus puts the workspaces of the task's steps and runs in that folder's own `sessions/`.
 
