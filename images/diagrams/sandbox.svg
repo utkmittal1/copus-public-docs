@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 350" role="img" aria-labelledby="ttl desc">
-  <title id="ttl">The sandbox: writes confined, reads open</title>
-  <desc id="desc">A task sits inside its write boundary, the session's own folder. Its writes stop at the boundary. Its reads cross the boundary and reach the rest of your Mac, including your documents and files other sessions made. Credential stores are closed to every task. macOS enforces the boundary below the level of any program.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 410" role="img" aria-labelledby="ttl desc">
+  <title id="ttl">The sandbox: writes confined, reads limited</title>
+  <desc id="desc">A task sits inside its write boundary, the session's own folder. Its writes stop at the boundary. Its reads reach your Desktop, Documents, Downloads and Pictures, the folders and files you give it, and files other tasks made. The rest of your home folder and credential stores are closed to every task. macOS enforces the boundary below the level of any program.</desc>
   <style>
     svg { --ink:#1a1712; --fill:#f4f0e6; --accent:#a03a22; }
     @media (prefers-color-scheme: dark) { svg { --ink:#e9eae4; --fill:#242b27; --accent:#b4552e; } }
@@ -25,37 +25,42 @@
     </marker>
   </defs>
 
-  <rect class="acc-shell" x="30" y="60" width="310" height="230" rx="12"/>
+  <rect class="acc-shell" x="30" y="60" width="310" height="290" rx="12"/>
   <text class="t" x="54" y="94">Write boundary</text>
   <text class="s" x="54" y="116">the session's own folder</text>
 
-  <rect class="box" x="54" y="132" width="200" height="68" rx="10"/>
-  <text class="c" x="154" y="172" text-anchor="middle">This task</text>
+  <rect class="box" x="54" y="160" width="200" height="68" rx="10"/>
+  <text class="c" x="154" y="200" text-anchor="middle">This task</text>
 
-  <text class="xs" x="250" y="222" text-anchor="middle">writes</text>
-  <path class="acc-ln" d="M154 200 V222 Q154 232 164 232 H340"/>
-  <path d="M340 210 V254" stroke="var(--accent)" stroke-width="5" fill="none"/>
+  <text class="xs" x="250" y="268" text-anchor="middle">writes</text>
+  <path class="acc-ln" d="M154 228 V268 Q154 278 164 278 H340"/>
+  <path d="M340 256 V300" stroke="var(--accent)" stroke-width="5" fill="none"/>
 
-  <text class="s" x="54" y="270">It writes here and nowhere else.</text>
+  <text class="s" x="54" y="330">It writes here and nowhere else.</text>
 
-  <text class="s" x="440" y="104" text-anchor="middle">Reads are open</text>
-  <path class="ln" d="M254 148 C 300 148 304 127 344 127 H532"/>
-  <path class="ln" d="M254 184 C 300 184 304 187 344 187 H532"/>
+  <text class="s" x="440" y="112" text-anchor="middle">reads</text>
+  <path class="ln" d="M254 174 C 300 174 304 127 344 127 H532"/>
+  <path class="ln" d="M254 194 C 300 194 304 181 344 181 H532"/>
+  <path class="ln" d="M254 214 C 300 214 304 235 344 235 H532"/>
 
-  <rect class="shell" x="540" y="60" width="310" height="230" rx="12"/>
-  <text class="t" x="564" y="94">The rest of your Mac</text>
+  <rect class="shell" x="540" y="60" width="310" height="290" rx="12"/>
+  <text class="t" x="564" y="94">What it reads</text>
 
   <rect class="box" x="564" y="104" width="262" height="46" rx="8"/>
-  <text class="s" x="580" y="133">Your documents and downloads</text>
+  <text class="s" x="580" y="123">Desktop, Documents,</text>
+  <text class="s" x="580" y="141">Downloads, Pictures</text>
 
-  <rect class="box" x="564" y="164" width="262" height="46" rx="8"/>
-  <text class="s" x="580" y="193">Files other sessions made</text>
+  <rect class="box" x="564" y="158" width="262" height="46" rx="8"/>
+  <text class="s" x="580" y="187">Folders and files you give it</text>
 
-  <rect class="blocked" x="564" y="222" width="262" height="56" rx="8"/>
-  <circle cx="588" cy="250" r="9" fill="none" stroke="var(--ink)" stroke-opacity=".55" stroke-width="1.75"/>
-  <path d="M582 256 L594 244" stroke="var(--ink)" stroke-opacity=".55" stroke-width="1.75" fill="none"/>
-  <text class="c" x="608" y="247">Credential stores</text>
-  <text class="xs" x="608" y="266">closed to every task</text>
+  <rect class="box" x="564" y="212" width="262" height="46" rx="8"/>
+  <text class="s" x="580" y="241">Files other tasks made</text>
 
-  <text class="s" x="30" y="330">macOS enforces the boundary below the level of any program.</text>
+  <rect class="blocked" x="564" y="272" width="262" height="62" rx="8"/>
+  <circle cx="588" cy="303" r="9" fill="none" stroke="var(--ink)" stroke-opacity=".55" stroke-width="1.75"/>
+  <path d="M582 309 L594 297" stroke="var(--ink)" stroke-opacity=".55" stroke-width="1.75" fill="none"/>
+  <text class="c" x="608" y="298">Rest of your home folder</text>
+  <text class="xs" x="608" y="318">and credential stores: closed</text>
+
+  <text class="s" x="30" y="390">macOS enforces the boundary below the level of any program.</text>
 </svg>
