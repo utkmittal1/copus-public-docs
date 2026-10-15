@@ -74,7 +74,7 @@ Copus puts each limit where a task could do damage. Writing is where a task can 
 
 ## Where the sandbox stops
 
-The sandbox controls where a task may write and what it may read. It also keeps a task away from your keychain and your other apps. A task can't ask macOS for a keychain value, open or control another app, read the clipboard, use the microphone, read your Mac's Calendar or Reminders, ask for your location, or start a program that keeps running after the task. The cases below fall outside the sandbox.
+The sandbox controls where a task may write and what it may read. It also keeps a task away from your keychain and your other apps. A task can't ask macOS for a keychain value, open or control another app, read the clipboard, use the microphone, read your Mac's Calendar or Reminders, ask for your location, or start a program that keeps running after the task. It also can't stop a program it didn't start, such as one of your apps, Copus itself, or another task. It can't mount, unmount or eject a disk, run one of your Shortcuts, or use the SSH keys your Mac's SSH agent holds. The cases below fall outside the sandbox.
 
 **The network is open.** A command a task runs can reach the internet. Copus controls that by asking before every command outside its read-only list, which is why you can't set **Run commands** to run on its own. On **Autopilot** and **Full access**, Copus runs the command without asking.
 
