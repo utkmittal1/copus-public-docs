@@ -89,7 +89,7 @@ Copus asks you before a task reads either file, every time, in every approval mo
 
 **To your iPhone, if you paired an iPhone.** Turn on **Allow iPhone access** under **Settings** > **iPhone**, and Copus serves your name, your tasks, their transcripts and files, your projects, the tasks and meetings on your Home page, and your notifications to that phone over your own Tailscale network. Copus serves data to a phone only while **Allow iPhone access** is on. See [Copus on your iPhone](/working/iphone).
 
-A command can also send your data off your Mac. The sandbox confines only what a task writes, so a command that runs can upload a file of yours anywhere on the internet. Copus controls that by asking before every command outside its read-only list, which is why you can't set **Run commands** to run on its own. On **Autopilot**, Copus answers that question for you. See [Approvals and permissions](/control/approvals-and-permissions).
+A command can also send your data off your Mac. The sandbox leaves the network open, so a command that runs can upload any file the task can read, such as a file in your Documents folder, anywhere on the internet. Copus controls that by asking before every command outside its read-only list, which is why you can't set **Run commands** to run on its own. On **Autopilot**, Copus answers that question for you. See [Approvals and permissions](/control/approvals-and-permissions).
 
 <Warning>
   "Local" describes where Copus keeps your data at rest. Every request to an AI provider leaves your Mac, whichever provider you choose, because each provider runs on its own machines. If a document is sensitive enough that its text must never reach an AI provider, keep it out of the task.
