@@ -60,6 +60,8 @@ On **Autopilot** and **Full access**, Copus reads, searches, writes files in the
 | Use a tool that changes something, in a server you added yourself | Asks, and offers **Always allow in this conversation** | Runs |
 | Create or change a scheduled task | Runs | Asks every time |
 | Open or act on a site Copus's browser holds your sign-in for | Asks once per site, and again after your next message | Asks once per site, and again after your next message |
+| Type or upload a file on a website in Copus's browser | Asks once per site, and again after your next message | Runs |
+| Open a web address Copus put together itself in Copus's browser | Asks | Runs |
 
 Copus can't tell what a tool in a server you added yourself changes, so those tools follow their own row, whatever they do.
 
@@ -87,11 +89,15 @@ You can limit these writes in two ways. Set **Edit & write files** to **Ask** on
 
 In **Manual**, Copus asks before every command outside the read-only list, and shows you the exact command in the request. It also asks before anything an integration writes, such as a Gmail message, a Slack post, or a new or changed Linear issue.
 
-Copus browses ordinary pages in a browser of its own without asking. It asks the moment that browser lands on a site you have signed in to through Copus, because that page is your account. On **Autopilot** and **Full access**, Copus asks too, and leaves out **Always allow in this conversation**. Your answer covers that one site until Copus comes back to you.
+Copus opens pages, reads them and clicks through them in a browser of its own without asking. It asks before it types on a site or uploads a file there. It also asks the moment that browser lands on a site you have signed in to through Copus, because that page is your account. Copus asks that in every mode. Your answer covers that one site until Copus comes back to you.
+
+Copus keeps a file its browser downloads only if it is a document, a data file or an image. It asks before it keeps a zip archive.
+
+**Working in the Chrome you are signed in to.** Copus works in your own Chrome only after you switch on **Use my Chrome for sites I’m signed in to** under **Built-in tools**, which needs a one-time browser extension. Even then Copus asks before it acts on each site, in every mode, and your answer covers that one site for the rest of the turn. A turn is one round of work: your message, and everything Copus does before it comes back to you. Send the next message and Copus asks again.
 
 ## What Copus asks every time
 
-Copus asks three questions every time they come up. On all three, Copus waits for your answer, including on **Autopilot** and **Full access**, and leaves out **Always allow in this conversation**.
+Copus asks two questions every time they come up. On both, Copus waits for your answer, including on **Autopilot** and **Full access**, and leaves out **Always allow in this conversation**.
 
 **Reading a file that holds credentials.** Copus asks before a task reads any of these:
 
@@ -107,9 +113,7 @@ Copus asks this question about a credential file in a folder of your own. Copus 
 
 **Publishing work or throwing away changes.** Copus asks before a command that publishes work to a shared repository, such as `git push`, or changes something on GitHub through the `gh` command, such as opening a pull request. It also asks before a command that throws away changes you haven't committed in git, such as `git reset --hard`, `git restore`, or `git clean -f`. Copus asks only about a command it can read. A script that runs one of these commands inside it runs without the question.
 
-**Working in the Chrome you are signed in to.** Copus works in your own Chrome only after you switch on **Use my Chrome for sites I’m signed in to** under **Built-in tools**, which needs a one-time browser extension. Even then Copus asks before it acts on each site, and your answer covers that one site for the rest of the turn. A turn is one round of work: your message, and everything Copus does before it comes back to you. Send the next message and Copus asks again.
-
-Copus applies the opposite rule to work it runs with nobody watching. In that work, Copus refuses your own Chrome, a credential file, a push, a change on GitHub, and a command that throws away changes, the moment the question comes up, because nobody is there to answer. Copus applies this rule to a run of a scheduled task, a step of a multi-step task, a review task, and the work Copus does on its own in a task it started or in a multi-step task's own conversation. When you type a message in a task Copus started, or in the conversation **Update task** opens on a task's page, you are there to answer, so Copus asks you. The same holds after you select **Do it**, **Refine**, or **Check in** on a task Copus started.
+Copus applies the opposite rule to work it runs with nobody watching. In that work, Copus refuses your own Chrome, typing on a website, a credential file, a push, a change on GitHub, and a command that throws away changes, the moment the question comes up, because nobody is there to answer. Copus applies this rule to a run of a scheduled task, a step of a multi-step task, a review task, and the work Copus does on its own in a task it started or in a multi-step task's own conversation. When you type a message in a task Copus started, or in the conversation **Update task** opens on a task's page, you are there to answer, so Copus asks you. The same holds after you select **Do it**, **Refine**, or **Check in** on a task Copus started.
 
 ## What Copus never runs
 
