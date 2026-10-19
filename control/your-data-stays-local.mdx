@@ -25,7 +25,7 @@ Copus keeps what it manages in one folder called `CopusData`, inside your home f
 | `projects/` | Project folders, and the folder of every scheduled and multi-step task |
 | `logs/` | One log file, `copus.jsonl` |
 | `knowledge/models/` | The model Copus indexes your documents with |
-| `speech/models/` | The model Copus transcribes dictation with |
+| `speech/models/` | The models Copus transcribes dictation with |
 | `speech/voice/` | The voice Copus speaks with in voice mode |
 | `runtime/` | The Python Copus runs scripts with, its own browser, and the logins for sites you signed in to |
 | `skills/` | Skills you added yourself |
@@ -110,7 +110,7 @@ Copus fetches these files the first time it starts, then runs them from `CopusDa
 - pandoc, which the Word skill uses to read documents, from GitHub.
 - ffmpeg, which demo-studio uses to make videos, from ffmpeg.martin-riedl.de.
 - The model that indexes your documents, from Hugging Face.
-- The model that transcribes your dictation and meeting recordings, from Hugging Face.
+- The model that transcribes your dictation and meeting recordings, and a small model that tells your voice apart from background noise.
 
 Together these downloads come to about 1 GB.
 
