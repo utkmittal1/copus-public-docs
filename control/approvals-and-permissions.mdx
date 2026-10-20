@@ -97,7 +97,7 @@ Copus keeps a file its browser downloads only if it is a document, a data file o
 
 ## What Copus asks every time
 
-Copus asks two questions every time they come up. On both, Copus waits for your answer, including on **Autopilot** and **Full access**, and leaves out **Always allow in this conversation**.
+Copus asks three questions every time they come up. On each, Copus waits for your answer, including on **Autopilot** and **Full access**, and leaves out **Always allow in this conversation**.
 
 **Reading a file that holds credentials.** Copus asks before a task reads any of these:
 
@@ -112,6 +112,8 @@ Copus adds whatever a task reads to the conversation and sends the conversation 
 Copus asks this question about a credential file in a folder of your own. Copus refuses a file inside one of the folders it keeps shut, such as `~/.ssh`, `~/.aws` or your keychain folder, without asking you. For every folder and file Copus keeps shut, see [The sandbox](/control/sandbox).
 
 **Publishing work or throwing away changes.** Copus asks before a command that publishes work to a shared repository, such as `git push`, or changes something on GitHub through the `gh` command, such as opening a pull request. It also asks before a command that throws away changes you haven't committed in git, such as `git reset --hard`, `git restore`, or `git clean -f`. Copus asks only about a command it can read. A script that runs one of these commands inside it runs without the question.
+
+**Sending a follow-up to another task.** When one task sends a follow-up message to a task it started, Copus shows you the whole message first and sends it only after you select **Allow**. See [Start a task from another task](/concepts/sessions-and-workspace#start-a-task-from-another-task).
 
 Copus applies the opposite rule to work it runs with nobody watching. In that work, Copus refuses your own Chrome, a website it doesn't trust, typing on a website, a credential file, a push, a change on GitHub, and a command that throws away changes, the moment the question comes up, because nobody is there to answer. Copus applies this rule to a run of a scheduled task, a step of a multi-step task, a review task, and the work Copus does on its own in a task it started or in a multi-step task's own conversation. When you type a message in a task Copus started, or in the conversation **Update task** opens on a task's page, you are there to answer, so Copus asks you. The same holds after you select **Do it**, **Refine**, or **Check in** on a task Copus started.
 

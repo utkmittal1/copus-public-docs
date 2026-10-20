@@ -12,6 +12,7 @@ This page covers how to:
 - [Start a task](#start-a-task), and how Copus names it
 - [Choose which kind of task to start](#choose-which-kind-of-task-to-start)
 - [Find a review task](#review-tasks) Copus started to check its work
+- [Start a task from another task](#start-a-task-from-another-task)
 - [Find where a task's files land](#the-workspace-a-task-writes-to)
 - [Add a folder Copus can change](#add-a-folder-copus-can-change), such as a code repository
 - [Open the files a task made](#open-the-files-a-task-made)
@@ -38,6 +39,12 @@ Copus works on the other two kinds without you there. A **multi-step task** is f
 When you ask Copus to have a piece of work reviewed, or agree when Copus offers a review, Copus starts a separate task titled **Review:** followed by the file's name. Copus lists the review task with your other tasks.
 
 Copus runs the review task on the same provider and model as the task that asked for it, and starts it without that task's conversation. In the review task, Copus reads the files named in the request, checks them against the listed sources and standards, and sends its findings back to the task that asked. Copus leaves the work itself unchanged during a review. A review task runs without your standing instructions and your response style. Copus runs a review task on **Autopilot** with nobody watching, whatever mode the task that asked for it is in, and you can't switch its mode.
+
+## Start a task from another task
+
+A task can start a new task and hand it a brief, the instructions the new task starts from. Ask for one in the conversation, such as "Start a separate task to fix the export bug." Use it to give a side job its own task, or to carry the work on in a fresh task when a conversation has grown long. Copus may also suggest a new task, and starts one only once you agree. In **Manual**, Copus asks you before it starts the task.
+
+The new task is an ordinary task. It runs on the same AI provider and model, and in the same approval mode, as the task that started it, and joins the same project if that task is in one. It can read that task's conversation and files, the files you attached to it, and the folders you added to it, but it can't change those folders.
 
 ## The workspace a task writes to
 
