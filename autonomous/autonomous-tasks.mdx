@@ -38,7 +38,7 @@ You set a task up by asking for it in an ordinary conversation. Copus builds the
     Confirm the time and timezone Copus proposes, or name a different zone. Your own zone is the default.
   </Step>
   <Step title="Check the task once it is saved">
-    Copus writes the instructions and saves the task. Check what the task will do, when the first run happens, and where the result goes. The task runs on the AI provider and model of the conversation you set it up in, not on the provider marked **Default**. See [AI providers](/concepts/ai-providers).
+    Copus writes the instructions and saves the task. Check what the task will do, when the first run happens, and where the result goes. Copus runs the task on your default AI provider, with the model set for **Scheduled tasks**. To run it on another model, use the **Runs on** box on the task's page. See [AI providers](/concepts/ai-providers).
   </Step>
   <Step title="Approve who the task may reach">
     If the task emails or invites anyone, Copus shows a card headed **Who “task name” may reach**, listing their addresses. Remove anyone who shouldn't be there, then select **Approve**. A run emails nobody who isn't on that list, you included, so check that your own address is there when the task emails you.
@@ -126,7 +126,9 @@ The task's page lists its runs under **Runs**, with the count beside it. Select 
 
 Select **Run now** to start a run without waiting for the next slot. Select **Pause** to stop the schedule, and **Resume** to start it again. To change what the task does, select **Update task** to open the task's own conversation, and tell Copus what should be different.
 
-A run card shows `Needs you` when the run stopped to ask you for something, `Failed` when the run couldn't finish, and `Trying again` with the wait remaining when Copus is about to retry the run, or `Retry held` while the task is paused. A run that is queued, working, or done carries a mark instead of a word. Copus leaves a run marked `Needs you` for you to answer and doesn't retry it.
+The **Runs on** box shows the AI provider, model, and level the next run uses, and reads **The default for scheduled tasks.** To run this task on something else, pick it there, and the box reads **Set for this task.** Select **Use the default** to go back.
+
+A run card shows `Needs you` when the run stopped to ask you for something, `Failed` when the run couldn't finish, and `Trying again` with the wait remaining when Copus is about to retry the run, or `Retry held` while the task is paused. A run that is queued, working, or done carries a mark instead of a word. Copus leaves a run marked `Needs you` for you to answer and doesn't retry it. A card shows `Skipped` when the task's AI provider couldn't take the run, because it was signed out or its API key was missing or out of credit. Copus doesn't retry a skipped run, and a skipped run doesn't count toward the failed runs that stop a task.
 
 <Note>
   Copus gives a run that stops part-way up to three attempts, with a wait between them, and the card counts them as `Attempt 2 of 3`. Copus cancels a run that shows no activity for a long stretch, so the task can move on, and then retries the run like any other failure. Copus waits out your provider's usage limit without spending an attempt.
