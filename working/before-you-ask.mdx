@@ -17,12 +17,12 @@ This page covers how Copus decides what to take on, what it hands back, and how 
 - [Review and respond to results](#review-and-respond) with Refine, Dismiss, and other actions
 - [See how Copus learns from what you send, refine, or dismiss](#how-copus-learns-from-your-responses)
 - [Check when Copus reads your apps](#when-copus-checks)
-- [Stop Copus from starting tasks](#stop-copus-from-starting-tasks) from an app
+- [Pause Copus, or stop it from starting tasks](#stop-copus-from-starting-tasks)
 - [Limitations](#limitations)
 
 ## How it works
 
-Every 15 minutes, Copus reads what changed in your connected apps and decides which threads and meetings ask something of you. For each thread or meeting that does, Copus creates a task, does the work, and puts the result on the Home page. You review the result, ask for changes, and decide what happens next.
+Every 15 minutes, Copus reads what changed in your Gmail and decides which threads ask something of you. For each thread that does, Copus creates a task, does the work, and puts the result on the Home page. You review the result, ask for changes, and decide what happens next.
 
 For example, when a colleague emails to ask for a comparison of two vendors by Friday, Copus might:
 
@@ -40,32 +40,34 @@ Before its first task, Copus builds your People list from your sent mail. While 
 
 ## Apps Copus works from
 
-Copus reads every supported app you connect. Copus finds work in Gmail and Google Calendar. Other apps give Copus context while it works.
+Copus finds work in Gmail. Google Calendar, Google Drive, and your other connected apps give Copus context while it works.
 
 | App | What Copus does with it |
 |---|---|
 | Gmail | Reads every thread that changes, except mail Gmail files under Promotions, Social, or Forums, and starts or suggests a task when a thread asks something of you |
-| Google Calendar | Reads your upcoming meetings and writes a prep document for each meeting that needs one. Also shows your meetings in the **Coming up** box on the Home page, and checks each proposed event for clashes |
+| Google Calendar | Shows your meetings in the **Coming up** box on the Home page, each with the prep document Copus wrote for it, if any. Also checks each proposed event for clashes |
 | Google Drive | Gives Copus access to your files while it works on a task |
 
 ## Requirements
 
 - You're signed in to an [AI provider](/concepts/ai-providers).
-- Gmail or Google Calendar is connected.
+- Google is connected.
 - Copus is open, and your Mac is awake.
 
 ## Connect your apps
 
-Copus starts reading your mail as soon as you connect Gmail. You can connect your Google apps from two places:
+One Google sign-in connects Gmail, Google Calendar, and Google Drive together. Copus starts reading your mail as soon as you connect. You can connect Google from two places:
 
-- **Connect Google**, during setup or on the Home page. One Google sign-in connects Gmail, Google Calendar, and Google Drive. The connection fails if you leave any of the three apps' permissions unapproved.
-- **Settings** > **Integrations**. Each Google app connects separately, with its own sign-in.
+- **Connect Google**, during setup or on the Home page.
+- The **Google** card in **Settings** > **Integrations**.
+
+Both open the same panel. Select **Agree and connect Google**, and leave every box ticked on Google's sign-in page. If you untick a box, Copus connects none of the three apps.
 
 If you skip Google during setup, you can connect it later from either place.
 
 ### What Copus reads first
 
-When you first connect Gmail, Copus reads your mailbox once to learn about you:
+When you first connect Google, Copus reads your mailbox once to learn about you:
 
 1. Copus reads your recent sent mail and builds your People list. The people you write to most, and most recently, rank highest.
 2. Copus reads your recent threads with the people at the top of your People list, and creates its first tasks from them. At the same time, Copus writes a guide to how you write and saves facts about you to your [memory](/context/memory).
@@ -87,7 +89,7 @@ Copus starts small, clear tasks right away. When a task is large or its scope is
 
 Once a day, Copus looks for Gmail threads where nobody has replied for three days or more. When someone is waiting on you, Copus starts the reply or suggests it. When you're waiting on someone, Copus usually suggests a short follow-up for you to send. Copus leaves a quiet thread alone when the silence has a reason, such as a settled matter.
 
-Copus also reads your upcoming meetings in Google Calendar. For a meeting that needs preparation, Copus writes a prep document and shows it next to the meeting in the **Coming up** box on the Home page.
+When a thread shows that a meeting needs preparation, Copus writes a prep document. Copus shows the document next to the meeting in the **Coming up** box on the Home page.
 
 While a task is open, new mail on its thread goes to that task. When the new message changes what the task needs, Copus works on the task again with the new message in front of it. New mail on the thread of a closed task starts a new task.
 
@@ -146,19 +148,23 @@ Copus saves a fact when it sees a pattern across your tasks. You find your writi
 | Daily | Looks at quiet Gmail threads, and starts or suggests replies and follow-ups |
 | Weekly | Reviews the week's results and updates your memory, writing guide, and People list |
 
+To stop the 15-minute and daily checks for a while, select **Pause checking** on the Home page. See [Stop Copus from starting tasks](#stop-copus-from-starting-tasks).
+
 ## Stop Copus from starting tasks
 
-To stop Copus from starting tasks from an app, open **Settings** > **Integrations**, select Gmail or Google Calendar, and disconnect the app. Copus also loses access to that app in tasks you start.
+To stop Copus from starting tasks for a while, select **Pause checking** on the Home page. It sits next to the line that says when Copus last checked your mail, such as **Checked 5m ago**. While Copus is paused, it stops the 15-minute mail check, the daily look at quiet threads, and its first read of your mailbox if that read hasn't finished. The line then reads **Checking paused**. Tasks you start, your scheduled tasks and digests, the **Coming up** box, and the weekly review keep running. Select **Resume** to start again. Copus checks your mail as soon as you resume.
+
+To stop Copus for good, open the **Google** card in **Settings** > **Integrations** and select **Disconnect**. Copus then can't use Gmail, Google Calendar, or Google Drive in tasks you start either.
 
 ## Limitations
 
-- **Copus finds work in Gmail and Google Calendar only.** Google Drive and your other connected apps support the tasks Copus starts.
+- **Copus finds work in Gmail only.** Google Calendar, Google Drive, and your other connected apps support the tasks Copus starts.
 - **Copus skips three Gmail tabs.** Mail that Gmail files under Promotions, Social, or Forums never becomes a task, including mailing-list mail that lands in Forums.
 - **Copus works only while it's open.** Checks run only while Copus is open and your Mac is awake. When you open Copus after a missed check, Copus runs that check once. If your Google sign-in expires, the Home page shows a message, and checks stop until you connect Google again in **Settings** > **Integrations**.
 - **Copus can misjudge a thread.** Copus sometimes takes on a thread you'd ignore, or misses a thread you want handled. The weekly review reads every task you dismiss or decline.
 - **Copus changes nothing in your connected apps on its own.** While Copus works on a task by itself, it only reads your apps. You send every email, create every event, and make every other Google change yourself, with the button on the task, such as **Send**, **Save as draft**, or **Create event**. After you select **Do it**, **Refine**, or **Check in**, or type a message in the task, Copus works as it does on **Autopilot**: it makes ordinary changes, such as editing a Drive file, and asks before it sends, posts, deletes, or shares something.
 - **Copus writes only to people it knows.** A reply can go only to someone on a thread Copus read, or to someone in your People list.
-- **Your mail goes to your AI provider.** To decide what needs work and to do it, Copus sends mail to your AI provider. The first read sends your recent sent mail and your recent threads with the people at the top of your People list. Each 15-minute check sends every changed thread outside the Promotions, Social, and Forums tabs in full, with Copus's notes on the people in it, and contacts your provider only when a thread has changed. The daily check sends the quiet threads it looks at. See [Your data stays local](/control/your-data-stays-local).
+- **Your mail goes to your AI provider.** To decide what needs work and to do it, Copus sends mail to your AI provider. The first read sends up to 60 of your most recent sent emails, and up to 40 threads from the last 14 days with the people at the top of your People list. Each 15-minute check sends every changed thread outside the Promotions, Social, and Forums tabs in full, with Copus's notes on the people in it, and contacts your provider only when a thread has changed. The daily check sends the quiet threads it looks at. See [Your data stays local](/control/your-data-stays-local).
 
 ## Related
 

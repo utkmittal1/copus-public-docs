@@ -40,7 +40,7 @@ Open a connected integration's panel to see its tools, under a **Read** group an
 | **Slack** | Search channels and threads, read messages, and send messages. | Copus's sign-in, or your own OAuth app |
 
 <Note>
-  To connect Gmail, Google Calendar, and Google Drive with one Google sign-in, select **Connect Google** on the Home page. Gmail and Google Calendar are also where Copus finds work to start before you ask. See [Work Copus starts before you ask](/working/before-you-ask).
+  Gmail, Google Calendar, and Google Drive connect together, with one Google sign-in, and share one card on the **Integrations** page, named **Google**. You can also connect Google from **Connect Google** on the Home page. Copus finds the work it starts before you ask in Gmail. See [Work Copus starts before you ask](/working/before-you-ask).
 </Note>
 
 ## Design
@@ -133,7 +133,7 @@ These integrations take a credential you create yourself:
 
 - Excalidraw, Figma, and Firecrawl take an API key you generate in that service.
 - GitHub takes a fine-grained personal access token, a GitHub token you scope to chosen repositories and permissions.
-- Gmail, Google Drive, Google Calendar, and Slack take the **Client id** and **Client secret** of your own OAuth app, but only when your account isn't approved for Copus's built-in sign-in. You create the app in Google Cloud Console or at api.slack.com, after selecting **Set up your own app instead** in the integration's panel.
+- Google (Gmail, Google Calendar, and Google Drive) and Slack take the **Client id** and **Client secret** of your own OAuth app, but only when your account isn't approved for Copus's built-in sign-in. You create the app in Google Cloud Console or at api.slack.com, after selecting **Set up your own app instead** in the **Google** or **Slack** panel.
 
 Copus puts each credential in your Mac's keychain and never shows it back on screen. When an integration's key stops working, Copus shows the boxes empty, and you paste the credential in again.
 

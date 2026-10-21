@@ -23,7 +23,7 @@ Set up an integration when the work you want Copus to do lives in that app. With
 
 An integration is the only way Copus acts inside an app's own account. Without an integration, Copus can still open that app's website in [its own browser](/connections/web-and-sign-ins), which is slower and needs you to sign in there. A task can't use the GitHub sign-in saved on your Mac, so Copus pushes code to GitHub through the GitHub integration.
 
-Copus also finds work to start before you ask in Gmail and Google Calendar. Once you connect either app, Copus reads it and puts the results on the Home page. Google Drive and your other apps give Copus context while it works. See [Work Copus starts before you ask](/working/before-you-ask).
+Copus also finds work in Gmail and starts it before you ask. Once you connect Google, Copus reads your mail and puts the results on the Home page. Google Calendar, Google Drive, and your other apps give Copus context while it works. See [Work Copus starts before you ask](/working/before-you-ask).
 
 [Integrations catalog](/reference/integrations-catalog) lists every app Copus ships an integration for, and what each app can do.
 
@@ -34,26 +34,26 @@ Copus also finds work to start before you ask in Gmail and Google Calendar. Once
     In **Settings**, select **Integrations**. Copus lists the integrations you have set up under **Connected** and the rest under **Available**. Type into **Search integrations…** to filter both lists by name.
   </Step>
   <Step title="Pick the integration">
-    Select its card to open its panel.
+    Select its card to open its panel. Gmail, Google Calendar, and Google Drive share one card, **Google**.
   </Step>
   <Step title="Work through the setup steps, if the panel shows any">
-    For Atlassian and GitHub, the panel shows numbered steps to finish before you connect. For Gmail, Google Drive, Google Calendar, and Slack, the panel shows steps only when you choose to sign in through your own app. For Google, Slack, and GitHub, the panel also shows a link above the steps that opens that provider's developer portal.
+    For Atlassian and GitHub, the panel shows numbered steps to finish before you connect. For Google and Slack, the panel shows steps only when you choose to sign in through your own app. For Slack and GitHub, the panel also shows a link above the steps that opens that provider's developer portal.
   </Step>
   <Step title="Connect">
-    Select **Connect**. For an integration you sign in to, approve the page that opens in your browser. For an integration that takes a key, paste the key first.
+    Select **Connect**, or **Agree and connect Google** for Google. For an integration you sign in to, approve the page that opens in your browser. For an integration that takes a key, paste the key first.
   </Step>
 </Steps>
 
 Copus then moves the integration to the **Connected** list. If you don't approve the sign-in page in time, the panel reads "Timed out waiting for sign-in to complete." Select **Connect** to start again.
 
-To connect Gmail, Google Calendar, and Google Drive with one sign-in, select **Connect Google** on the Home page. Copus connects all three apps or none of them, so approve every permission Google asks for.
+Gmail, Google Calendar, and Google Drive connect together, with one Google sign-in. Before you sign in, the **Google** panel shows what Copus does with your Google data and what it uses each app for. You agree to it when you select **Agree and connect Google**. You can also open the same panel from the **Connect Google** step on the Home page. Copus connects all three apps or none of them, so leave every box ticked on Google's sign-in page.
 
 <Note>
   When you connect an app, Copus signs in and switches on that app's tools in the same step, each at the setting the app ships it with. Some tools stay switched off. Copus leaves the panel open on the tools, so you can review them and change any tool's setting straight away.
 </Note>
 
 <Warning>
-  Copus holds one account per integration. If you connect a second Gmail account, Copus replaces the first account. You can't run a work account and a personal account side by side in the same integration.
+  Copus holds one account per integration. If you connect a second Google account, Copus replaces the first account in Gmail, Google Calendar, and Google Drive. You can't run a work account and a personal account side by side in the same integration.
 </Warning>
 
 ## What an integration asks you for
@@ -62,28 +62,30 @@ Copus signs in to each integration in one of four ways, and the integration's pa
 
 | How Copus signs in | What you supply | Which integrations |
 |---|---|---|
-| Copus's built-in sign-in, or an app of your own | With the built-in sign-in, nothing: select **Connect** and approve the sign-in page. With your own app, the **Client id** and **Client secret** of an app you create in Google Cloud Console or in Slack's developer portal | Gmail, Google Drive, Google Calendar, and Slack |
+| Copus's built-in sign-in, or an app of your own | With the built-in sign-in, nothing: connect and approve the sign-in page. With your own app, the **Client id** and **Client secret** of an app you create in Google Cloud Console or in Slack's developer portal | Google (Gmail, Google Calendar, and Google Drive) and Slack |
 | A sign-in in your browser | Nothing. Select **Connect** and approve the sign-in page that opens | Most other apps, including Notion, Linear, Asana, Todoist, Miro, Canva, Stripe, and Airtable. Atlassian also needs an administrator of your Atlassian organization to add Copus's address once, in numbered steps the panel gives you |
 | A pasted key | An API key or access token you generate in that service. GitHub needs a fine-grained personal access token | Figma, Excalidraw, Firecrawl, and GitHub |
 | Nothing at all | No account and no key | AWS Documentation |
 
 ### Sign in to Google or Slack through your own app
 
-Copus's built-in sign-in for Gmail, Google Drive, Google Calendar, and Slack works only for approved users. If your account isn't approved, sign in through an app you register yourself:
+Copus's built-in sign-in for Google and Slack works only for approved users. If your account isn't approved, sign in through an app you register yourself:
 
 <Steps>
   <Step title="Switch to your own app">
     In the integration's panel, select **Set up your own app instead**.
   </Step>
   <Step title="Create the app">
-    Work through the numbered steps. The link above the steps opens Google Cloud Console for a Google app and Slack's developer portal for Slack. Copy the redirect address shown in the steps into your app's settings.
+    Work through the numbered steps. For Google, each step links to the Google Cloud Console page where you do it. You create a client of the type **Desktop app**. For Slack, the link above the steps opens Slack's developer portal, and you copy the redirect address shown in the steps into your app's settings.
   </Step>
   <Step title="Connect">
-    Paste the **Client id** and **Client secret**, select **Connect**, and approve the sign-in page in your browser.
+    Paste the **Client id** and **Client secret**. Select **Connect**, or **Agree and connect Google** for Google, and approve the sign-in page in your browser. You enter the two values once. When you connect again later, Copus uses the same app.
   </Step>
 </Steps>
 
-To go back to the built-in sign-in, select **Use the built-in sign-in instead**.
+To go back to the built-in sign-in, select **Use the built-in sign-in instead**, or **Use Copus's sign-in instead** for Google.
+
+While your Google app's publishing status is **Testing**, Google ends its sign-ins after seven days, so you connect again each week.
 
 <Note>
   Until Google finishes reviewing Copus, the Google sign-in page shows a warning that the app is unverified. Choose **Continue** to carry on. The sign-in then works as usual.
@@ -95,7 +97,7 @@ To go back to the built-in sign-in, select **Use the built-in sign-in instead**.
 
 ## What Copus may do once an integration is in place
 
-Open a connected integration's panel to see its tools under **Tools**, in two groups. Each group shows how many of its tools are enabled.
+Open a connected integration's panel to see its tools under **Tools**, in two groups. Each group shows how many of its tools are enabled. The **Google** panel lists Gmail, Google Calendar, and Google Drive one after another, each with its own groups.
 
 - **Read** tools look things up: search your mail, list your issues, fetch a page. Copus sets most read tools to **Auto** and runs them on its own while it works. Copus sets a few read tools in Canva and Firecrawl to **Ask**.
 - **Write** tools change something: send a message, create a task, update a record. Copus sets every write tool to **Ask**.
@@ -116,6 +118,8 @@ Copus puts each integration's credentials in your Mac's keychain, one item per i
 
 Select **Disconnect** in an integration's panel to disconnect the app. Copus removes that app's tools and deletes the sign-in it stored, and you can set the integration up again at any time.
 
+When you select **Disconnect** on the **Google** panel, Copus disconnects Gmail, Google Calendar, and Google Drive together. Copus also asks Google to cancel its access to your Google account. That disconnects Copus on every other Mac that uses the same Google account, too. To keep Copus out of one of the three apps in its tasks, switch off that app's tools instead.
+
 <Note>
   When you set up an integration, Copus reaches that app's own service over the internet. Copus keeps your tasks, files, and credentials on your Mac, and the app's data travels the same way it does when you use the app yourself. See [Your data stays local](/control/your-data-stays-local).
 </Note>
@@ -124,7 +128,7 @@ Select **Disconnect** in an integration's panel to disconnect the app. Copus rem
 
 An integration's sign-in can expire, and the sign-in saved on your Mac can go missing. Either way, Copus pauses that integration's tools until you sign in again. Copus also shows a banner across the top of the window, such as "Notion needs to reconnect." When several integrations need fixing, the banner shows how many instead. Select **Open Integrations** in the banner to go straight there.
 
-The integration's card in the **Connected** list reads **Reconnect**. When you open the card, the panel shows that the sign-in expired. Select **Connect** to sign in again. Copus restores the integration as it was, including any tool settings you changed. To drop the integration instead, select **Remove**.
+The integration's card in the **Connected** list reads **Reconnect**. When you open the card, the panel shows that the sign-in expired. Select **Connect**, or **Agree and connect Google** for Google, to sign in again. Copus restores the integration as it was, including any tool settings you changed. To drop the integration instead, select **Remove**.
 
 For an integration that takes a key, the panel says the app rejected the saved API key. Paste a new key and select **Connect**.
 

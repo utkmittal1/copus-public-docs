@@ -20,14 +20,14 @@ This page covers how both kinds of task run, what Copus reads while it works, an
 
 | | Work Copus starts | Work you start |
 |---|---|---|
-| Where it starts | A Gmail thread or a meeting on your Google Calendar | The message box on the Home page |
+| Where it starts | A Gmail thread | The message box on the Home page |
 | How Copus scopes it | Copus reads the thread and decides what the work is. | Copus answers a quick request straight away. For larger work, Copus asks you what it needs to know, then plans the steps. |
 | Where the result appears | On the Home page, as a task for you to review | In the conversation, with finished files under **Artifacts** |
 | What Copus sends | Copus sends a reply only when you select **Send**, and creates an event only when you select **Create event**. | A new task asks you first. By default, Copus asks before it sends, posts, or changes anything in a connected app, and before it runs a command that changes something on your Mac. You can let a task do these without asking. |
 
 ## How Copus starts work on its own
 
-Every 15 minutes, Copus reads what changed in Gmail, reads your upcoming meetings, and starts the work they ask of you. That work includes documents, analyses, research, meeting prep, replies, follow-ups, and decisions laid out as choices. Copus learns from what you do with each result. Each result waits on the Home page for you to review, refine, send, or dismiss.
+Every 15 minutes, Copus reads the Gmail threads that changed and starts the work they ask of you. That work includes documents, analyses, research, meeting prep, replies, follow-ups, and decisions laid out as choices. Copus learns from what you do with each result. Each result waits on the Home page for you to review, refine, send, or dismiss. To stop these checks for a while, select **Pause checking** on the Home page.
 
 [Work Copus starts before you ask](/working/before-you-ask) covers what Copus takes on, what it hands back, and how to review or stop it.
 
@@ -80,10 +80,10 @@ See [Your data stays local](/control/your-data-stays-local).
 A task you start has an approval mode: **Manual**, **Autopilot**, or **Full access**. You switch the mode in the controls under the message box. In **Manual**, Copus asks you by default before it sends, posts, or changes anything in a connected app, and before it runs a command that changes something on your Mac. On **Autopilot**, Copus runs commands and makes most changes without asking for the rest of the conversation, and still asks before it sends, posts, deletes, or shares something in a connected app. On **Full access**, Copus runs nearly everything without asking. A new task starts in **Manual** unless you change **New tasks start in** under **Settings** > **Built-in tools**.
 
 <Warning>
-  On **Autopilot** and **Full access**, Copus can change a record in a connected app without showing it to you first. Use **Manual** for any task that might change a record. Email, calendar changes, and Drive sharing and comments are the exception. In every mode, Copus shows you a card for those first, and nothing goes out until you select the button on it.
+  On **Autopilot** and **Full access**, Copus can change a record in a connected app without showing it to you first. Use **Manual** for any task that might change a record. Sent email, saved drafts, calendar changes, and Drive sharing and comments are the exception. In every mode, Copus shows you a card for those first, and nothing goes out until you select the button on it.
 </Warning>
 
-Copus also starts tasks on its own, from your mail and calendar. In those tasks, Copus changes nothing in your connected apps by itself, and you send every reply and create every event yourself.
+Copus also starts tasks on its own, from your mail. In those tasks, Copus changes nothing in your connected apps by itself, and you send every reply and create every event yourself.
 
 In a task you start, Copus always asks before it reads a file that holds credentials or works in your own Chrome, in every approval mode. In work that runs without you, Copus refuses both. [Approvals and permissions](/control/approvals-and-permissions) covers each approval button.
 
@@ -99,11 +99,11 @@ Copus runs both without asking you, as it does with work it starts from your mai
 
 - **Copus works only while it's open.** Copus runs tasks only while it's open and your Mac is awake. A scheduled run or a mail check that comes due while Copus is closed runs once when you open Copus again.
 - **Copus makes mistakes.** Read a result before you send it anywhere.
-- **Copus starts work from Gmail and Google Calendar only.** Your other connected apps give Copus context for its tasks.
+- **Copus starts work from Gmail only.** Google Calendar, Google Drive, and your other connected apps give Copus context for its tasks.
 
 ## Related
 
-- [Work Copus starts before you ask](/working/before-you-ask): what Copus takes on from your mail and calendar
+- [Work Copus starts before you ask](/working/before-you-ask): what Copus takes on from your mail
 - [What Copus learns about you](/context/what-copus-learns): your People list, writing guide, and facts
 - [Tasks and the workspace](/concepts/sessions-and-workspace): the unit of work and the folder each task gets
 - [Approvals and permissions](/control/approvals-and-permissions): what Copus asks before it acts
