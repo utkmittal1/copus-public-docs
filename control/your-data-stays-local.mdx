@@ -49,11 +49,7 @@ Two kinds of line carry your own words. When a turn starts, Copus logs the start
 
 `copus.db` holds your tasks and their transcripts, your memory facts, your settings, which integrations you have connected, and the indexed text of your Knowledge Sources. It also holds what Copus learns from your mail: your People list, with each person's name, addresses, and notes, and your guide to how you write, with earlier versions of both. See [What Copus learns about you](/context/what-copus-learns).
 
-For a password, API key, or access token you saved under **Secrets**, and for an integration you connected, Copus stores only the name of each field. Copus saves the value itself in your keychain.
-
-<Warning>
-  Copus can store one kind of credential in the database. If you add an MCP server of your own that runs on this machine, Copus stores the environment variables you gave it exactly as you typed them, so a token typed into that box is kept in `copus.db` in plain text. Save the token under **Secrets** instead and point the server at the secret.
-</Warning>
+For a password, API key, or access token you saved under **Secrets**, and for an integration you connected, Copus stores only the name of each field. Copus saves the value itself in your keychain. For an MCP server you added yourself, Copus also saves its address and its launch config in your keychain, since either can hold a key.
 
 ## Where your credentials live
 

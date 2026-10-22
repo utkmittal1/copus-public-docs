@@ -49,7 +49,7 @@ Copus keeps credentials in two places. Copus never shows a stored credential bac
 
 | Route | Where Copus puts the credential |
 |---|---|
-| An integration | Your Mac's keychain, one item per integration, holding the access token or key Copus signs in with. AWS Documentation is the exception: it needs no account, so Copus stores nothing for it |
+| An integration | Your Mac's keychain, one item per integration, holding the access token or key Copus signs in with. For a custom server, the item also holds its address and launch config. AWS Documentation is the exception: it needs no account, so Copus stores nothing for it |
 | A secret | Your Mac's keychain, one item per field, where a field is one named piece of a credential such as a password or a host name |
 | A website sign-in | A file in Copus's own data folder, holding the cookies and stored site data the site handed Copus's browser. Copus reads that file to carry a sign-in into later tasks |
 
