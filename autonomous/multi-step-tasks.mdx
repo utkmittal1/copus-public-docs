@@ -49,7 +49,7 @@ That planning conversation is the task's own conversation. In it, Copus decides 
 
 A step is a real piece of work one conversation can finish on its own, start to finish, whatever the other steps in its round do. Copus writes every step's result into the task's own folder, which outlives every conversation in the task.
 
-Copus keeps the plan in a file called `plan.md`, in the workspace folder of the task's own conversation. Copus writes the plan before handing anything out and updates it every time work comes back, so the plan survives a conversation that gets cleared or restarted. To read it, select **Update task** on the task's page to open the task's own conversation.
+Copus keeps the plan in a file called `plan.md`, in the workspace folder of the task's own conversation. Copus writes the plan before handing anything out and updates it every time work comes back, so the plan survives a conversation that gets cleared or restarted. To read it, select **Open the plan** on the task's page to open the task's own conversation.
 
 <Frame>
   <img src="/images/diagrams/long-running-task.svg" alt="One large job at the top. Copus's planning conversation splits it into a round of steps that run side by side, each in its own conversation. The steps report back, and the results rejoin the plan, which hands out the next round." />
@@ -77,7 +77,7 @@ In the task's own conversation, Copus reads what the step produced and marks the
 
 Copus gives every step three things beyond what an ordinary task gets.
 
-The first is its own assignment, which Copus writes in the task's own conversation and hands over as the first message in that step. Open the step to read it. The second is the task's **Instructions**, the rules every step follows, which you can read and edit yourself in the **Instructions** box on the task page. The third is a short snapshot of each of the most recent steps, with the path to that step's full work log, so a step can pick up what came before it. For a task inside a project, Copus also gives each step the project's instructions, sources, and memory, and tells it what the project's own conversations have been doing.
+The first is its own assignment, which Copus writes in the task's own conversation and hands over as the first message in that step. Open the step to read it. The second is the task's **Instructions**, the rules every step follows, which you can read and edit yourself on the **Instructions** tab of the task page. The third is a short snapshot of each of the most recent steps, with the path to that step's full work log, so a step can pick up what came before it. For a task inside a project, Copus also gives each step the project's instructions, sources, and memory, and tells it what the project's own conversations have been doing.
 
 Copus keeps the task's own conversation, and every conversation you opened on the task, out of each step. Copus also withholds the tools for creating tasks from every step. Copus aims to keep the plan out of the instructions, so no step starts doing work that belongs to another step. Copus doesn't enforce that aim, so a plan written into the instructions reaches every step.
 
@@ -95,28 +95,28 @@ When the job needs to email or invite people, Copus shows a card headed **Who â€
 
 ## Follow the work and pause it
 
-The task's page shows the whole job. To read Copus's reasoning, select **Update task** to open the task's own conversation.
+The task's page shows the whole job. **Progress** at the top counts the steps done, failed, and working. The card headed **The plan** shows the last thing the task's own conversation said. To read Copus's reasoning, select **Open the plan**.
 
-The **Steps** tab shows its count, like `Steps Â· 12`, and lists every step on its own card. A card shows one of these labels when the step needs your attention:
+The **Steps** tab lists every step on its own row, newest first, and shows older steps as you scroll. A row shows one of these labels when the step needs your attention:
 
 - `Needs you` when the step stopped to ask you for something
 - `Failed` when the step couldn't finish
 - `Trying again due now` when Copus is about to restart the step, or `Retry held` while the task is paused
 - `Unreported` when the step ended without saying how it went, until Copus settles it
 
-On a step's second or third start, the card shows the attempt, like `Attempt 2 of 3`, while the step runs. Select a card to see what the step reported and the files it produced. To read everything the step did, select **Open step** on its card.
+On a step's second or third start, the row shows the attempt, like `Attempt 2 of 3`, while the step runs. Select a row to see what the step reported and the files it produced. To read everything the step did, select **Open step**.
 
 Select **Pause** in the header to stop the task. Copus stops each step running at that moment and marks it "Stopped when the task was paused." Select **Resume** to start the task again. Copus picks those steps back up before it plans anything new.
 
-The **Runs on** box on the task's page shows two models. **Planning** is the model for the task's own conversation, and **Each step** is the model for the steps. Each follows your default for its kind of work until you pick something else there. A change applies to the work Copus starts after it.
+**Plans on** and **Steps on**, at the top of the task's page, show two models. **Plans on** is the model for the task's own conversation, and **Steps on** is the model for the steps. Each follows your default for its kind of work until you pick something else there. A change applies to the work Copus starts after it.
 
 <Tip>
-  The **Instructions** box on the task's page holds the rules every step follows. Select **Artifacts** in the top bar to see the task's own folder, with everything the job delivers and anything Copus keeps from one step to the next. For a task outside a project, Copus keeps the folder under `CopusData/projects` in your home folder. For a task inside a project, Copus keeps the folder in the project's Copus folder, under `tasks/`. Select **Memory** in the top bar for the facts Copus keeps for this task alone. See [Memory](/context/memory).
+  The **Instructions** tab on the task's page holds the rules every step follows. Select **Artifacts** in the top bar to see the task's own folder, with everything the job delivers and anything Copus keeps from one step to the next. For a task outside a project, Copus keeps the folder under `CopusData/projects` in your home folder. For a task inside a project, Copus keeps the folder in the project's Copus folder, under `tasks/`. Select **Memory** in the top bar for the facts Copus keeps for this task alone. See [Memory](/context/memory).
 </Tip>
 
 ## Talk to a task while it runs
 
-The **Conversations** tab lists the conversations you have opened on this task, with the count beside its name. Select **Start a conversation**, type your first message, and Copus opens the conversation inside the task and takes you into it.
+The **Conversations** tab lists the conversations you have opened on this task. Select **Start a conversation**, type your first message, and Copus opens the conversation inside the task and takes you into it.
 
 Open a conversation of your own when you want to change the task without interrupting the work in the task's own conversation. From your own conversation, Copus can change the task's name, description, and instructions, rework the plan, and set the next round of steps going.
 

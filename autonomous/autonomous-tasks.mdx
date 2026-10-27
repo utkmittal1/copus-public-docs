@@ -39,7 +39,7 @@ You set a task up by asking for it in an ordinary conversation. Copus creates th
     Confirm the time and timezone Copus proposes, or name a different zone. Your own zone is the default.
   </Step>
   <Step title="Check the task once it is saved">
-    Copus writes the instructions and asks you to approve them on a card. Once you approve, check what the task will do, when the first run happens, and where the result goes. Copus runs the task on your default AI provider, with the model set for **Scheduled tasks**. To run it on another model, use the **Runs on** box on the task's page. See [AI providers](/concepts/ai-providers).
+    Copus writes the instructions and asks you to approve them on a card. Once you approve, check what the task will do, when the first run happens, and where the result goes. Copus runs the task on your default AI provider, with the model set for **Scheduled tasks**. To run it on another model, use **Runs on** at the top of the task's page. See [AI providers](/concepts/ai-providers).
   </Step>
   <Step title="Approve who the task may reach">
     If the task emails or invites anyone, Copus shows a card headed **Who “task name” may reach**, listing their addresses. Remove anyone who shouldn't be there, then select **Approve**. A run emails nobody who isn't on that list, you included, so check that your own address is there when the task emails you.
@@ -53,7 +53,7 @@ Every run works from the instructions alone, so Copus writes them as a complete 
 </Note>
 
 <Tip>
-  You can edit a live task's instructions on its page. In the **Instructions** box, select **Edit** and type the change. Copus saves the text shortly after you stop typing, and again when you leave the field. The next run reads the new text. A run that's already going keeps the text it started with. To have Copus make the change, select **Update task** and say what should be different. Copus changes the schedule and the task's files from the same conversation. The task changes only when Copus changes its instructions, schedule, or files there.
+  You can edit a live task's instructions on its page. Open the **Instructions** tab and type the change. Copus saves the text shortly after you stop typing, and again when you leave the field. The next run reads the new text. A run that's already going keeps the text it started with. To have Copus make the change, select **Update task** and say what should be different. Copus changes the schedule and the task's files from the same conversation. The task changes only when Copus changes its instructions, schedule, or files there.
 </Tip>
 
 ## What a run is given
@@ -99,7 +99,7 @@ Copus shows the schedule as a sentence in plain English. Copus writes the senten
 
 Where the sentence names a clock time, Copus adds the timezone the way people say it, so `America/Los_Angeles` reads as `Pacific`, `America/New_York` as `Eastern`, and `Asia/Tokyo` as `Japan`. Copus leaves out the standard-or-daylight half of the name, so the line stays the same all year. Copus keeps the schedule in that zone across daylight saving, so a 7:00 AM task stays at 7:00 AM.
 
-Copus shows the sentence on the task's row in the list, and in the **Schedule** box on the task's page.
+Copus shows the sentence on the task's row in the list, and under **Schedule** at the top of the task's page.
 
 <Note>
   For an unusual schedule with no natural wording, Copus shows the schedule as it's stored and adds the zone, like `On the schedule "0 7 L * *" (Pacific)`.
@@ -115,7 +115,7 @@ The second kind is what earlier runs delivered. Copus puts each run's result in 
 
 You can open and edit anything in that folder yourself, and Copus uses your changes on the next run. The folder sits under `CopusData/projects` in your home folder. Copus always keeps a scheduled task's folder there, even when you set it up from a conversation inside a project.
 
-The task's page shows what every run is given in its **Instructions** box. Select **Memory** in the top bar to see the facts Copus keeps for this task alone. See [Memory](/context/memory). When the task has approved people, select **People** in the top bar to see who the task may email and invite, and to add or remove an address.
+The task's page shows what every run is given on its **Instructions** tab. Select **Memory** in the top bar to see the facts Copus keeps for this task alone. See [Memory](/context/memory). When the task has approved people, select **People** in the top bar to see who the task may email and invite, and to add or remove an address.
 
 <Note>
   Copus keeps only a task's most recent runs. Past that limit, Copus deletes the oldest run's conversation and workspace, including that run's scratch files. Copus keeps everything a run delivered into the task's folder, so results outlive the runs that wrote them.
@@ -123,11 +123,11 @@ The task's page shows what every run is given in its **Instructions** box. Selec
 
 ## Run, pause, and watch a task
 
-The task's page lists its runs under **Runs**, with the count beside it. Select a run to see what it reported, what it's waiting on, and the files it delivered. To read everything the run did, select **Open run** on its card.
+The task's page lists its runs on the **Runs** tab, newest first, and shows older runs as you scroll. Select a run to see what it reported, what it's waiting on, and the files it delivered. To read everything the run did, select **Open run**. When a run is waiting on you, the top of the page names it, with **Open run** beside it.
 
 Select **Run now** to start a run without waiting for the next slot. Select **Pause** to stop the schedule, and **Resume** to start it again. To change what the task does, select **Update task** to open the task's own conversation, and tell Copus what should be different.
 
-The **Runs on** box shows the AI provider, model, and level the next run uses, and reads **The default for scheduled tasks.** To run this task on something else, pick it there, and the box reads **Set for this task.** Select **Use the default** to go back.
+**Runs on**, at the top of the task's page, shows the AI provider, model, and level the next run uses. To run this task on something else, pick it there. A model you pick for this task has a reset button beside it. Select it to go back to the default.
 
 A run card shows `Needs you` when the run stopped to ask you for something, `Failed` when the run couldn't finish, and `Trying again` with the wait remaining when Copus is about to retry the run, or `Retry held` while the task is paused. A run that is queued, working, or done carries a mark instead of a word. Copus leaves a run marked `Needs you` for you to answer and doesn't retry it. A card shows `Skipped` when the task's AI provider couldn't take the run, because it was signed out or its API key was missing or out of credit. Copus doesn't retry a skipped run, and a skipped run doesn't count toward the failed runs that stop a task.
 
