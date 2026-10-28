@@ -97,7 +97,7 @@ Copus keeps a file its browser downloads only if it is a document, a data file o
 
 ## What Copus asks every time
 
-Copus asks three questions every time they come up. On each, Copus waits for your answer, including on **Autopilot** and **Full access**, and leaves out **Always allow in this conversation**.
+Copus asks four questions every time they come up. On each, Copus waits for your answer, including on **Autopilot** and **Full access**, and leaves out **Always allow in this conversation**.
 
 **Reading a file that holds credentials.** Copus asks before a task reads any of these:
 
@@ -115,7 +115,9 @@ Copus asks this question about a credential file in a folder of your own. Copus 
 
 **Sending a follow-up to another task.** When one task sends a follow-up message to a task it started, Copus shows you the whole message first and sends it only after you select **Allow**. See [Start a task from another task](/concepts/sessions-and-workspace#start-a-task-from-another-task).
 
-Copus applies the opposite rule to work it runs with nobody watching. In that work, Copus refuses your own Chrome, a website it doesn't trust, typing on a website, a credential file, a push, a change on GitHub, and a command that throws away changes, the moment the question comes up, because nobody is there to answer. Copus applies this rule to a run of a scheduled task, a step of a multi-step task, a review task, and the work Copus does on its own in a task it started or in a multi-step task's own conversation. When you type a message in a task Copus started, or in the conversation **Update task** opens on a task's page, you are there to answer, so Copus asks you. The same holds after you select **Do it**, **Refine**, or **Check in** on a task Copus started.
+**Running a command outside the sandbox.** In a task at the **Coding** sandbox level, Copus can ask to run one command outside the sandbox, with full access to your Mac. The card shows the exact command and the folder, and you select **Run** or **Don’t run**. You answer it only in Copus on your Mac. See [Run a command outside the sandbox](/control/sandbox#run-a-command-outside-the-sandbox).
+
+Copus applies the opposite rule to work it runs with nobody watching. In that work, Copus refuses your own Chrome, a website it doesn't trust, typing on a website, a credential file, a push, a change on GitHub, a command that throws away changes, and a command outside the sandbox, the moment the question comes up, because nobody is there to answer. Copus applies this rule to a run of a scheduled task, a step of a multi-step task, a review task, and the work Copus does on its own in a task it started or in a multi-step task's own conversation. When you type a message in a task Copus started, or in the conversation **Update task** opens on a task's page, you are there to answer, so Copus asks you. The same holds after you select **Do it**, **Refine**, or **Check in** on a task Copus started.
 
 ## What Copus never runs
 
@@ -130,6 +132,8 @@ Copus refuses some commands in every mode, and says why in the conversation:
 - Connecting to this Mac with `ssh`, or handing control of a shell to another computer.
 
 For a command that needs the administrator, run it yourself in Terminal.
+
+In a task at **Coding**, Copus can still ask to run one of these outside the sandbox. The card then says **Copus normally refuses this.**, and the command runs only if you select **Run**.
 
 ## Answer a request
 
@@ -163,7 +167,7 @@ See [Built-in tools](/working/tools) for each capability and its checkbox. See [
 
 On **Autopilot** and **Full access**, Copus asks you less often. A task in either mode can do only what it could do in **Manual**, and these limits hold in every mode.
 
-**The sandbox holds in every mode.** macOS refuses a write outside the folders the task can write to, with no question to you, so neither **Autopilot** nor **Full access** can allow the write. [The sandbox](/control/sandbox) covers that boundary.
+**The sandbox holds in every mode.** macOS refuses a write outside the folders the task can write to, with no question to you, so neither **Autopilot** nor **Full access** can allow the write. Only you can let a command past it, by selecting **Run** on the card for a command outside the sandbox in a task at **Coding**. [The sandbox](/control/sandbox) covers that boundary.
 
 **A tool you switched off stays off.** Clear the checkbox beside **Run commands** and Copus builds your next task without it. Neither **Autopilot** nor **Full access** can bring the tool back, because the task doesn't have it.
 
