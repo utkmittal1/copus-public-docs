@@ -1,9 +1,9 @@
 ---
 title: "The sandbox"
-description: "macOS lets every task Copus runs write only in its own folder and the folders you add, and read only the folders that task needs. See what a task can write and read, and where the sandbox stops."
+description: "macOS lets every task Copus runs write only in its own folder and the folders you add, and read only the folders that task needs. See what a task can write and read, where the sandbox stops, and how the Coding level lets a project or AI team work on code."
 ---
 
-The sandbox is a boundary macOS holds around every task Copus runs. A task writes only inside its own folder and the folders you added to it. In your home folder, it reads only its own folders, the folders you added, the files you attached, and the folders on your [**Folders Copus can read**](/working/tools#see-what-copus-can-do-with-no-app-connected) list. That list starts with your Desktop, Documents, Downloads and Pictures folders. A task can also reach the network.
+The sandbox is a boundary macOS holds around every task Copus runs. A task writes only inside its own folder and the folders you added to it. In your home folder, it reads only its own folders, the folders you added, the files you attached, and the folders on your [**Folders Copus can read**](/working/tools#see-what-copus-can-do-with-no-app-connected) list. That list starts with your Desktop, Documents, Downloads and Pictures folders. A task can also reach the network. In a project or AI team set to **Coding**, a task can read most of the rest of your Mac too, so it can work on code.
 
 macOS enforces that boundary. Copus hands macOS the list of what a task may write and read, and macOS applies that list to the program it starts and to everything that program starts after it: a file tool, a command, a script Copus wrote and ran, a helper that script launched. macOS holds this boundary whatever program runs inside it.
 
@@ -13,6 +13,7 @@ This page covers how to:
 - [Learn which filenames no task can write](#files-no-task-can-write), anywhere on your Mac
 - [See what a task can read](#what-a-task-can-read), and which folders stay shut
 - [Understand why writing is confined and reading is not](#why-copus-confines-writing-and-not-reading)
+- [Let a project or AI team work on code](#work-on-code), and approve a command outside the sandbox
 - [Know where the sandbox stops](#where-the-sandbox-stops), and what covers the rest
 
 <Note>
@@ -72,6 +73,32 @@ A task has to read your own material to do your work. A document you attached to
 
 Copus puts each limit where a task could do damage. Writing is where a task can destroy something, so Copus confines writing to the task's own folder and the folders you add. Reading is where a task can leak something, so macOS shuts the rest of your home folder and the credential folders, and Copus asks you before a task reads a credential file anywhere else.
 
+## Work on code
+
+**Sandbox level** is a setting on a project or an AI team that decides how much of your Mac its tasks can read. **Standard** is the sandbox the rest of this page describes, and every project and team starts on it. **Coding** lets tasks read files across your Mac, apart from the places that hold passwords, keys and sign-ins. Choose **Coding** for a project whose tasks write, build or test code. Coding tools keep their installs, caches and settings in your home folder, which **Standard** keeps shut.
+
+To change the level, open the project's **Settings** in the top bar, or the team's **Settings** panel, and choose under **Sandbox level**. Only you can change it, in Copus on your Mac. The level covers every task in the project or team.
+
+At **Coding**, a task reads your whole home folder, including `Library`. macOS still shuts:
+
+- Your credential folders and files, such as `.ssh`, `.aws` and your keychain folder, as at **Standard**.
+- Other tools' sign-in files, and your shell history.
+- The cookies, saved sign-ins and private data of your browsers and other apps, such as your mail and messages.
+- Other AI tools' sign-ins and conversations, and Copus's own data folders.
+- Other drives.
+
+Writing doesn't change.
+
+<Warning>
+  The list of shut places can't name every tool's sign-in file. A task at **Coding** can read a secret kept anywhere the list doesn't reach, and Copus sends whatever a task reads to your AI provider. Set **Coding** only on a project or team whose work needs it.
+</Warning>
+
+### Run a command outside the sandbox
+
+At **Coding**, Copus can ask you to run one command outside the sandbox, such as a build that writes outside the task's folders or a `git push` that needs your sign-in. Copus shows you the exact command and the folder it runs in. Select **Run** to run it, or **Don’t run** to skip it. Copus asks every time, and you answer only in Copus on your Mac.
+
+A command you run this way has full access to your Mac, like a command you type in Terminal. It can also run files Copus wrote or changed in that folder, such as a project's scripts and tests. Read the command and the folder before you select **Run**.
+
 ## Where the sandbox stops
 
 The sandbox controls where a task may write and what it may read. It also keeps a task away from your keychain and your other apps. A task can't ask macOS for a keychain value, open or control another app, read the clipboard, use the microphone, read your Mac's Calendar or Reminders, ask for your location, or start a program that keeps running after the task. It also can't stop a program it didn't start, such as one of your apps, Copus itself, or another task. It can't mount, unmount or eject a disk, run one of your Shortcuts, or use the SSH keys your Mac's SSH agent holds. The cases below fall outside the sandbox.
@@ -83,6 +110,8 @@ The sandbox controls where a task may write and what it may read. It also keeps 
 **One task can read another task's files.** A task can read the files any other task made, so treat anything a task produced as visible to a later task. It can't change them unless both tasks are in the same project.
 
 **Tasks in the same project can write each other's files.** They share the project folder by design. A task outside a project can still read another task's files, and can't write them. Two conversations you added the same folder to can both write in it.
+
+**A command you approve with Run has no sandbox.** In a project or AI team at **Coding**, a command you approve on the card runs with full access to your Mac. See [Run a command outside the sandbox](#run-a-command-outside-the-sandbox).
 
 **A key you hand a program yourself can be read.** A task can read the settings any program on your Mac started with, so a key you export in a Terminal window is readable while that program runs. You can use [Secrets](/connections/secrets) to securely store and use passwords, tokens, and API keys in Copus.
 
