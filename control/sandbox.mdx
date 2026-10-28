@@ -75,25 +75,19 @@ Copus puts each limit where a task could do damage. Writing is where a task can 
 
 ## Work on code
 
-**Sandbox level** is a setting on a project or an AI team that decides how much of your Mac its tasks can read. It has two choices. **Standard** is the sandbox the rest of this page describes, and every project and team starts on it. **Coding** lets tasks read files across your Mac, apart from the places that hold passwords, keys and sign-ins.
+**Sandbox level** is a setting on a project or an AI team that decides how much of your Mac its tasks can read. **Standard** is the sandbox the rest of this page describes, and every project and team starts on it. **Coding** lets tasks read files across your Mac, apart from the places that hold passwords, keys and sign-ins. Choose **Coding** for a project whose tasks write, build or test code. Coding tools keep their installs, caches and settings in your home folder, which **Standard** keeps shut.
 
-Choose **Coding** for a project whose tasks write, build or test code. Coding tools keep their installs, caches and settings in your home folder and its `Library` folder. **Standard** keeps those folders shut, so many coding tools fail there.
+To change the level, open the project's **Settings** in the top bar, or the team's **Settings** panel, and choose under **Sandbox level**. Only you can change it, in Copus on your Mac. The level covers every task in the project or team.
 
-To set the level for a project, open the project and select **Settings** in the top bar. Under **Sandbox level**, select **Coding**, then select **Turn on coding** in the dialog headed **Turn on coding?**. For an AI team, open the team from **AI Teams** in the sidebar and do the same in its **Settings** panel. To go back, select **Standard**. Copus doesn't ask you to confirm that. Only you can change the level, and only in Copus on your Mac. Copus applies the change to each task from that task's next message. A conversation at **Coding** shows a **Coding** label beside its title in the top bar.
+At **Coding**, a task reads your whole home folder, including `Library`. macOS still shuts:
 
-In a project at **Coding**, every conversation in the project reads this way, and so does every multi-step task in it, with its steps. In an AI team at **Coding**, the team lead, every teammate and your chats with the team read this way.
-
-A task at **Coding** reads your whole home folder, including `Library`, and the `/Users/Shared` folder. macOS still shuts these places to it:
-
-- The credential folders and files a task at **Standard** can't read, such as `.ssh`, `.aws`, your shell startup files and your keychain folder.
+- Your credential folders and files, such as `.ssh`, `.aws` and your keychain folder, as at **Standard**.
 - Other tools' sign-in files, and your shell history.
-- The cookies and saved sign-ins of your browsers and other apps.
-- Other apps' private data, such as your mail and messages.
-- Other AI tools' sign-ins and conversations.
-- Copus's own data folders.
-- Other drives, as at **Standard**.
+- The cookies, saved sign-ins and private data of your browsers and other apps, such as your mail and messages.
+- Other AI tools' sign-ins and conversations, and Copus's own data folders.
+- Other drives.
 
-Writing doesn't change. A task at **Coding** writes only where a task at **Standard** writes.
+Writing doesn't change.
 
 <Warning>
   The list of shut places can't name every tool's sign-in file. A task at **Coding** can read a secret kept anywhere the list doesn't reach, and Copus sends whatever a task reads to your AI provider. Set **Coding** only on a project or team whose work needs it.
@@ -101,18 +95,9 @@ Writing doesn't change. A task at **Coding** writes only where a task at **Stand
 
 ### Run a command outside the sandbox
 
-In a project or AI team at **Coding**, Copus can ask you to run one command outside the sandbox. Copus asks when a command needs more than the sandbox allows, such as a build that writes outside the task's folders, or a `git push` that needs your sign-in.
+At **Coding**, Copus can ask you to run one command outside the sandbox, such as a build that writes outside the task's folders or a `git push` that needs your sign-in. Copus shows you the exact command and the folder it runs in. Select **Run** to run it, or **Don’t run** to skip it. Copus asks every time, and you answer only in Copus on your Mac.
 
-Copus shows a card headed **Run a command outside the sandbox**, with the exact command in full and the folder it runs in. When Copus would refuse the command inside the sandbox, or ask you about it, the card also says **Copus normally refuses this.** or **Copus normally asks about this.**, with the reason.
-
-- **Run**: Copus runs that exact command in that folder, with full access to your Mac and the internet. While it runs, the card shows how long it has been running and its last lines of output. Copus reads the output when the command ends. To end the command early, select **Stop** in the message box. Copus stops the command after 60 minutes.
-- **Don’t run**: Copus runs nothing and carries on without the command.
-
-Copus asks every time, in every approval mode, and the card has no **Always allow** button. Like any request, the card waits 10 minutes for your answer, and Copus runs nothing after that. You answer only in Copus on your Mac, and the iPhone app shows **Answer on your Mac** in place of the buttons. Where nobody is there to answer, such as a step of a multi-step task or a teammate's work, Copus never runs a command outside the sandbox.
-
-<Warning>
-  A command you run outside the sandbox can do anything you can do in Terminal: change or delete any file, use your sign-ins, and send data anywhere. It can also run files Copus wrote or changed in that folder, such as a project's scripts and tests, so a short command can do more than it shows. Read the command and the folder before you select **Run**.
-</Warning>
+A command you run this way has full access to your Mac, like a command you type in Terminal. It can also run files Copus wrote or changed in that folder, such as a project's scripts and tests. Read the command and the folder before you select **Run**.
 
 ## Where the sandbox stops
 
