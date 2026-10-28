@@ -88,6 +88,8 @@ A new task starts in the mode set by **New tasks start in**, which is **Manual**
 
 Copus sends the whole conversation to the AI provider on every turn, and the provider can take only so much at once. A ring under the box shows how much of that room the conversation has used, and hovering the ring gives you the figures behind it. The ring turns from green to yellow, orange and red as the conversation fills. To make room, select the ring and then **Compact now**: Copus summarizes the conversation so far and carries on from the summary. Typing `/compact` does the same. Copus also compacts on its own when the conversation is nearly full, and asks first if you switch to a model the conversation is too long for.
 
+When you come back to a long conversation after a break, Copus sends a shorter version of it to save tokens: its first messages, its latest messages and its summary if it has one. Copus reads the rest from the conversation when it needs it. A line in the conversation marks the spot.
+
 The ring appears once a task has a conversation to measure.
 
 ## Ask in Side chat
