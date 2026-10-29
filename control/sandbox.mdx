@@ -75,7 +75,7 @@ Copus puts each limit where a task could do damage. Writing is where a task can 
 
 ## Work on code
 
-**Sandbox level** is a setting on a project or an AI team that decides how much of your Mac its tasks can read. **Standard** is the sandbox the rest of this page describes, and every project and team starts on it. At either level, tasks can also run the project's or team's [commands that run without asking](#commands-that-run-without-asking) outside the sandbox. **Coding** lets tasks read files across your Mac, apart from the places that hold passwords, keys and sign-ins. Choose **Coding** for a project whose tasks write, build or test code. Coding tools keep their installs, caches and settings in your home folder, which **Standard** keeps shut.
+**Sandbox level** is a setting on a project or an AI team that decides how much of your Mac its tasks can read. **Standard** is the sandbox the rest of this page describes, and every project and team starts on it. **Coding** lets tasks read files across your Mac, apart from the places that hold passwords, keys and sign-ins. Choose **Coding** for a project whose tasks write, build or test code. Coding tools keep their installs, caches and settings in your home folder, which **Standard** keeps shut. At either level, tasks can also run the project's or team's [commands that run without asking](#commands-that-run-without-asking) outside the sandbox.
 
 To change the level, open the project's **Settings** in the top bar, or the team's **Settings** panel, and choose under **Sandbox level**. Only you can change it, in Copus on your Mac. The level covers every task in the project or team.
 
@@ -105,17 +105,17 @@ A project or AI team can keep a list of commands its tasks may run outside the s
 
 You add a command to the list in one of three ways:
 
-- On a card for a command outside the sandbox, select **Always allow in this project**, or **Always allow in this team**. Copus runs the command and adds it to the list. The card shows exactly what the button saves, usually the command without its options, with extra words allowed after it. An option is a word that starts with `-`, such as `--grep lock`.
+- On a card for a command outside the sandbox, select **Always allow in this project**, or **Always allow in this team**. Copus runs the command and adds it to the list. The card shows exactly what the button saves: the command up to its first option, with extra words allowed after it, or, when cutting would leave too little, the whole command exactly. An option is a word that starts with `-`, such as `--grep`.
 - Select **Add command** above the list, type the command, choose its folder, and select **Add command**.
 - In an AI team, the team can ask for a command under **Needs you**, or list one in its requirements. Approving the request or the requirements adds it.
 
-Copus keeps some commands off the list: one it always refuses or asks about every time, such as `git push`, one that reads a password file or a folder it keeps shut, and one it can't read in full, such as a command holding `$( )`. A card for a command Copus asks about every time has no **Always allow** button, and **Add command** refuses any of these with the reason.
+Copus keeps some commands off the list: one it always refuses or asks about every time, such as `git push`, one that reads a password file or a folder it keeps shut, and one it can't read in full, such as a command holding `$( )`. A card for one of these has no button to always allow it, and **Add command** says why it can't join the list.
 
-Each row on the list holds one command and the folder it runs in. The command runs in that folder or any folder inside it. Turn on **Allow extra words after it** to let a task add plain words after the command, such as a test file's name or an option. With it on, a row for `npx playwright test` also covers `npx playwright test e2e/login.spec.ts`. Copus never counts words that chain another command or redirect output, and it checks the whole command again every time it runs, so a row for `git` with extra words still never runs `git push`. Copus refuses extra words after a command that runs whatever program it is given, such as `bash -c` or `npm exec`.
+Each row on the list holds one command and the folder it runs in. The command runs in that folder or any folder inside it. Turn on **Allow extra words after it** to let a task add plain words after the command, such as a test file's name or an option. With it on, a row for `npx playwright test` also covers `npx playwright test e2e/login.spec.ts`. Each file must be named in full, with no `*`, `~` or `$`, and Copus never counts words that chain another command or redirect output, and it checks the whole command again every time it runs, so a row for `git` with extra words still never runs `git push`. Copus refuses extra words after a command that runs whatever program it is given, such as `bash -c` or `npm exec`.
 
 Select **Remove** on a row to take the command off the list. Copus stops a run of that command if one is going.
 
-A command on the list runs with no card whether or not you're there. With nobody there, Copus refuses every other command outside the sandbox. At **Standard**, Copus never shows the card, so a task can run only the commands on the list. A scheduled task sits outside every project, so its runs never use a list.
+A command on the list runs with no card whether or not you're there, and the conversation shows it running with **Approved for** and the project's or team's name. With nobody there, Copus refuses every other command outside the sandbox. At **Standard**, Copus never shows the card, so a task can run only the commands on the list. A scheduled task sits outside every project, so its runs never use a list.
 
 <Warning>
   A command on the list runs with full access to your Mac and nobody watching. A test or build command runs whatever the project's files tell it to, and the project's tasks can change those files. Add only commands you would run yourself in that folder.
@@ -133,7 +133,7 @@ The sandbox controls where a task may write and what it may read. It also keeps 
 
 **Tasks in the same project can write each other's files.** They share the project folder by design. A task outside a project can still read another task's files, and can't write them. Two conversations you added the same folder to can both write in it.
 
-**A command you approve to run outside the sandbox has no sandbox.** A command you approve with **Run**, and a command on a project's or team's list of commands that run without asking, runs with full access to your Mac. See [Run a command outside the sandbox](#run-a-command-outside-the-sandbox).
+**A command you approve to run outside the sandbox has no sandbox.** A command you approve with **Run**, and a command on a project's or team's list of commands that run without asking, runs with full access to your Mac. See [Commands that run without asking](#commands-that-run-without-asking).
 
 **A key you hand a program yourself can be read.** A task can read the settings any program on your Mac started with, so a key you export in a Terminal window is readable while that program runs. You can use [Secrets](/connections/secrets) to securely store and use passwords, tokens, and API keys in Copus.
 
