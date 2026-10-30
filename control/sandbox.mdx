@@ -75,7 +75,7 @@ Copus puts each limit where a task could do damage. Writing is where a task can 
 
 ## Work on code
 
-**Sandbox level** is a setting on a project or an AI team that decides how much of your Mac its tasks can read. **Standard** is the sandbox the rest of this page describes, and every project and team starts on it. **Coding** lets tasks read files across your Mac, apart from the places that hold passwords, keys and sign-ins. Choose **Coding** for a project whose tasks write, build or test code. Coding tools keep their installs, caches and settings in your home folder, which **Standard** keeps shut. At either level, tasks can also run the project's or team's [approved commands](#approved-commands) outside the sandbox.
+**Sandbox level** is a setting on a project or an AI team that decides how much of your Mac its tasks can read. **Standard** is the sandbox the rest of this page describes, and every project and team starts on it. **Coding** lets tasks read files across your Mac, apart from the places that hold passwords, keys and sign-ins. Choose **Coding** for a project whose tasks write, build or test code. Coding tools keep their installs, caches and settings in your home folder, which **Standard** keeps shut. At either level, tasks can also run the commands on the project's or team's [**Allowed outside the sandbox**](#allowed-outside-the-sandbox) list.
 
 To change the level, open the project's **Settings** in the top bar, or the team's **Settings** panel, and choose under **Sandbox level**. Only you can change it, in Copus on your Mac. The level covers every task in the project or team.
 
@@ -99,9 +99,9 @@ At **Coding**, Copus can ask you to run one command outside the sandbox, such as
 
 A command you run this way has full access to your Mac, like a command you type in Terminal. It can also run files Copus wrote or changed in that folder, such as a project's scripts and tests. Read the command and the folder before you select **Run**.
 
-### Approved commands
+### Allowed outside the sandbox
 
-A project or AI team can keep a list of commands its tasks may run outside the sandbox with no card, called **Approved commands**. Use it for the builds and tests a multi-step task or an AI team needs while nobody is there to select **Run**. The list sits in the project's **Settings**, or the team's **Settings** panel, under **Sandbox level**. Copus uses it at both levels, **Standard** and **Coding**.
+A project or AI team can keep a list of commands its tasks may run outside the sandbox with no card, called **Allowed outside the sandbox**. Use it for the builds and tests a multi-step task or an AI team needs while nobody is there to select **Run**. The list sits in the project's **Settings**, or the team's **Settings** panel, under **Sandbox level**. Copus uses it at both levels, **Standard** and **Coding**.
 
 You add a command to the list in one of three ways:
 
@@ -133,7 +133,7 @@ The sandbox controls where a task may write and what it may read. It also keeps 
 
 **Tasks in the same project can write each other's files.** They share the project folder by design. A task outside a project can still read another task's files, and can't write them. Two conversations you added the same folder to can both write in it.
 
-**A command you approve to run outside the sandbox has no sandbox.** A command you approve with **Run**, and a command on a project's or team's **Approved commands** list, runs with full access to your Mac. See [Approved commands](#approved-commands).
+**A command you approve to run outside the sandbox has no sandbox.** A command you approve with **Run**, and a command on a project's or team's **Allowed outside the sandbox** list, runs with full access to your Mac. See [Allowed outside the sandbox](#allowed-outside-the-sandbox).
 
 **A key you hand a program yourself can be read.** A task can read the settings any program on your Mac started with, so a key you export in a Terminal window is readable while that program runs. You can use [Secrets](/connections/secrets) to securely store and use passwords, tokens, and API keys in Copus.
 
