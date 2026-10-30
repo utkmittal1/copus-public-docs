@@ -3,9 +3,9 @@ title: "Tasks and the workspace"
 description: "A task is one piece of work and the conversation around it. Find where a task's files land and what belongs to that task alone."
 ---
 
-A task is a piece of work you asked Copus for. Copus runs three kinds of task and lists them together: a conversation, a multi-step task, and a scheduled task. A conversation is the ordinary kind, where you say what you need, Copus does it, and you go back and forth in the same thread. Copus works on the other two kinds without you there.
+A task is a piece of work you asked Copus for. Copus runs two kinds of task and lists them together: a conversation and a scheduled task. A conversation is the ordinary kind, where you say what you need, Copus does it, and you go back and forth in the same thread. Copus works on a scheduled task without you there.
 
-Copus gives every conversation a folder of its own to write files into, called a workspace. Copus gives each multi-step task and each scheduled task a folder that holds one workspace per step or per run.
+Copus gives every conversation a folder of its own to write files into, called a workspace. Copus gives each scheduled task a folder that holds one workspace per run.
 
 This page covers how to:
 
@@ -30,9 +30,7 @@ Copus names the task for you. Copus uses your first message as the title straigh
 
 Most tasks are conversations. You ask, Copus works, and you read the result and ask for the next thing. The rest of this page describes conversations.
 
-Copus works on the other two kinds without you there. A **multi-step task** is for a job too big for one sitting, such as working through a folder of contracts. Copus writes a plan, splits the work into steps, and keeps working until the job is done. A **scheduled task** is for a result you want again and again, such as a brief every weekday morning. Copus runs the task at the time you agreed and leaves the result for you.
-
-[Multi-step tasks](/autonomous/multi-step-tasks) and [Scheduled tasks](/autonomous/autonomous-tasks) cover those two kinds in full.
+A **scheduled task** is for a result you want again and again, such as a brief every weekday morning. Copus runs the task at the time you agreed and leaves the result for you, with nobody watching. [Scheduled tasks](/autonomous/autonomous-tasks) covers them in full.
 
 ## Review tasks
 
@@ -57,7 +55,7 @@ A task can write files only inside its own folder, and macOS enforces that limit
 
 A task can read its own folder, the folders you add, the files you attach, the files other tasks made, and the folders on your **Folders Copus can read** list. That list starts with your Desktop, Documents, Downloads and Pictures folders. The rest of your home folder is closed to it. In a project or AI team set to **Coding**, a task can also read files across your Mac, apart from passwords, keys and sign-ins. See [Work on code](/control/sandbox#work-on-code). In every approval mode, Copus asks you each time a task tries to read a file that looks like a credential. [The sandbox](/control/sandbox) covers the boundary in full.
 
-Copus puts the workspace of a conversation outside a project in `CopusData/sessions`, inside your home folder. For a conversation in a project, Copus puts the workspace in that project's `sessions/` folder. For a scheduled task, or a multi-step task outside a project, Copus creates a folder under `CopusData/projects`. For a multi-step task in a project, Copus creates that folder in the project's `tasks/` folder. Copus puts the workspaces of the task's steps and runs in that folder's own `sessions/`.
+Copus puts the workspace of a conversation outside a project in `CopusData/sessions`, inside your home folder. For a conversation in a project, Copus puts the workspace in that project's `sessions/` folder. For a scheduled task, Copus creates a folder under `CopusData/projects`, and puts the workspaces of the task's runs in that folder's own `sessions/`.
 
 <Frame>
   <img src="/images/diagrams/session-workspace.svg" alt="A task with its own workspace folder. Inside the workspace, finished deliverables sit in a final-output area and working files sit in a separate intermediate-files area." />
@@ -80,20 +78,17 @@ Select the folder icon in the message box to see the folders you added. Select a
 
 You can't add or remove a folder while Copus is replying. To give every conversation in a project the same folder, add it to the project instead. See [The project folder](/concepts/projects#the-project-folder).
 
-When you switch a conversation that has folders to a multi-step task, Copus first asks you to confirm that the task can take them. Copus switches the conversation only after you select **Switch to multi-step** in that question. The task works on its own and doesn't ask before it runs a command, so it can create, edit, and delete files in those folders without asking you. To take a folder away from the task, select the folder name on the task's page, then **Remove**.
-
 ### Limitations
 
 - **A conversation holds up to 10 added folders.** Remove a folder to add another.
 - **Copus adds only folders inside your home folder or on an external drive.** In your home folder, it refuses the home folder itself, your `Library` folder, `CopusData`, and hidden folders, whose names start with a dot. It refuses anything inside those folders too.
 - **Some files stay blocked inside an added folder.** The files no task can write anywhere stay blocked in your added folders too. [The sandbox](/control/sandbox#files-no-task-can-write) lists them.
 - **Scheduled tasks never get added folders.**
-- **You can't add a folder to a multi-step task after it starts.** The task keeps only the folders its conversation had when it switched to multi-step.
 - **Copus never moves, renames, or deletes an added folder.** Deleting the conversation leaves the folder where it is.
 
 ## Open the files a task made
 
-Select **Artifacts** in the top bar of a task. The files pane opens beside the conversation, with the task's folders on the left and the open file on the right. The task's finished deliverables in `final-output/` are open from the start. For a task in a project or a multi-step task, the folders start from the project, with its shared `artifacts` folder above this task's folder. **Search files** finds a file by its name.
+Select **Artifacts** in the top bar of a task. The files pane opens beside the conversation, with the task's folders on the left and the open file on the right. The task's finished deliverables in `final-output/` are open from the start. For a task in a project, the folders start from the project, with its shared `artifacts` folder above this task's folder. **Search files** finds a file by its name.
 
 Select **Open folder in Finder**, beside **Search files**, to open the task's whole folder on your Mac. The same item sits in the **Task actions** menu in the top bar.
 
@@ -110,16 +105,16 @@ Two settings apply to one task alone.
 **Approval mode.** Each conversation runs in **Manual**, on **Autopilot**, or on **Full access**, set from the controls under the message box. In **Manual**, Copus asks you by default before it sends, posts, or changes anything in a connected app, and before it runs a command that changes something on your Mac. On **Autopilot**, Copus runs commands and makes most changes without asking, and still asks before it sends, posts, deletes, or shares something in a connected app. On **Full access**, Copus runs nearly everything without asking. A new task starts in **Manual**. To start every new task in another mode instead, open **Settings**, select **Built-in tools**, and change **New tasks start in**. A task in a project you pointed at a folder of your own starts in **Manual** either way. See [Approvals and permissions](/control/approvals-and-permissions).
 
 <Note>
-  A multi-step task's steps and a scheduled task's runs run on **Autopilot**, because nobody is there to answer. When a step or a run tries to read a file that looks like a credential, Copus refuses for the same reason. A task's own conversation and a task Copus starts on its own also stay on **Autopilot**, and you can't switch their mode.
+  A scheduled task's runs run on **Autopilot**, because nobody is there to answer. When a run tries to read a file that looks like a credential, Copus refuses for the same reason. A task's own conversation and a task Copus starts on its own also stay on **Autopilot**, and you can't switch their mode.
 </Note>
 
 ## Find, rename, pin, move, or delete a task
 
 The sidebar lists your recent tasks under **Tasks**, as many as fit its height. Right-click a task in the sidebar, or select the "…" beside it, for **Pin** and **Delete**, plus the project items such as **Add to project** for a conversation. Select **View all** beneath the tasks for the full list.
 
-To find older work, type into **Search** at the top of the sidebar, or press `⌘K` to put the cursor there. Copus searches your conversations, projects, scheduled and multi-step tasks, the tasks it started on Home, and your AI teams. It matches the words in their titles and descriptions, and in a conversation's messages. The matches take the place of the sidebar's links and its Tasks list, best match first, and you select one to open it. Put words in quotes to match an exact phrase. A search made only of one- and two-letter words, such as "Q3", matches titles and descriptions alone.
+To find older work, type into **Search** at the top of the sidebar, or press `⌘K` to put the cursor there. Copus searches your conversations, projects, scheduled tasks, the tasks it started on Home, and your AI teams. It matches the words in their titles and descriptions, and in a conversation's messages. The matches take the place of the sidebar's links and its Tasks list, best match first, and you select one to open it. Put words in quotes to match an exact phrase. A search made only of one- and two-letter words, such as "Q3", matches titles and descriptions alone.
 
-The full list from **View all** has three controls. Type into **Search tasks…** to narrow the list. Use the menu reading **All tasks**, **Scheduled**, or **Multi-step** to show one kind of task. Select **Pinned**, beside that menu, to see only the tasks you pinned, and **All** to see every task again.
+The full list from **View all** has three controls. Type into **Search tasks…** to narrow the list. Use the menu reading **All tasks**, **Scheduled**, or **Digests** to show one kind of task. Select **Pinned**, beside that menu, to see only the tasks you pinned, and **All** to see every task again.
 
 <Steps>
   <Step title="Rename a task">
@@ -141,11 +136,11 @@ The full list from **View all** has three controls. Type into **Search tasks…*
 To delete several tasks at once, tick their rows in the full list and select **Delete** in the bar above them. The checkbox in that bar ticks every row on screen. When more tasks match than the list has loaded, select **Select all** with the number of matching tasks beside it to include every one of them.
 
 <Warning>
-  When you delete a multi-step or scheduled task, Copus removes the task, its steps and runs, and its folder, and you can't keep the folder. When you tick a mix of conversations and multi-step or scheduled tasks, the folder option in the delete dialog applies only to the conversations. Copus deletes the folders of the multi-step and scheduled tasks whatever you tick.
+  When you delete a scheduled task, Copus removes the task, its runs, and its folder, and you can't keep the folder. When you tick a mix of conversations and scheduled tasks, the folder option in the delete dialog applies only to the conversations. Copus deletes the folders of the scheduled tasks whatever you tick.
 </Warning>
 
 <Note>
-  Copus refuses to delete a conversation that is still working, or to move it into a project. Stop the conversation first, or wait for it to finish. You can't rename, pin, move, or delete a multi-step or scheduled task's own conversation.
+  Copus refuses to delete a conversation that is still working, or to move it into a project. Stop the conversation first, or wait for it to finish. You can't rename, pin, move, or delete a scheduled task's own conversation.
 </Note>
 
 ## Tasks inside a project

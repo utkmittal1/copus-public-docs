@@ -22,8 +22,8 @@ This page covers how to:
 | Approval needed | When Copus needs your go-ahead to run a tool. |
 | Connector broken | When a connected tool stops working. |
 | Run could not finish | When a run of a scheduled task stops before it delivers, or is skipped because its AI provider is signed out or out of credit. |
-| Task stopped itself | When a task stops on its own, after runs fail or a job goes quiet. |
-| Job finished | When a multi-step task finishes everything it was set. |
+| Task stopped itself | When a task stops on its own, after runs fail. |
+| Team work ready | When an AI team hands you finished work. |
 | Ready for you | When a task Copus started is ready to review on the Home page. |
 | Copus needs you | When a task Copus started is waiting on your answer or is stuck. |
 | Memory cleanup suggested | When memory is getting long and Copus has cleanup suggestions to review. |
@@ -33,7 +33,8 @@ A scheduled task raises a notification only when a run can't finish, a run is sk
 When you select a notification, Copus opens what the notification is about:
 
 - **Agent responded** and **Approval needed**: the conversation.
-- **Run could not finish**, **Task stopped itself**, and **Job finished**: the task.
+- **Run could not finish** and **Task stopped itself**: the task.
+- **Team work ready**: the team.
 - **Connector broken**: **Settings** > **Integrations**.
 - **Ready for you** and **Copus needs you**: the Home page, with that task open beside it.
 - **Memory cleanup suggested**: **About you** > **Memory**, or the project or scheduled task whose memory is filling up.
@@ -108,8 +109,5 @@ Copus skips **Agent responded** and **Approval needed** while their conversation
   </Card>
   <Card title="Scheduled tasks" icon="clock" href="/autonomous/autonomous-tasks">
     Recurring work Copus runs on a schedule.
-  </Card>
-  <Card title="Multi-step tasks" icon="bolt" href="/autonomous/multi-step-tasks">
-    Big jobs Copus drives to completion over hours.
   </Card>
 </CardGroup>

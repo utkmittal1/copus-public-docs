@@ -37,7 +37,7 @@ A fact belongs at the narrowest level where it stays true.
 | Level | What belongs there | What reads it |
 |---|---|---|
 | **Global** | What stays true about you everywhere: who you are, the people around you, what you prefer, how you like work done | Every task you start |
-| **Project** | Decisions and constraints for one project | Every task in that project, including scheduled and multi-step tasks in the project |
+| **Project** | Decisions and constraints for one project | Every task in that project |
 | **Session** | What applies to one conversation only, such as "use US spelling, just for this" | That conversation only |
 
 Copus keeps a scheduled task's own facts on the task's page. The task also reads the facts of its project.
@@ -78,7 +78,7 @@ Copus sends every rule to your AI provider with each message. Keep rules for pre
 
 When you mention something worth keeping, such as "I always want sources cited," Copus picks the level and saves the fact while it replies. Copus adds a note to the reply that lists each change, such as **Updated global memory** or **Removed from project memory**. When Copus can't save a fact, the note shows **Not saved to global memory** and gives the reason, such as "you deleted this before" or "already remembered".
 
-In work Copus runs with nobody watching, such as a scheduled task's run or a multi-step task's step, Copus saves only session facts. It saves no rule there, and no global or project fact, including a scheduled task's own facts. The note gives the reason "saved only with you here". Copus's weekly review, and its first read of your mail, still save what they learn about you.
+In work Copus runs with nobody watching, such as a scheduled task's run, Copus saves only session facts. It saves no rule there, and no global or project fact, including a scheduled task's own facts. The note gives the reason "saved only with you here". Copus's weekly review, and its first read of your mail, still save what they learn about you.
 
 Each saved change in the note has links:
 
