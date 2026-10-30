@@ -73,8 +73,7 @@
       {
         "group": "Copus on its own",
         "pages": [
-          "autonomous/autonomous-tasks",
-          "autonomous/multi-step-tasks"
+          "autonomous/autonomous-tasks"
         ]
       },
       {
@@ -98,7 +97,8 @@
     { "source": "/autonomous/home", "destination": "/working/before-you-ask" },
     { "source": "/autonomous/chief-of-stuff", "destination": "/working/before-you-ask" },
     { "source": "/reference/keyboard-shortcuts", "destination": "/working/describing-what-you-need" },
-    { "source": "/autonomous/long-running-tasks", "destination": "/autonomous/multi-step-tasks" },
+    { "source": "/autonomous/long-running-tasks", "destination": "/autonomous/autonomous-tasks" },
+    { "source": "/autonomous/multi-step-tasks", "destination": "/autonomous/autonomous-tasks" },
     { "source": "/concepts/how-piper-works", "destination": "/concepts/how-copus-works" },
     { "source": "/context/what-piper-learns", "destination": "/context/what-copus-learns" }
   ],

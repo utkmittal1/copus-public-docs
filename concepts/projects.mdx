@@ -67,15 +67,15 @@ The top bar also has **Settings**, which holds the project's **Sandbox level**. 
 
 The top bar of the project page shows the folder the project lives in. For a project Copus manages, it reads **Project folder**. For a project you created with **Existing folder**, it shows that folder's name. Select the folder name, then select **Project folder** in the list to open the folder in Finder.
 
-Copus keeps its own files in three folders. `artifacts/` holds the shared deliverables, `sessions/` holds one workspace folder per task, and `session-logs/` holds each task's work log. When a multi-step task belongs to the project, Copus adds a `tasks/` folder, with a folder inside it for each multi-step task. Copus keeps scheduled tasks outside projects, so their folders never sit here.
+Copus keeps its own files in three folders. `artifacts/` holds the shared deliverables, `sessions/` holds one workspace folder per task, and `session-logs/` holds each task's work log. Copus keeps scheduled tasks outside projects, so their folders never sit here.
 
-Where those folders sit depends on the choice you made when you created the project. For a project Copus manages, they sit at the top of the project folder, under `CopusData/projects` in your home folder, and the top bar shows that folder. For a project pointed at a folder of your own, the top bar shows your folder. Copus puts its folders in a subfolder it creates inside yours, with a name that starts with `copus-project-`. Conversations in that project can still read and edit the rest of your folder. A multi-step task in the project can write only inside Copus's subfolder.
+Where those folders sit depends on the choice you made when you created the project. For a project Copus manages, they sit at the top of the project folder, under `CopusData/projects` in your home folder, and the top bar shows that folder. For a project pointed at a folder of your own, the top bar shows your folder. Copus puts its folders in a subfolder it creates inside yours, with a name that starts with `copus-project-`. Conversations in that project can still read and edit the rest of your folder.
 
 ### Add a folder to every conversation in a project
 
 Add a folder to the project when the project's work changes files outside it, such as a code repository. Select the folder name in the top bar, then **Add folder**, choose the folder, and confirm. Every conversation in the project can change files in that folder from its next message, including conversations you start later.
 
-In a conversation, the project's folder carries the label **From project** and has no **Remove**. To remove it, select the folder name in the top bar, then **Remove** next to the folder. The removal applies to every conversation in the project. A conversation you move out of the project loses the project's folders. A multi-step task started from a conversation in the project takes the project's folders with it, after you confirm. [Add a folder Copus can change](/concepts/sessions-and-workspace#add-a-folder-copus-can-change) covers what Copus does in an added folder.
+In a conversation, the project's folder carries the label **From project** and has no **Remove**. To remove it, select the folder name in the top bar, then **Remove** next to the folder. The removal applies to every conversation in the project. A conversation you move out of the project loses the project's folders. [Add a folder Copus can change](/concepts/sessions-and-workspace#add-a-folder-copus-can-change) covers what Copus does in an added folder.
 
 ## The progress each task writes
 
@@ -83,7 +83,7 @@ Copus records each task's progress as the task goes. Inside a project, Copus sha
 
 Copus writes a short snapshot of where each conversation has got to, and gives every task in the project the other tasks' snapshots. Copus also keeps a dated work log for each task, as a file in the project's `session-logs/` folder, and reads a full log when it needs the detail behind a snapshot. Copus starts each new task in the project with what it recorded for the earlier tasks.
 
-The project's **Tasks** list holds its multi-step tasks alongside its conversations, most recently active first.
+The project's **Tasks** list holds its conversations, most recently active first.
 
 ## Find, pin, or delete a project
 
@@ -94,10 +94,6 @@ Pin the projects you keep returning to, then select **Pinned** above the list to
 To remove the project and its conversations, select **Project actions**, then **Delete project**. Copus leaves the files you added as sources, and the folders you added, where they are. To remove the folder from disk as well, tick the option in the confirmation: **Also delete the project folder from disk** for a project Copus manages, or **Also remove Copus's subfolder from your folder** for a project that lives in a folder of your own.
 
 Copus refuses to delete a project while a conversation in it is still working. Stop the conversation first.
-
-<Warning>
-  When you delete a project, Copus permanently removes everything in it, including its multi-step tasks. Copus stops any step still running and deletes those tasks' folders from disk whether or not you tick the option.
-</Warning>
 
 <Note>
   When a project lives in a folder of your own, its conversations start in **Manual** approval mode, whatever you set as your default. Switch a conversation to **Autopilot** or **Full access** from the controls under the message box.

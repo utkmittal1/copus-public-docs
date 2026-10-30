@@ -27,7 +27,7 @@ A task writes inside its own folder, which depends on where the task sits. A con
 - A conversation outside a project writes inside its own workspace folder, and your other files stay as they are. A task Copus starts on its own writes inside its own workspace folder in the same way.
 - A conversation in a project writes anywhere inside that project's folder, because tasks in a project are meant to build on each other's files. For a project you pointed at a folder of your own, that means your folder. Copus creates files in it, and writes over files you already had.
 - A conversation also writes inside each folder you added to it or to its project. See [Add a folder Copus can change](/concepts/sessions-and-workspace#add-a-folder-copus-can-change).
-- A multi-step task and a scheduled task write inside the folder that task belongs to. A task outside a project gets a folder of its own, shared by every step or run. A multi-step task inside a project writes inside the project's Copus folder. For a project Copus manages, that's the whole project folder. For a project you pointed at a folder of your own, it's the subfolder Copus created there, so your own files around it stay out of reach. A multi-step task also writes in the folders it took from its conversation when the conversation switched to multi-step. A scheduled task never gets a folder you added.
+- A scheduled task writes inside a folder of its own, shared by every run. A scheduled task never gets a folder you added.
 
 To find where each folder sits on disk, see [Tasks and the workspace](/concepts/sessions-and-workspace).
 
@@ -101,7 +101,7 @@ A command you run this way has full access to your Mac, like a command you type 
 
 ### Allowed outside the sandbox
 
-A project or AI team can keep a list of commands its tasks may run outside the sandbox with no card, called **Allowed outside the sandbox**. Use it for the builds and tests a multi-step task or an AI team needs while nobody is there to select **Run**. The list sits in the project's **Settings**, or the team's **Settings** panel, under **Sandbox level**. Copus uses it at both levels, **Standard** and **Coding**.
+A project or AI team can keep a list of commands its tasks may run outside the sandbox with no card, called **Allowed outside the sandbox**. Use it for the builds and tests an AI team needs while nobody is there to select **Run**, or for a command a project's conversations run often. The list sits in the project's **Settings**, or the team's **Settings** panel, under **Sandbox level**. Copus uses it at both levels, **Standard** and **Coding**.
 
 You add a command to the list in one of three ways:
 
@@ -118,7 +118,7 @@ Select a row to open it. There you can turn **Allow arguments** on or off, or se
 A command on the list runs with no card whether or not you're there, and the conversation shows it running with **Approved for** and the project's or team's name. With nobody there, Copus refuses every other command outside the sandbox. At **Standard**, Copus never shows the card, so a task can run only the commands on the list. A scheduled task sits outside every project, so its runs never use a list.
 
 <Warning>
-  A command on the list runs with full access to your Mac and nobody watching. A test or build command runs whatever the project's files tell it to, and the project's tasks can change those files. Add only commands you would run yourself in that folder.
+  A command on the list runs with full access to your Mac and no card, even in a team with nobody watching. A test or build command runs whatever the project's files tell it to, and the project's tasks can change those files. Add only commands you would run yourself in that folder.
 </Warning>
 
 ## Where the sandbox stops

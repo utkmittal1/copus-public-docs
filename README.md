@@ -38,7 +38,7 @@ renamed page before a reader does.
 
 ## What the site holds
 
-Thirty-one pages in eight sections, plus six diagrams. `docs.json` is the
+Thirty pages in eight sections, plus four diagrams. `docs.json` is the
 navigation and the theme, and it matches the files on disk exactly: every page
 appears once and resolves to a real `.mdx`.
 
@@ -49,14 +49,13 @@ appears once and resolves to a real `.mdx`.
 | What Copus knows about you | `context/` | What Copus learns about you, Memory, Instructions and profile, Response style, Knowledge |
 | Connecting your tools | `connections/` | Connecting your tools, Integrations, Secrets, Web and sign-ins |
 | Working with Copus | `working/` | Work Copus starts before you ask, The message box, What Copus hands back, Skills, Built-in tools, Notifications, iPhone app, Appearance |
-| Copus on its own | `autonomous/` | Scheduled tasks, Multi-step tasks |
+| Copus on its own | `autonomous/` | Scheduled tasks |
 | Staying in control | `control/` | Your data stays local, Approvals and permissions, The sandbox |
 | Reference | `reference/` | Integrations catalog, Troubleshooting and FAQ |
 
-The five diagrams live in `images/diagrams/` as SVG: `core-loop.svg`,
-`session-workspace.svg`, `memory-levels.svg`, `ai-provider-context.svg`,
-and `long-running-task.svg`. Each one
-is embedded on exactly one page. There are no screenshots anywhere, which is
+The four diagrams live in `images/diagrams/` as SVG: `core-loop.svg`,
+`session-workspace.svg`, `memory-levels.svg` and `ai-provider-context.svg`.
+Each one is embedded on exactly one page. There are no screenshots anywhere, which is
 deliberate. A screenshot goes stale the moment the UI moves.
 
 ## How these pages were built, and the bar to hold
