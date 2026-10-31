@@ -47,7 +47,7 @@ Two kinds of line carry your own words. When a turn starts, Copus logs the start
 
 ## What the database holds
 
-`copus.db` holds your tasks and their transcripts, your memory facts, your settings, which integrations you have connected, and the indexed text of your Knowledge Sources. It also holds what Copus learns from your mail: your People list, with each person's name, addresses, and notes, and your guide to how you write, with earlier versions of both. See [What Copus learns about you](/context/what-copus-learns). For each meeting Copus looks at on your calendar, it keeps the meeting's Google Calendar ID and start time for 90 days, so it knows which meetings it has already looked at.
+`copus.db` holds your tasks and their transcripts, your memory facts, your settings, which integrations you have connected, and the indexed text of your Knowledge Sources. It also holds what Copus learns from your mail: your People list, with each person's name, addresses, and notes, and your guide to how you write, with earlier versions of both. See [What Copus learns about you](/context/what-copus-learns). For each meeting Copus looks at on your calendar, it keeps the meeting's Google Calendar ID, its start time, and a fingerprint of its title, guests, and description for 90 days, so it knows which meetings it has already looked at and which have changed.
 
 For a password, API key, or access token you saved under **Secrets**, and for an integration you connected, Copus stores only the name of each field. Copus saves the value itself in your keychain. For an MCP server you added yourself, Copus also saves its address and its launch config in your keychain, since either can hold a key.
 
