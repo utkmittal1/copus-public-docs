@@ -1,6 +1,6 @@
 ---
 title: "The sandbox"
-description: "macOS lets every task Copus runs write only in its own folder and the folders you add, and read only the folders that task needs. See what a task can write and read, where the sandbox stops, and how the Coding level lets a project or AI team work on code."
+description: "macOS lets every task Copus runs write only in its own folder and the folders you add, and read only the folders that task needs. See what a task can write and read, which websites a command can reach, where the sandbox stops, and how the Coding level lets a project or AI team work on code."
 ---
 
 The sandbox is a boundary macOS holds around every task Copus runs. A task writes only inside its own folder and the folders you added to it. In your home folder, it reads only its own folders, the folders you added, the files you attached, and the folders on your [**Folders Copus can read**](/working/tools#see-what-copus-can-do-with-no-app-connected) list. That list starts with your Desktop, Documents, Downloads and Pictures folders. On the internet, a command a task runs reaches only the websites Copus lets through. In a project or AI team set to **Coding**, a task can read most of the rest of your Mac too, so it can work on code.
@@ -77,7 +77,7 @@ A command a task runs, and every program that command starts, reaches the intern
 - Copus's own website and documentation.
 - A site you allowed for this conversation, and a site you approved for a scheduled task or an AI team.
 
-For any other site, Copus asks you first, with a request that names the site. Select **Allow once**, or **Allow** followed by the site's name and **for this conversation** to let the conversation reach that site from then on. Select **Don’t allow** to refuse it. On **Full access**, Copus lets every site through without asking. In work Copus runs with nobody watching, Copus refuses any site nobody approved, whatever the mode.
+For any other site, Copus asks you first, with a request that names the site. Select **Allow once** to let the command reach the site this time. To let the conversation reach that site from then on, select the button that names it, such as **Allow api.example.com for this conversation**. Select **Don’t allow** to refuse it. On **Full access**, Copus lets every site through without asking. In work Copus runs with nobody watching, Copus refuses any site nobody approved, whatever the mode.
 
 ## Why Copus confines writing and not reading
 
@@ -137,7 +137,7 @@ A command on the list runs with no card whether or not you're there, and the con
 
 The sandbox controls where a task may write and what it may read. It also keeps a task away from your keychain and your other apps. A task can't ask macOS for a keychain value, open or control another app, read the clipboard, use the microphone, read your Mac's Calendar or Reminders, ask for your location, or start a program that keeps running after the task. It also can't stop a program it didn't start, such as one of your apps, Copus itself, or another task. It can't mount, unmount or eject a disk, run one of your Shortcuts, or use the SSH keys your Mac's SSH agent holds. The cases below fall outside the sandbox.
 
-**A command can send what it reads to a site Copus lets through.** Copus doesn't check what a command sends. A command can upload any file its task can read to any site on the [list of sites Copus lets through](#websites-a-command-can-reach), or to any site on **Full access**. Copus also asks before every command outside its read-only list, which is why you can't set **Run commands** to run on its own. On **Autopilot** and **Full access**, Copus runs the command without asking.
+**A command can send what it reads to a site Copus lets through.** Copus doesn't check what a command sends. A command can upload any file its task can read to any site on the [list of sites Copus lets through](#websites-a-command-can-reach), or, on **Full access**, to any site. Copus also asks before every command outside its read-only list, which is why you can't set **Run commands** to run on its own. On **Autopilot** and **Full access**, Copus runs the command without asking.
 
 **A refused write fails quietly.** macOS refuses the write and hands the task an error. Copus doesn't ask you about the write, so you can't approve it by mistake. Copus either reports the failure in its reply or works around it.
 
