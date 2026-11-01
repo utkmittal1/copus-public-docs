@@ -95,13 +95,13 @@ While a task is open, new mail on its thread goes to that task. When the new mes
 
 ### Meetings
 
-Every hour, Copus looks at your meetings in the next three hours, decides which ones need a prep document, and writes it straight away. The 8 PM look also covers tomorrow's meetings before 10 AM, so their prep is ready when your day starts. Copus shows each prep next to its meeting in the **Coming up** box on the Home page. Copus leaves out all-day events, events you declined or marked Free, and events with nobody else on them, such as a Focus time block.
+Every hour, Copus looks at your meetings in the next two hours and starts a prep for each one. Each prep first decides whether its meeting needs a prep document. When it doesn't, Copus closes the prep without notifying you, and **Prep this meeting** shows on the meeting again. The 8 PM look also covers tomorrow's meetings before 10 AM, so their prep is ready when your day starts. Copus shows each prep next to its meeting in the **Coming up** box on the Home page. Copus leaves out all-day events, events you declined or marked Free, and events with nobody else on them, such as a Focus time block.
 
-To have Copus prepare a meeting it left alone, select **Prep this meeting** under the meeting in **Coming up**. The button shows on any meeting that hasn't started and has no prep yet, including one only you are invited to.
+To have Copus prepare a meeting it left alone, select **Prep this meeting** under the meeting in **Coming up**. Copus always writes a prep you ask for. The button shows on any meeting that hasn't started and has no prep yet, including one only you are invited to.
 
-Every morning, Copus looks at your meetings in the next seven days, including ones only you are invited to, and finds the ones you need to produce something for, such as a document for a review or your update for a weekly status meeting. For each, Copus suggests the work as an idea and picks the day you should start it. The idea appears on the Home page on that day. Until then, Copus keeps it out of Home, your **Tasks** list, and search. New mail about the meeting joins the idea without starting it, so the work waits for you to select **Do it**.
+Every morning, Copus looks at your meetings in the next seven days and finds the ones you need to produce something for, such as a document for a review or your update for a weekly status meeting. It leaves out the same events as the hourly look, and out-of-office events too. For each meeting that needs work, Copus suggests the work as an idea and picks the day you should start it. The idea appears on the Home page on that day, with a calendar icon and the meeting it's for. Until then, Copus keeps it out of Home, your **Tasks** list, and search. New mail about the meeting joins the idea without starting it, so the work waits for you to select **Do it**.
 
-For each meeting it looks at, Copus searches your mail, files, chats, and notes, and reads what it knows about the people on it. It links the email threads it finds to the prep or the idea. A meeting can have both: the document you write ahead, and the prep you read before you walk in.
+For each meeting it looks at, Copus searches your mail, files, chats, and notes, and reads what it knows about the people on it. A meeting can have both a prep and an idea: the document you write ahead, and the prep you read before you walk in.
 
 ## What you get back
 
@@ -155,14 +155,14 @@ The weekly review can also suggest up to four changes to the work Copus takes on
 
 ### See and correct what Copus takes on
 
-**What Copus handles** is the page for the work Copus does on its own: what it took on in the last seven days and why, and what steers it. To open it, select **Customize** at the end of the line on the Home page that says when Copus last checked your mail, or **See what Copus handles** on the **Copus is learning** card. When Copus takes on work you'd rather it left alone, or skips work you want, correct that call on the page, and Copus follows the correction from its next check.
+**What Copus handles** is the page for the work Copus does on its own: what it took on in the last seven days and why, and what steers it. Each meeting the hourly look started a prep for shows as **Prep** or **No prep needed**, with the reason. To open the page, select **Customize** at the end of the line on the Home page that says when Copus last checked your mail, or **See what Copus handles** on the **Copus is learning** card. When Copus takes on work you'd rather it left alone, or skips work you want, correct that call on the page, and Copus follows the correction from its next check.
 
 ## When Copus checks
 
 | Schedule | What Copus does |
 |---|---|
 | Every 15 minutes | Reads what changed in Gmail since the last check |
-| Every hour | Looks at your meetings in the next three hours, and writes prep for the ones that need it. At 8 PM, also looks at tomorrow's meetings before 10 AM |
+| Every hour | Looks at your meetings in the next two hours, and writes prep for the ones that need it. At 8 PM, also looks at tomorrow's meetings before 10 AM |
 | Daily, at 8 AM | Looks at quiet Gmail threads, and starts or suggests replies and follow-ups. Looks at your meetings in the next seven days, and suggests the work they need from you |
 | Weekly | Reviews the week's results and updates your memory, writing guide, and People list |
 
@@ -182,7 +182,7 @@ To stop Copus for good, open the **Google** card in **Settings** > **Integration
 - **Copus can misjudge a thread.** Copus sometimes takes on a thread you'd ignore, or misses a thread you want handled. The weekly review reads every task you dismiss or decline.
 - **Copus changes nothing in your connected apps on its own.** While Copus works on a task by itself, it only reads your apps. You send every email, create every event, and make every other Google change yourself, with the button on the task, such as **Send**, **Save as draft**, or **Create event**. After you select **Do it**, **Refine**, or **Check in**, or type a message in the task, Copus works as it does on **Autopilot**: it makes ordinary changes, such as editing a Drive file, and asks before it sends, posts, deletes, or shares something.
 - **Copus writes only to people it knows.** A reply can go only to someone on a thread Copus read, or to someone in your People list.
-- **Your mail and meetings go to your AI provider.** To decide what needs work and to do it, Copus sends mail and meetings to your AI provider. The first read sends up to 60 of your most recent sent emails, and up to 40 threads from the last 14 days with the people at the top of your People list. Each 15-minute check sends every changed thread outside the Promotions, Social, and Forums tabs in full, with Copus's notes on the people in it, and contacts your provider only when a thread has changed. The daily check sends the quiet threads it looks at. The hourly and morning looks at your calendar send each meeting's title, time, organizer, guests with Copus's notes on them, and up to 1,500 characters of its description, along with what Copus finds about it in your mail, files, chats, and notes. The hourly look sends a meeting once, and the morning look sends it again only when it changes. See [Your data stays local](/control/your-data-stays-local).
+- **Your mail and meetings go to your AI provider.** To decide what needs work and to do it, Copus sends mail and meetings to your AI provider. The first read sends up to 60 of your most recent sent emails, and up to 40 threads from the last 14 days with the people at the top of your People list. Each 15-minute check sends every changed thread outside the Promotions, Social, and Forums tabs in full, with Copus's notes on the people in it, and contacts your provider only when a thread has changed. The daily check sends the quiet threads it looks at. The hourly and morning looks at your calendar send each meeting's title, time, organizer, guests with Copus's notes on them, and up to 1,500 characters of its description, along with what Copus finds about it in your mail, files, chats, and notes. The hourly look sends a meeting once, and the morning look sends it again only when it changes. The email check, the follow-up check, the morning look at meetings, and each task on the Home page may also send what they find in your conversations, projects, and tasks in Copus. See [Your data stays local](/control/your-data-stays-local).
 
 ## Related
 
