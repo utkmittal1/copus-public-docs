@@ -3,7 +3,7 @@ title: "Notifications"
 description: "A notification tells you that work has finished, or that something needs a decision from you. See what each notification means, where it reaches you, and switch off the notifications you don't want."
 ---
 
-A notification tells you that work has finished, that something needs your decision, or that something has broken. Copus raises ten kinds of notification, each with a switch of its own, and every kind is on until you switch it off.
+A notification tells you that work has finished, that something needs your decision, that something has broken, or that a reminder you set is due. Copus raises twelve kinds of notification, each with a switch of its own, and every kind is on until you switch it off.
 
 This page covers how to:
 
@@ -21,6 +21,8 @@ This page covers how to:
 | Agent responded | When Copus finishes responding somewhere you're not watching. |
 | Approval needed | When Copus needs your go-ahead to run a tool. |
 | Connector broken | When a connected tool stops working. |
+| Reminder | When a reminder you set goes off. |
+| Task done | When a one-time task, or one you asked to hear from, finishes or has something to tell you. |
 | Run could not finish | When a run of a scheduled task stops before it delivers, or is skipped because its AI provider is signed out or out of credit. |
 | Run was refused something | When a run of a scheduled task needed a site or action you haven't approved for it. |
 | Task stopped itself | When a task stops on its own, after runs fail. |
@@ -29,14 +31,15 @@ This page covers how to:
 | Copus needs you | When a task Copus started is waiting on your answer or is stuck. |
 | Memory cleanup suggested | When memory is getting long and Copus has cleanup suggestions to review. |
 
-A scheduled task raises a notification only when a run can't finish, is skipped, or is refused something, or when the task stops itself. A run that delivers and was refused nothing raises nothing.
+A scheduled task raises a notification when a run can't finish, is skipped, or is refused something, or when the task stops itself. A run that delivers raises **Task done** only for a task that runs once, or a repeating task you asked to hear back from. Any other run that delivers and was refused nothing raises nothing. See [Scheduled tasks](/autonomous/autonomous-tasks#run-a-task-once).
 
 An AI team notifies you in two ways. **Team needs you** arrives when the team needs something from you, such as an answer, an approval, or requirements to review. It also arrives when a scheduled teammate can't run because its AI provider is signed out or out of credit. **Agent responded** and **Approval needed** arrive from your own conversations with the team. Work a team finishes waits under **Ready** on the team screen and raises no notification.
 
 When you select a notification, Copus opens what the notification is about:
 
 - **Agent responded** and **Approval needed**: the conversation.
-- **Run could not finish**, **Run was refused something**, and **Task stopped itself**: the task.
+- **Reminder**: the conversation you set the reminder in, or the Home page if you deleted that conversation.
+- **Task done**, **Run could not finish**, **Run was refused something**, and **Task stopped itself**: the task.
 - **Team needs you**: the team.
 - **Connector broken**: **Settings** > **Integrations**.
 - **Ready for you** and **Copus needs you**: the Home page, with that task open beside it.
@@ -60,17 +63,21 @@ Copus shows a popup card in the top right corner as a notification arrives, and 
 
 ### macOS banners
 
-A banner reaches you outside Copus's window. Banners start switched off. Copus posts a banner only while no Copus window has focus.
+A banner reaches you outside Copus's window. Banners start switched off. Copus posts a banner only while no Copus window has focus. A **Reminder** gets a banner even while banners are switched off.
 
 ### Sound
 
 Copus plays a short chime when a notification arrives, while **Sound** is on.
 
+### Your iPhone
+
+If you paired an iPhone, some notifications also reach it as phone notifications, even when your Mac is off: every **Reminder**, and for a task that runs once or one you asked to hear back from, **Task done**, **Run could not finish**, and **Task stopped itself**. For those tasks, your phone also warns you when a run didn't start because your Mac was off. See [Reminders](/working/reminders#reminders-on-your-iphone).
+
 ## Switch a notification off
 
-Open **Settings** > **Notifications**. The **Events** section lists all ten kinds, each with a switch. The **Delivery** section holds **In-app**, **Sound**, and **macOS banners**. **Sound** and **macOS banners** have switches, and **In-app** reads **Always on**.
+Open **Settings** > **Notifications**. The **Events** section lists all twelve kinds, each with a switch. The **Delivery** section holds **In-app**, **Sound**, and **macOS banners**. **Sound** and **macOS banners** have switches, and **In-app** reads **Always on**.
 
-When you switch off a row in **Events**, Copus stops raising that kind everywhere: in the bell, in a popup, in a banner, and in the chime. Notifications of that kind already in the bell stay there.
+When you switch off a row in **Events**, Copus stops raising that kind everywhere: in the bell, in a popup, in a banner, in the chime, and on your iPhone. Notifications of that kind already in the bell stay there.
 
 To empty the bell, open it and select the × on a row, or select **Clear all**. Copus deletes each notification you dismiss.
 
@@ -93,13 +100,13 @@ To empty the bell, open it and select the × on a row, or select **Clear all**. 
 
 Copus starts with notification hours already set to the day and evening. A notification raised outside your hours waits, then arrives once when the hours open. A waiting **Team needs you** arrives only if the team still has something waiting for you by then.
 
-To change your hours, open **Settings** > **Notifications** and pick the times under **Notification hours**, in **Between** … **and**. To cover the night, pick an end time earlier than the start time. To receive notifications at any hour, pick the same start and end time. Notification hours apply to every kind of notification.
+To change your hours, open **Settings** > **Notifications** and pick the times under **Notification hours**, in **Between** … **and**. To cover the night, pick an end time earlier than the start time. To receive notifications at any hour, pick the same start and end time. Notification hours apply to every kind of notification except **Reminder**, which arrives at the time you set.
 
 Notification hours decide only when notifications reach you. An AI team in **Autonomous** can have its own hours, which decide when it runs on its own, and you set them by asking the team lead. See [AI teams](/concepts/how-copus-works#hand-copus-work-that-runs-on-its-own).
 
 ## See when Copus skips a notification
 
-Copus skips **Agent responded** and **Approval needed** while their conversation is on screen and Copus has focus, on its own page or open on the team screen. Copus skips **Ready for you** and **Copus needs you** while the Home page is on screen and Copus has focus. Copus drops a skipped notification, because you already have the conversation or the Home page in front of you. After you switch to another app, Copus raises these notifications as normal.
+Copus skips **Agent responded** and **Approval needed** while their conversation is on screen and Copus has focus, on its own page or open on the team screen. Copus skips **Ready for you** and **Copus needs you** while the Home page is on screen and Copus has focus. Copus drops a skipped notification, because you already have the conversation or the Home page in front of you. After you switch to another app, Copus raises these notifications as normal. Copus never skips a **Reminder**, whatever is on screen.
 
 **Team needs you** still shows its popup while that team's screen is open and Copus has focus, but Copus keeps no row for it in the bell.
 

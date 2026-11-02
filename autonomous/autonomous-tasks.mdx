@@ -1,15 +1,16 @@
 ---
 title: "Scheduled tasks"
-description: "A scheduled task is work Copus repeats on a schedule you agreed. Ask for a scheduled task in a conversation, and Copus writes the instructions, runs the task at the time you settled, and keeps each result in the task's folder."
+description: "A scheduled task is work Copus does on a schedule you agreed, or once at a set time. Ask for a scheduled task in a conversation, and Copus writes the instructions, runs the task at the time you settled, and keeps each result in the task's folder."
 ---
 
-A scheduled task is work Copus repeats on a schedule. It holds three things: instructions saying what each run should produce, a schedule saying when, and a folder the task keeps from one run to the next. Copus opens a fresh conversation for each run and gives it the instructions as its message.
+A scheduled task is work Copus does at a time you agreed, either repeating on a schedule or once. It holds three things: instructions saying what each run should produce, a schedule saying when, and a folder the task keeps from one run to the next. Copus opens a fresh conversation for each run and gives it the instructions as its message.
 
 Your **Tasks** list holds one other kind of task that runs without you: the tasks Copus starts on its own from your mail. Their results wait on the Home page. See [Work Copus starts before you ask](/working/before-you-ask).
 
 This page covers how to:
 
 - [Set up a scheduled task](#set-up-a-scheduled-task) by asking for it in a conversation
+- [Run a task once](#run-a-task-once) at a set time, reuse it, and hear back when it's done
 - [See what each run is given](#what-a-run-is-given), and what Copus keeps out of it
 - [Find a task in the list](#where-your-tasks-live), and read its status
 - [Read the schedule](#the-schedule-in-plain-english) Copus writes for you
@@ -18,7 +19,7 @@ This page covers how to:
 - [Make a task a digest](#digests), which shows on the Home page and can be read aloud
 - [Rename or delete a task](#rename-or-delete-a-task)
 
-Make a scheduled task when you want the same result delivered again and again: a brief every weekday morning, a summary of last week every Monday, a check on your numbers at the start of each month. For a result you want once, start an ordinary task.
+Make a scheduled task when you want the same result delivered again and again: a brief every weekday morning, a summary of last week every Monday, a check on your numbers at the start of each month. Make a task that runs once for work Copus should do at a set time while you're away, such as booking a tennis court tomorrow at 2. For a result you want now, start an ordinary task. To be told something at a time, with no work to do then, ask for a [reminder](/working/reminders).
 
 ## Set up a scheduled task
 
@@ -56,6 +57,22 @@ Every run works from the instructions alone, so Copus writes them as a complete 
   You can edit a live task's instructions on its page. Open the **Instructions** tab and type the change. Copus saves the text shortly after you stop typing, and again when you leave the field. The next run reads the new text. A run that's already going keeps the text it started with. To have Copus make the change, select **Update task** and say what should be different. Copus changes the schedule and the task's files from the same conversation. The task changes only when Copus changes its instructions, schedule, or files there.
 </Tip>
 
+## Run a task once
+
+A task that runs once does its work on one date you name, then stops. Ask for it the way you'd ask for any scheduled task, such as "Book the tennis court for me tomorrow at 2." Copus sets it up in the task's own conversation, with the same approval cards, and its schedule reads `Once · Sat Nov 1, 2:00 PM`.
+
+When the run delivers, the task's status becomes `Done`, and Copus sends a **Task done** notification with the start of what the run said. When the run fails for good, the status becomes `Failed`. To try again, select **Update task** and give the task a new date. **Run now** runs a task that runs once without using up its date, so the run on the date still happens.
+
+Before Copus makes a new scheduled task, it checks the tasks you already have. When one already does the work, Copus offers to reuse it, such as "Reuse your 'Book tennis court' task for Sat Nov 8, 2:00 PM?". Say yes, and the task gets the new date and keeps the people and sites you approved for it, so you approve nothing new. Copus never reuses a task without your yes. For a repeating task you already have, Copus tells you so and makes no second copy.
+
+A repeating task tells you nothing when a run delivers. To hear back after each run, say so when you ask for the task, such as "every Friday, book the court, and let me know", or ask later in the task's own conversation. You can also ask a run to tell you something only when it happens, such as "tell me only if no court is free". The run then sends you a **Task done** notification at that moment.
+
+A task that runs once, and a repeating task you asked to hear back from, also reach your iPhone if you paired one. If your Mac is off, asleep, or has Copus closed at the run's time, your phone warns you five minutes later that the run didn't start. The task runs when Copus is back. See [Copus on your iPhone](/working/iphone#get-notifications-on-your-phone).
+
+<Note>
+  If the task's AI provider is signed out or out of credit at the run's time, a task that runs once stays due, and runs as soon as the provider works again. If the date passes before you approve the task's setup, the task doesn't run, and Copus asks you for a new date when you approve.
+</Note>
+
 ## What a run is given
 
 Copus gives each run four things.
@@ -81,7 +98,7 @@ Your tasks are all in one list. Select **View all** under **Tasks** in the sideb
 
 **Last active** shows the time of the task's latest activity. The task's own page shows when the next run is due.
 
-Search the list with **Search tasks…**. Copus matches your search against each task's name and its summary or description. The search covers every task, including tasks further down than you have scrolled. Select **Scheduled** or **Digests** from the menu beside the search box to see one kind, or **All tasks** to see everything. Select **Pinned** to see only pinned tasks, and **All** to see every task again.
+Search the list with **Search tasks…**. Copus matches your search against each task's name and its summary or description. The search covers every task, including tasks further down than you have scrolled. Select **Scheduled** or **Digests** from the menu beside the search box to see one kind, or **All tasks** to see everything. The same menu's **Reminders** shows your [reminders](/working/reminders) still to go off. Select **Pinned** to see only pinned tasks, and **All** to see every task again.
 
 ## The schedule, in plain English
 
@@ -96,6 +113,7 @@ Copus shows the schedule as a sentence in plain English. Copus writes the senten
 | Start of the month | `The 1st of each month at 7:00 AM Pacific` |
 | Through the working day | `Every hour from 7:00 AM to 6:00 PM Pacific` |
 | Frequently | `Every 5 minutes on weekdays` |
+| Once, on one date | `Once · Sat Nov 1, 2:00 PM` |
 
 Where the sentence names a clock time, Copus adds the timezone the way people say it, so `America/Los_Angeles` reads as `Pacific`, `America/New_York` as `Eastern`, and `Asia/Tokyo` as `Japan`. Copus leaves out the standard-or-daylight half of the name, so the line stays the same all year. Copus keeps the schedule in that zone across daylight saving, so a 7:00 AM task stays at 7:00 AM.
 
@@ -135,10 +153,10 @@ A run card shows `Needs you` when the run stopped to ask you for something, `Fai
   Copus gives a run that stops part-way up to three attempts, with a wait between them, and the card counts them as `Attempt 2 of 3`. Copus cancels a run that shows no activity for a long stretch, so the task can move on, and then retries the run like any other failure. Copus waits out your provider's usage limit without spending an attempt.
 </Note>
 
-If several runs fail in a row, Copus stops the task and sets its status to `Failed`. Copus sends you a notification headed with the task's name and "stopped itself", and the task page reads "This task stopped itself after several runs failed in a row. Resume it once the cause is sorted." Fix the cause of the failures, then select **Resume**.
+If several runs of a repeating task fail in a row, Copus stops the task and sets its status to `Failed`. Copus sends you a notification headed with the task's name and "stopped itself", and the task page reads "This task stopped itself after several runs failed in a row. Resume it once the cause is sorted." Fix the cause of the failures, then select **Resume**.
 
 <Warning>
-  Copus runs a scheduled task only while Copus is open and your Mac is on and awake. When you open Copus after it missed a slot, Copus runs the task once to catch up, then returns to the schedule. After a long gap with many missed slots, Copus still runs one catch-up run.
+  Copus runs a scheduled task only while Copus is open and your Mac is on and awake. When you open Copus after it missed a slot, Copus runs the task once to catch up, then returns to the schedule. After a long gap with many missed slots, Copus still runs one catch-up run. For a task that runs once, or one you asked to hear back from, your iPhone tells you when a run is missed.
 </Warning>
 
 ## Digests
