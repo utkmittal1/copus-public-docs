@@ -59,11 +59,11 @@ Every run works from the instructions alone, so Copus writes them as a complete 
 
 ## Run a task once
 
-A task that runs once does its work on one date you name, then stops. Ask for it the way you'd ask for any scheduled task, such as "Book the tennis court for me tomorrow at 2." Copus sets it up in the task's own conversation, with the same approval cards, and its schedule reads `Once · Sat Nov 1, 2:00 PM`.
+A task that runs once does its work on one date you name, then stops. Ask for it the way you'd ask for any scheduled task, such as "Book the tennis court for me tomorrow at 2." Copus sets it up in the task's own conversation, with the same approval cards, and its schedule reads `Once · Sat Nov 7, 2:00 PM`.
 
 When the run delivers, the task's status becomes `Done`, and Copus sends a **Task done** notification with the start of what the run said. When the run fails for good, the status becomes `Failed`. To try again, select **Update task** and give the task a new date. **Run now** runs a task that runs once without using up its date, so the run on the date still happens.
 
-Before Copus makes a new scheduled task, it checks the tasks you already have. When one already does the work, Copus offers to reuse it, such as "Reuse your 'Book tennis court' task for Sat Nov 8, 2:00 PM?". Say yes, and the task gets the new date and keeps the people and sites you approved for it, so you approve nothing new. Copus never reuses a task without your yes. For a repeating task you already have, Copus tells you so and makes no second copy.
+Before Copus makes a new scheduled task, it checks the tasks you already have. When one already does the work, Copus offers to reuse it, such as "Reuse your 'Book tennis court' task for Sat Nov 14, 2:00 PM?". Say yes, and the task gets the new date and keeps the people and sites you approved for it, so you approve nothing new. Copus never reuses a task without your yes. For a repeating task you already have, Copus tells you so and makes no second copy.
 
 A repeating task tells you nothing when a run delivers. To hear back after each run, say so when you ask for the task, such as "every Friday, book the court, and let me know", or ask later in the task's own conversation. You can also ask a run to tell you something only when it happens, such as "tell me only if no court is free". The run then sends you a **Task done** notification at that moment.
 
@@ -113,7 +113,7 @@ Copus shows the schedule as a sentence in plain English. Copus writes the senten
 | Start of the month | `The 1st of each month at 7:00 AM Pacific` |
 | Through the working day | `Every hour from 7:00 AM to 6:00 PM Pacific` |
 | Frequently | `Every 5 minutes on weekdays` |
-| Once, on one date | `Once · Sat Nov 1, 2:00 PM` |
+| Once, on one date | `Once · Sat Nov 7, 2:00 PM` |
 
 Where the sentence names a clock time, Copus adds the timezone the way people say it, so `America/Los_Angeles` reads as `Pacific`, `America/New_York` as `Eastern`, and `Asia/Tokyo` as `Japan`. Copus leaves out the standard-or-daylight half of the name, so the line stays the same all year. Copus keeps the schedule in that zone across daylight saving, so a 7:00 AM task stays at 7:00 AM.
 
