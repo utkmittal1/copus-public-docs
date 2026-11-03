@@ -38,7 +38,7 @@ renamed page before a reader does.
 
 ## What the site holds
 
-Thirty pages in eight sections, plus four diagrams. `docs.json` is the
+Thirty-one pages in eight sections, plus four diagrams. `docs.json` is the
 navigation and the theme, and it matches the files on disk exactly: every page
 appears once and resolves to a real `.mdx`.
 
@@ -48,7 +48,7 @@ appears once and resolves to a real `.mdx`.
 | Core concepts | `concepts/` | How Copus works, Tasks and the workspace, Projects, AI providers |
 | What Copus knows about you | `context/` | What Copus learns about you, Memory, Instructions and profile, Response style, Knowledge |
 | Connecting your tools | `connections/` | Connecting your tools, Integrations, Secrets, Web and sign-ins |
-| Working with Copus | `working/` | Work Copus starts before you ask, The message box, What Copus hands back, Skills, Built-in tools, Notifications, iPhone app, Appearance |
+| Working with Copus | `working/` | Work Copus starts before you ask, The message box, What Copus hands back, Skills, Built-in tools, Reminders, Notifications, iPhone app, Appearance |
 | Copus on its own | `autonomous/` | Scheduled tasks |
 | Staying in control | `control/` | Your data stays local, Approvals and permissions, The sandbox |
 | Reference | `reference/` | Integrations catalog, Troubleshooting and FAQ |
