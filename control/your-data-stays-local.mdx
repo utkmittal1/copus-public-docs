@@ -8,7 +8,7 @@ Copus keeps your tasks, files, memory, and credentials on your Mac, in a folder 
 This page covers how to:
 
 - [Find where Copus keeps your data](#where-copus-keeps-your-data), folder by folder
-- [Read what the log file records](#what-the-log-file-records), including the part that holds your own words
+- [Read what the log file records](#what-the-log-file-records), including the parts that hold your own words
 - [See what the database holds](#what-the-database-holds), and a credential that can land in it
 - [Find where your credentials live](#where-your-credentials-live), and the sign-ins kept in a file
 - [Learn what leaves your Mac](#what-leaves-your-mac), and why each route exists
@@ -43,7 +43,9 @@ Copus keeps recent log lines in `CopusData/logs/copus.jsonl` and deletes older l
 
 Copus writes one line for each action it takes, with a timestamp and details such as the task and project the action belongs to, the AI provider that ran it, a count, a duration, or the message of an error.
 
-Two kinds of line carry your own words. When a turn starts, Copus logs the start of the message that started it. When Copus removes or rewords a memory fact during cleanup, it logs that fact's full text. Copus keeps its own replies and the contents of the files a task read out of the log, and records a reply only as a length.
+Some lines carry your own words or the addresses of people you work with. When a turn starts, Copus logs the start of the message that started it. When a scheduled task's run sends an email, Copus logs its subject and every recipient's address, and when a run creates a calendar event, Copus logs the guests' addresses. When Copus removes or rewords a memory fact during cleanup, it logs that fact's full text. A few lines about Copus's browser keep up to 300 characters of a page's text. Copus keeps its own replies and the contents of the files a task read out of the log, and records a reply only as a length.
+
+When you ask Copus in a chat what it did or why something happened, Copus can search this log itself. It leaves out the message starts, email subjects, addresses, memory facts and page text, so it never reads those. An error message from another service stays in, and it can repeat part of what Copus sent that service.
 
 ## What the database holds
 
@@ -65,7 +67,7 @@ Copus asks you before a task reads either file, every time, in every approval mo
 
 ## What leaves your Mac
 
-**To the AI provider.** The provider you pick in **Settings** under **AI Providers** runs on its own machines. On every turn, Copus sends the provider your prompt, the conversation so far, your memory, your instructions, and the text of any file a task read. Copus adds whatever a task reads to the conversation, so the text of that file leaves your Mac. When you save an API key, Copus sends that provider one more request, to list the models your account can reach.
+**To the AI provider.** The provider you pick in **Settings** under **AI Providers** runs on its own machines. On every turn, Copus sends the provider your prompt, the conversation so far, your memory, your instructions, and the text of any file a task read. Copus adds whatever a task reads to the conversation, so the text of that file leaves your Mac. When Copus searches its log for you, it sends the lines it reads too. When you save an API key, Copus sends that provider one more request, to list the models your account can reach.
 
 **To the AI provider, for work Copus starts on its own.** Once you connect Google, Copus sends your AI provider the mail threads it reads to find and do work, with its notes on the people in each thread. Every hour and every morning, Copus also sends the upcoming meetings it looks at: each meeting's title, time, organizer, guests, and description. The work Copus starts on its own may also send what it finds in your conversations, projects, and tasks in Copus. When Copus first reads your mailbox, it also sends up to 60 of your most recent sent emails. To see what each check sends, see [Work Copus starts before you ask](/working/before-you-ask#limitations).
 
