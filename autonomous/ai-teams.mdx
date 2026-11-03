@@ -33,7 +33,7 @@ This page covers how to:
     Tell the team lead what you need, in the box that reads "Describe the task…". The lead asks what it needs to know.
   </Step>
   <Step title="Approve the requirements">
-    The team lead writes the requirements from your conversation and shows them on a card labelled **Requirements · for your approval**, with the line "The team lead wrote these from your conversation." The card also lists the teammates who join when you approve, the websites and saved secrets the team may use while you're away, any hours, and any commands, under **Allowed outside the sandbox once you approve**. To leave a teammate out, select the x beside its name. Select **Approve**, or **Dismiss** to approve nothing. To change anything else, say so in the chat.
+    The team lead writes the requirements from your conversation and pins them above the message box, on a card labelled **Requirements · for your approval**. Select **Read the requirements** to open the card in full. Besides the requirements, it lists what you approve with them: **Teammates who join when you approve**, the websites and saved secrets the team may use under **While you're away, the team may use**, any **Hours**, and any commands under **Allowed outside the sandbox once you approve**. To leave a teammate out, select the x beside its name. Select **Approve**, or **Dismiss** to approve nothing. To change anything else, say so in the chat.
   </Step>
 </Steps>
 
@@ -60,7 +60,7 @@ The **Autonomous** switch in the team's top bar decides how much the team does w
 - **Off**, the team is in **Collaborate**. You work on the task with the team lead. Each session the lead wants to start waits under **Needs you** as **Session to start**, with the teammate and the brief, until you select **Start**.
 - **On**, the team lead starts sessions itself, within the requirements, and scheduled teammates run on their schedules.
 
-The first time you turn on **Autonomous**, Copus asks "Run on set hours?". Select **Set hours** to have the team run on its own only at set times, such as overnight or on weekends, and the team lead agrees the hours with you in the chat. You approve them on the requirements card. Outside its hours, the team works as in **Collaborate**: the lead asks you before it starts a teammate's session, and Copus skips a scheduled teammate's runs. To change the hours later, ask the team lead.
+The first time you turn on **Autonomous** on a team with no hours, Copus asks "Run on set hours?". Select **Set hours** to have the team run on its own only at set times, such as overnight or on weekends, and the team lead agrees the hours with you in the chat. You approve them on the requirements card. Outside its hours, the team works as in **Collaborate**: the lead asks you before it starts a teammate's session, and Copus skips a scheduled teammate's runs. To change the hours later, ask the team lead.
 
 When you turn **Autonomous** off, each session that hasn't started yet waits under **Needs you** as **Session to start**.
 
@@ -68,9 +68,7 @@ A team does its own work with nobody watching, so its sessions run on **Autopilo
 
 ## The team screen
 
-### The top bar
-
-Beside the team's name, a status line says where the team stands, such as "Paused: waiting for your answer" or "2 sessions running". A **Coding** badge shows when the team's **Sandbox level** is **Coding**.
+Beside the team's name, Copus shows the team's status, such as "Paused: waiting for your answer" or "2 sessions running", and **Coding** when the team's **Sandbox level** is **Coding**.
 
 ### Teammate tiles
 
@@ -80,13 +78,11 @@ Each teammate has a tile in the row under the top bar. While a teammate works, i
 |---|---|
 | **Blocked** | The teammate's last post said it was blocked. This shows even while it works. |
 | **Waiting for review** | A review it asked for is under way. |
-| **Runs on schedule** | A scheduled teammate between runs. |
+| **Runs on schedule** | A scheduled teammate that isn't running now. |
 | **Schedule stopped** | Failed runs stopped the schedule. |
 | **Idle** | Nothing to do now. |
 
-The team lead's tile reads **Running the team** while the team is in **Autonomous**, and **Working with you** otherwise. A red dot on a tile marks a reply you haven't read, or a tool waiting for your approval, in one of your conversations with that teammate.
-
-At the end of the row, select **Requirements** to read or edit them, **Team folder** to open the team's folders, and **Permissions** to see the websites and saved secrets the team may use. On the right of the window, **Artifacts** opens the team's files and **Settings** opens its settings.
+The team lead's tile reads **Running the team** while the team runs on its own in **Autonomous**, and **Working with you** otherwise, including outside the team's hours. A red dot on a tile marks a reply you haven't read, or a tool waiting for your approval, in one of your conversations with that teammate.
 
 ### Needs you
 
@@ -100,7 +96,7 @@ At the end of the row, select **Requirements** to read or edit them, **Team fold
 - **Something needs you**: a problem only you can sort out, such as a scheduled teammate whose schedule stopped.
 - **Team paused**: the team's AI provider isn't working, with **Try now** to try again at once.
 
-The team lead's chat also shows the requirements card, and its questions one at a time, above the message box.
+The team lead's chat also shows the requirements card above the message box, and the lead's questions and requests one at a time.
 
 ### Ready
 
@@ -112,11 +108,11 @@ The team lead's chat also shows the requirements card, and its questions one at 
 
 ## Talk with the team
 
-The team opens on its chat with the team lead. Select the pencil, **New conversation with the team lead**, to start a separate conversation with the lead while its main chat keeps working.
+The team opens on its chat with the team lead. Once you approve the requirements, select the pencil, **New conversation with the team lead**, to start a separate conversation with the lead while its main chat keeps working.
 
 A teammate's own sessions take no messages; you can read them on its page. To talk with a teammate, give feedback on work it finished, under **Ready**.
 
-On a teammate's page, select **View earlier** to find earlier conversations and sessions. You can **Rename**, **Pin**, or **Delete** one there. A review a teammate asks for runs as a separate task, and the teammate's tile shows **Waiting for review** while it runs. See [Tasks and the workspace](/concepts/sessions-and-workspace).
+On a teammate's page, select **View earlier** to find earlier conversations and sessions. You can **Rename**, **Pin**, or **Delete** one there. A review a teammate asks for runs as a separate task, and the teammate's tile can show **Waiting for review** while it runs. See [Tasks and the workspace](/concepts/sessions-and-workspace).
 
 ## Settings and permissions
 
@@ -127,15 +123,15 @@ Select **Settings** on the right of the team screen.
 - **Hours**: the team's hours, once it has some. To change them, ask the team lead.
 - **Sandbox level** and **Allowed outside the sandbox**: how much of your Mac the team's sessions can read, and the commands they may run outside the sandbox with no card. See [The sandbox](/control/sandbox#work-on-code).
 
-**Permissions** lists the websites and saved secrets the team may use while you're away, each with **Remove**. You add one only by approving a card from the team.
-
 Only you change these settings, in Copus on your Mac.
+
+Select **Permissions**, at the end of the row of teammates, to see the websites and saved secrets the team may use while you're away. You add one only by approving a card from the team, and you take one away with **Remove**, on your Mac.
 
 ## Where a team's files live
 
 Each team has a team folder under `CopusData/projects` in your home folder. Every teammate has a folder of its own there, which only that teammate's sessions and your conversations with it can change. Finished work goes in **Artifacts**.
 
-To give the team a folder of your own, select **Team folder**, then **Add folder**. The button then reads "2 folders". Copus works on that folder where it is. See [Your data stays local](/control/your-data-stays-local).
+To give the team a folder of your own, select **Team folder**, then **Add folder**. Copus works on that folder where it is. See [Your data stays local](/control/your-data-stays-local).
 
 ## Notifications
 
@@ -148,7 +144,7 @@ Select **Team actions** > **Delete team**. Every session in the team stops, and 
 ## Limitations
 
 - **Copus works only while it's open.** A team works only while Copus is open and your Mac is awake.
-- **The team pauses when its AI provider fails.** When the provider isn't answering or hits its usage limit, the team pauses and Copus keeps trying for a day, then stops. When Copus is signed out of the provider, the team waits and carries on once you sign in again. When the provider is out of credit, add credit or save a new key, then select **Try now**.
+- **The team pauses when its AI provider fails.** When the provider isn't answering or hits its usage limit, the team pauses and Copus keeps trying for a day, then stops. When Copus is signed out of the provider, the team waits and carries on once you sign in again. When the provider is out of credit, Copus keeps trying; once you add credit or save a new key, select **Try now** to carry on at once.
 - **Copus makes mistakes.** Read finished work before you use it.
 - **You set up a team on your Mac.** You create a team, change its settings, and edit its requirements only on your Mac. See [Copus on your iPhone](/working/iphone) for what the phone can do.
 
