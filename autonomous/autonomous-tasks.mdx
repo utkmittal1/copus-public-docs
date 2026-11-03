@@ -5,14 +5,14 @@ description: "A scheduled task is work Copus does on a schedule you agreed, or o
 
 A scheduled task is work Copus does at a time you agreed, either repeating on a schedule or once. It holds three things: instructions saying what each run should produce, a schedule saying when, and a folder the task keeps from one run to the next. Copus opens a fresh conversation for each run and gives it the instructions as its message.
 
-Your **Tasks** list holds one other kind of task that runs without you: the tasks Copus starts on its own from your mail. Their results wait on the Home page. See [Work Copus starts before you ask](/working/before-you-ask).
+Your **Tasks** page holds one other kind of task that runs without you: the tasks Copus starts on its own from your mail. Their results wait on the Home page. See [Work Copus starts before you ask](/working/before-you-ask).
 
 This page covers how to:
 
 - [Set up a scheduled task](#set-up-a-scheduled-task) by asking for it in a conversation
 - [Run a task once](#run-a-task-once) at a set time, reuse it, and hear back when it's done
 - [See what each run is given](#what-a-run-is-given), and what Copus keeps out of it
-- [Find a task in the list](#where-your-tasks-live), and read its status
+- [Find a task on the Tasks page](#where-your-tasks-live), and read its status
 - [Read the schedule](#the-schedule-in-plain-english) Copus writes for you
 - [Find the task's folder](#the-tasks-folder) and what earlier runs left there
 - [Run, pause, and watch a task](#run-pause-and-watch-a-task)
@@ -90,15 +90,21 @@ Copus keeps the conversation you set the task up in out of every run, because th
 
 ## Where your tasks live
 
-Your tasks are all in one list. Select **View all** under **Tasks** in the sidebar. The list holds the tasks you start, the tasks Copus starts on its own, and your scheduled tasks, newest activity first. The columns are **Task**, **From**, **Status**, and **Last active**.
+The **Tasks** page holds your tasks on five tabs. Select **View all** under **Tasks** in the sidebar to open it on **Tasks you started**.
 
-**From** reads `You` for a task you asked for, including every scheduled task, and `Copus` for a task Copus started on its own.
+| Tab | What it lists |
+|---|---|
+| **Tasks you started** | The tasks you started yourself, newest activity first, under headings such as **Today** and **Yesterday** |
+| **Tasks Copus started** | The tasks Copus started on its own, in the same groups as the Home page. See [Work Copus starts before you ask](/working/before-you-ask#review-and-respond) |
+| **Scheduled** | Your scheduled tasks, digests included |
+| **Digests** | Your digests |
+| **Reminders** | Your [reminders](/working/reminders) still to go off |
 
-**Status** on a scheduled task reads `Active`, `Running`, `Paused`, `Failed`, or `Done`. A task Copus started on its own shows its own state, such as `Ready`, `Needs you`, or `Sent` with the time Copus sent the reply. Copus adds a `Needs you` badge beside the status when a run stopped to ask you for something. On a scheduled task, Copus removes the badge once a later run delivers.
+On **Scheduled** and **Digests**, the tasks that need you come first, then the rest in the order they next run. The last column, **Next run**, shows how soon each task runs. On **Tasks you started** and **Tasks Copus started**, the last column is **Last active**, the time of the task's latest activity.
 
-**Last active** shows the time of the task's latest activity. The task's own page shows when the next run is due.
+**Status** on a scheduled task reads `Active`, `Running`, `Paused`, `Failed`, or `Done`. Copus adds a `Needs you` badge beside the status when a run stopped to ask you for something, and removes it once a later run delivers.
 
-Search the list with **Search tasks…**. Copus matches your search against each task's name and its summary or description. The search covers every task, including tasks further down than you have scrolled. Select **Scheduled** or **Digests** from the menu beside the search box to see one kind, or **All tasks** to see everything. The same menu's **Reminders** shows your [reminders](/working/reminders) still to go off. Select **Pinned** to see only pinned tasks, and **All** to see every task again.
+Search a tab with **Search tasks…**. Copus matches your search against the name and the summary or description of each task on that tab, including tasks further down than you have scrolled. To search every kind of task at once, use **Search** at the top of the sidebar. Select **Pinned** to see only pinned tasks, and **All** to see every task again.
 
 ## The schedule, in plain English
 
@@ -169,11 +175,11 @@ To make one, ask for it in a conversation, such as "Every weekday at 7 AM, give 
 
 Select a digest in the box to read it. Select its speaker to have Copus read it aloud. Copus says which digest it is and when it was made, then reads a version written for listening, with the microphone off. Copus keeps reading while you move to another page. To stop, select the stop button at the top of the window.
 
-The box shows a digest once its newest run has published it. While a run is going, or when a digest needs you, its line says so, and selecting the line opens the task's page. To read an earlier digest, select **Open digest** on that run on the task's page. Copus leaves paused digests off the Home page. Select **See all digests** in the box to find them in your **Tasks** list.
+The box shows a digest once its newest run has published it. While a run is going, or when a digest needs you, its line says so, and selecting the line opens the task's page. To read an earlier digest, select **Open digest** on that run on the task's page. Copus leaves paused digests off the Home page. Select **See all digests** in the box to open the **Digests** tab of the **Tasks** page, which lists every digest.
 
 ## Rename or delete a task
 
-Select **Task actions** in the header, then **Rename** or **Delete**. **Delete** in that menu deletes the task at once, with no confirmation. **Delete** on the task's row in the **Tasks** list, or in the sidebar, asks you to confirm in the **Delete task?** dialog first. Either way, Copus deletes the task, every run it has had, and its whole folder. You can't keep the folder, so copy anything you want first.
+Select **Task actions** in the header, then **Rename** or **Delete**. **Delete** in that menu deletes the task at once, with no confirmation. **Delete** on the task's row on the **Tasks** page, or in the sidebar, asks you to confirm in the **Delete task?** dialog first. Either way, Copus deletes the task, every run it has had, and its whole folder. You can't keep the folder, so copy anything you want first.
 
 ## Next steps
 
