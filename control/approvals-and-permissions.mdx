@@ -102,7 +102,7 @@ Copus asks four questions every time they come up. On each, Copus waits for your
 
 **Reading a sign-in.** Copus asks before a task reads either of these:
 
-- The sign-ins Copus keeps in `CopusData`, such as Claude Code's and Codex's folders and the sign-ins you make in Copus's browser. Copus reads one kind of file there without asking: the files where Claude Code saves a command's output when it is too long to show.
+- The sign-ins Copus keeps in `CopusData`, such as Claude Code's and Codex's folders and the sign-ins you make in Copus's browser. Copus refuses the token files in Claude Code's and Codex's folders, as it refuses every password file. Copus reads one kind of file there without asking: the files where Claude Code saves a command's output when it is too long to show.
 - A file that looks like a password inside a credential folder you added by name, such as `~/.aws/credentials`. See [Open a shut folder](/control/sandbox#open-a-shut-folder).
 
 Copus adds whatever a task reads to the conversation and sends the conversation to your AI provider, so Copus leaves this read to you. Copus checks both routes to a file: the file a tool names, and the file a command names in its arguments.
