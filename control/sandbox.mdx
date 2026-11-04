@@ -83,7 +83,7 @@ A broader folder you add keeps the shut places inside it shut, at both sandbox l
 
 ## Websites a command can reach
 
-A command a task runs, and every program that command starts, reaches the internet only through Copus. macOS blocks every other connection off your Mac. Copus lets these sites through without asking, in every mode:
+A command a task runs, and every program that command starts, reaches the internet only through Copus. macOS blocks every other connection off your Mac, apart from the [certificate checks a plugin can open](#where-the-sandbox-stops) to its own programs. Copus lets these sites through without asking, in every mode:
 
 - Your AI provider's own sites.
 - The sites Python and Node packages come from.
@@ -159,6 +159,8 @@ The sandbox controls where a task may write and what it may read. It also keeps 
 **Tasks in the same project can write each other's files.** They share the project folder by design. A task outside a project can still read another task's files, and can't write them. Two conversations you added the same folder to can both write in it.
 
 **A command you approve to run outside the sandbox has no sandbox.** A command you approve with **Run**, and a command on a project's or team's **Allowed outside the sandbox** list, runs with full access to your Mac and reaches any website. See [Allowed outside the sandbox](#allowed-outside-the-sandbox).
+
+**A plugin you approve can open your keychain or certificate checks to its own programs.** When Copus runs a plugin's own Claude Code, the programs that plugin names can use your Mac's keychain, or check a website's certificate through macOS, and a certificate check can reach websites outside the list Copus lets through.
 
 **A key you hand a program yourself can be read.** A task can read the settings any program on your Mac started with, so a key you export in a Terminal window is readable while that program runs. You can use [Secrets](/connections/secrets) to securely store and use passwords, tokens, and API keys in Copus.
 
