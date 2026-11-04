@@ -61,7 +61,7 @@ Claude Code and Codex keep their sign-ins in files instead, both inside `CopusDa
 
 **Codex** writes its token to `.codex/auth.json`, because the Codex program reads its tokens from that file rather than from the keychain.
 
-Copus asks you before a task reads either file, every time, in every approval mode, and waits for your answer. In work Copus runs with nobody watching, including every task Copus starts on its own, Copus refuses the read instead of asking. See [Approvals and permissions](/control/approvals-and-permissions) for both rules.
+Copus refuses a task's read of either file, in every approval mode. Copus asks you before a task reads anything else in those two folders, every time, in every approval mode, and waits for your answer. In work Copus runs with nobody watching, including every task Copus starts on its own, Copus refuses that read instead of asking. See [Approvals and permissions](/control/approvals-and-permissions) for both rules.
 
 ## What leaves your Mac
 

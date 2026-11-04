@@ -79,7 +79,7 @@ Copus removes a capability you switched off from its toolset when a task starts.
 - `cd`, into a folder the task can write to
 - one of Copus's own skill scripts
 
-Copus asks you about every other command. Copus also asks you about any command that names a file holding credentials, such as an `.env` file or a `.pem` key, whatever else the command does. Copus treats `.env.example`, `.env.sample`, and `.env.template` as ordinary files, because they hold placeholders. [Approvals and permissions](/control/approvals-and-permissions#what-copus-asks-every-time) lists the files Copus treats as credentials.
+Copus asks you about every other command. Whatever else a command does, Copus refuses it when it names a file that looks like it holds a password, such as an `.env` file or a `.pem` key, and asks you when it names a sign-in Copus keeps in `CopusData`. Copus treats `.env.example`, `.env.sample`, and `.env.template` as ordinary files, because they hold placeholders. [Approvals and permissions](/control/approvals-and-permissions#limits-that-hold-in-every-mode) lists the files Copus refuses.
 
 The carve-out also follows your switches. Switch **Read files** off, and Copus asks you before it runs a read-only command such as `cat`. Switch **Edit & write files** off, and Copus asks before it creates a folder.
 </Tip>

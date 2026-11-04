@@ -53,7 +53,7 @@ Copus gives each conversation a workspace, a folder only that conversation write
 
 A task can write files only inside its own folder, and macOS enforces that limit. For a conversation outside a project, that folder is its workspace. For a conversation in a project, that folder is the whole project folder, so conversations in a project can edit each other's files. A conversation can also write in [folders you add to it](#add-a-folder-copus-can-change).
 
-A task can read its own folder, the folders you add, the files you attach, the files other tasks made, and the folders on your **Folders Copus can read** list. That list starts with your Desktop, Documents, Downloads and Pictures folders. The rest of your home folder is closed to it. In a project or AI team set to **Coding**, a task can also read files across your Mac, apart from passwords, keys and sign-ins. See [Work on code](/control/sandbox#work-on-code). In every approval mode, Copus asks you each time a task tries to read a file that looks like a credential. [The sandbox](/control/sandbox) covers the boundary in full.
+A task can read its own folder, the folders you add, the files you attach, the files other tasks made, and the folders on your **Folders Copus can read** list. That list starts with your Desktop, Documents, Downloads and Pictures folders. The rest of your home folder is closed to it. In a project or AI team set to **Coding**, a task can also read files across your Mac, apart from passwords, keys and sign-ins. See [Work on code](/control/sandbox#work-on-code). In every approval mode, Copus refuses a task's read of a file that looks like it holds a password, such as an `.env` file. [The sandbox](/control/sandbox) covers the boundary in full.
 
 Copus puts the workspace of a conversation outside a project in `CopusData/sessions`, inside your home folder. For a conversation in a project, Copus puts the workspace in that project's `sessions/` folder. For a scheduled task, Copus creates a folder under `CopusData/projects`, and puts the workspaces of the task's runs in that folder's own `sessions/`.
 
@@ -81,8 +81,12 @@ You can't add or remove a folder while Copus is replying. To give every conversa
 ### Limitations
 
 - **A conversation holds up to 10 added folders.** Remove a folder to add another.
-- **Copus adds only folders inside your home folder or on an external drive.** In your home folder, it refuses the home folder itself, your `Library` folder, `CopusData`, and hidden folders, whose names start with a dot. It refuses anything inside those folders too.
-- **Some files stay blocked inside an added folder.** The files no task can write anywhere stay blocked in your added folders too. [The sandbox](/control/sandbox#files-no-task-can-write) lists them.
+- **Copus refuses a few folders.** You can add any folder, including a hidden one such as `~/.aws` or one outside your home folder, apart from these:
+  - your whole home folder, or a folder that holds it, such as `/`
+  - Copus's own folders, `CopusData` and its app folder in `Library/Application Support`, and anything inside them
+  - a folder that holds one of Copus's own folders, such as `Library`. Your **Folders Copus can read** list accepts one, because no task can change files there.
+  - a folder that holds the temporary files of Copus's tasks, such as `/tmp`
+- **Some places stay shut inside an added folder.** The files no task can write anywhere stay blocked in your added folders too. A folder that holds credentials, such as `~/.ssh`, stays shut inside a broader folder you add, and opens only when you add it by name. [The sandbox](/control/sandbox#what-a-task-can-read) covers both lists.
 - **Scheduled tasks never get added folders.**
 - **Copus never moves, renames, or deletes an added folder.** Deleting the conversation leaves the folder where it is.
 

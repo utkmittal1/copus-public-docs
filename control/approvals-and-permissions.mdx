@@ -100,17 +100,12 @@ Copus keeps a file its browser downloads only if it is a document, a data file o
 
 Copus asks four questions every time they come up. On each, Copus waits for your answer, including on **Autopilot** and **Full access**, and leaves out **Always allow in this conversation**.
 
-**Reading a file that holds credentials.** Copus asks before a task reads any of these:
+**Reading a sign-in.** Copus asks before a task reads either of these:
 
-- A `.env` file, or a file whose name starts with `.env.`, such as `.env.local`. Copus reads a template whose name ends in `.example`, `.sample`, or `.template`, such as `.env.example`, without asking.
-- A `.pem`, `.key`, `.p12`, or `.pfx` file.
-- A key file named `id_rsa`, `id_dsa`, `id_ecdsa`, or `id_ed25519`.
-- A file named `credentials`, `credentials.json`, or `auth.json`, or a file named `secret` or `secrets` that ends in `.json`, `.yaml`, `.yml`, or `.toml`.
-- The credentials Copus stores in `CopusData`: your Claude and ChatGPT credentials, and the sign-ins you make in Copus's browser. Copus reads one kind of file there without asking: the files where Claude Code saves a command's output when it is too long to show.
+- The sign-ins Copus keeps in `CopusData`, such as Claude Code's and Codex's folders and the sign-ins you make in Copus's browser. Copus reads one kind of file there without asking: the files where Claude Code saves a command's output when it is too long to show.
+- A file that looks like a password inside a credential folder you added by name, such as `~/.aws/credentials`. See [Open a shut folder](/control/sandbox#open-a-shut-folder).
 
 Copus adds whatever a task reads to the conversation and sends the conversation to your AI provider, so Copus leaves this read to you. Copus checks both routes to a file: the file a tool names, and the file a command names in its arguments.
-
-Copus asks this question about a credential file in a folder of your own. Copus refuses a file inside one of the folders it keeps shut, such as `~/.ssh`, `~/.aws` or your keychain folder, without asking you. For every folder and file Copus keeps shut, see [The sandbox](/control/sandbox).
 
 **Publishing work or throwing away changes.** Copus asks before a command that publishes work to a shared repository, such as `git push`, or changes something on GitHub through the `gh` command, such as opening a pull request. It also asks before a command that throws away changes you haven't committed in git, such as `git reset --hard`, `git restore`, or `git clean -f`. Copus asks only about a command it can read. A script that runs one of these commands inside it runs without the question.
 
@@ -172,7 +167,16 @@ On **Autopilot** and **Full access**, Copus asks you less often. A task in eithe
 
 **A tool you switched off stays off.** Clear the checkbox beside **Run commands** and Copus builds your next task without it. Neither **Autopilot** nor **Full access** can bring the tool back, because the task doesn't have it.
 
-**Copus asks about credential files and your own Chrome in every mode.** Copus leaves both to you, in **Manual**, on **Autopilot**, and on **Full access**.
+**Copus refuses password files in every mode.** Copus refuses a task's read of any of these, without asking you, and macOS shuts them to every program the task runs:
+
+- A `.env` file, or a file whose name starts with `.env.`, such as `.env.local`. Copus reads a template whose name ends in `.example`, `.sample`, or `.template`, such as `.env.example`, as an ordinary file.
+- A `.pem`, `.key`, `.p12`, or `.pfx` file.
+- A key file named `id_rsa`, `id_dsa`, `id_ecdsa`, or `id_ed25519`.
+- A file named `credentials`, `credentials.json`, or `auth.json`, or a file named `secret` or `secrets` that ends in `.json`, `.yaml`, `.yml`, or `.toml`.
+
+Copus also refuses every file in the folders it keeps shut, such as `~/.ssh` or your keychain folder. Inside a credential folder you added by name, such as `~/.aws`, Copus asks about a password file instead of refusing it. For every folder and file Copus keeps shut, see [The sandbox](/control/sandbox#what-a-task-can-read).
+
+**Copus asks about sign-ins and your own Chrome in every mode.** Copus leaves both to you, in **Manual**, on **Autopilot**, and on **Full access**.
 
 **Email, calendar changes and Drive sharing always wait for you.** Copus shows you a card in the conversation for an email, an event you create, change or cancel, an answer to an invite, a Drive share or removal, and a comment on a Drive file. You review the card, and the action happens when you select its button. On an email card, select **Save as draft** to put the email in your Gmail drafts instead of sending it. A run of a scheduled task can email and invite only the people you approved for its task. See [Scheduled tasks](/autonomous/autonomous-tasks).
 
