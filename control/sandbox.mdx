@@ -3,7 +3,7 @@ title: "The sandbox"
 description: "macOS lets every task Copus runs write only in its own folder and the folders you add, and read only the folders that task needs. See what a task can write and read, which websites a command can reach, where the sandbox stops, and how the Coding level lets a project or AI team work on code."
 ---
 
-The sandbox is a boundary macOS holds around every task Copus runs. A task writes only inside its own folder and the folders you added to it. In your home folder, it reads only its own folders, the folders you added, the files you attached, and the folders on your [**Folders Copus can read**](/working/tools#see-what-copus-can-do-with-no-app-connected) list. That list starts with your Desktop, Documents, Downloads and Pictures folders. On the internet, a command a task runs reaches only the websites Copus lets through. In a project or AI team set to **Coding**, a task can read most of the rest of your Mac too, so it can work on code.
+The sandbox is a boundary macOS holds around every task Copus runs. A task writes only inside its own folder and the folders you added to it. In your home folder, it reads only its own folders, the folders you added, the files you attached, and the folders on your [**Folders Copus can read**](/working/tools#see-what-copus-can-do-with-no-app-connected) list. That list starts with your Desktop, Documents, Downloads and Pictures folders. On the internet, a command a task runs reaches only the websites Copus lets through, apart from the certificate checks a plugin can open. In a project or AI team set to **Coding**, a task can read most of the rest of your Mac too, so it can work on code.
 
 macOS enforces that boundary. Copus hands macOS the list of what a task may write and read, and macOS applies that list to the program it starts and to everything that program starts after it: a file tool, a command, a script Copus wrote and ran, a helper that script launched. macOS holds this boundary whatever program runs inside it.
 
@@ -160,7 +160,7 @@ The sandbox controls where a task may write and what it may read. It also keeps 
 
 **A command you approve to run outside the sandbox has no sandbox.** A command you approve with **Run**, and a command on a project's or team's **Allowed outside the sandbox** list, runs with full access to your Mac and reaches any website. See [Allowed outside the sandbox](#allowed-outside-the-sandbox).
 
-**A plugin you approve can open your keychain or certificate checks to its own programs.** When Copus runs a plugin's own Claude Code, the programs that plugin names can use your Mac's keychain, or check a website's certificate through macOS, and a certificate check can reach websites outside the list Copus lets through.
+**A plugin you approve can open your keychain or certificate checks to its own programs.** A plugin you add in **Integrations** can bring its own Claude Code. When Copus runs it, the programs the plugin names can use your Mac's keychain or check a website's certificate through macOS, and a command in that task can run those programs too. To check a certificate, macOS fetches addresses written inside it, so a check can reach websites outside the list Copus lets through.
 
 **A key you hand a program yourself can be read.** A task can read the settings any program on your Mac started with, so a key you export in a Terminal window is readable while that program runs. You can use [Secrets](/connections/secrets) to securely store and use passwords, tokens, and API keys in Copus.
 
