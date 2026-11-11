@@ -3,7 +3,7 @@ title: "The sandbox"
 description: "macOS lets every task Copus runs write only in its own folder and the folders you add, and read only the folders that task needs. See what a task can write and read, which websites a command can reach, where the sandbox stops, and how the Coding level lets a project or AI team work on code."
 ---
 
-The sandbox is a boundary macOS holds around every task Copus runs. A task writes only inside its own folder and the folders you added to it. In your home folder, it reads only its own folders, the folders you added, the files you attached, and the folders on your [**Folders Copus can read**](/working/tools#see-what-copus-can-do-with-no-app-connected) list. That list starts with your Desktop, Documents, Downloads and Pictures folders. On the internet, a command a task runs reaches only the websites Copus lets through. In a project or AI team set to **Coding**, a task can read most of the rest of your Mac too, so it can work on code.
+The sandbox is a boundary macOS holds around every task Copus runs. A task writes only inside its own folder and the folders you added to it. In your home folder, it reads only its own folders, the folders you added, the files you attached, and the folders on your [**Folders Copus can read**](/working/tools#see-what-copus-can-do-with-no-app-connected) list. That list starts with your Desktop, Documents, Downloads and Pictures folders. On the internet, a command a task runs reaches only the websites Copus lets through, apart from the certificate checks a plugin can open. In a project or AI team set to **Coding**, a task can read most of the rest of your Mac too, so it can work on code.
 
 macOS enforces that boundary. Copus hands macOS the list of what a task may write and read, and macOS applies that list to the program it starts and to everything that program starts after it: a file tool, a command, a script Copus wrote and ran, a helper that script launched. macOS holds this boundary whatever program runs inside it.
 
@@ -12,6 +12,7 @@ This page covers how to:
 - [Find the folders a task can write to](#what-a-task-can-write), and the few places outside them
 - [Learn which filenames no task can write](#files-no-task-can-write), anywhere on your Mac
 - [See what a task can read](#what-a-task-can-read), and which folders stay shut
+- [Open a shut folder](#open-a-shut-folder) that a tool needs, such as `~/.aws`
 - [See which websites a command can reach](#websites-a-command-can-reach), and when Copus asks you
 - [Understand why writing is confined and reading is not](#why-copus-confines-writing-and-not-reading)
 - [Let a project or AI team work on code](#work-on-code), and run commands outside the sandbox
@@ -49,9 +50,9 @@ macOS matches those names on the filename alone, wherever the file sits. The rul
 
 ## What a task can read
 
-A task reads its own folder, the files you attach, and the folders you added to it. A task in a project also reads the project's folder, the folders you added to the project, and its sources. Every task can also read the files other tasks made. Every task also reads the folders on your **Folders Copus can read** list, and can't create, change or delete files in them. That list starts with your Desktop, Documents, Downloads and Pictures folders, and holds up to 20 folders. To change it, open the list: In **Settings**, select **Built-in tools**, then select the number of folders under **Read files**, such as "4 folders". Select **Add folder** to add a folder, or select **Remove folder** beside one, then **Remove**, to take it off. Copus applies the change to each task from that task's next message. macOS shuts the rest of your home folder, such as `Movies`, `Library`, and the hidden folders whose names start with a dot. To let every task read another folder, add it to the **Folders Copus can read** list. To let one task also change the files in a folder, [add the folder to that task or its project](/concepts/sessions-and-workspace#add-a-folder-copus-can-change). Outside your home folder, a task reads the system and the programs you installed, but not other drives or the `/Users/Shared` folder. Copus reads without asking, and you can't set reading to ask.
+A task reads its own folder, the files you attach, and the folders you added to it. A task in a project also reads the project's folder, the folders you added to the project, and its sources. Every task can also read the files other tasks made. Every task also reads the folders on your **Folders Copus can read** list, and can't create, change or delete files in them. That list starts with your Desktop, Documents, Downloads and Pictures folders, and holds up to 20 folders. To change it, open the list: In **Settings**, select **Built-in tools**, then select the number of folders under **Read files**, such as "4 folders". Select **Add folder** to add a folder, or select **Remove folder** beside one, then **Remove**, to take it off. Copus applies the change to each task from that task's next message. macOS shuts the rest of your home folder, such as `Movies`, `Library`, and the hidden folders whose names start with a dot. To let every task read another folder, such as `~/.config` or a folder outside your home folder, add it to the **Folders Copus can read** list. To let one task also change the files in a folder, [add the folder to that task or its project](/concepts/sessions-and-workspace#add-a-folder-copus-can-change). Outside your home folder, a task reads the system and the programs you installed, but not other drives or the `/Users/Shared` folder unless you add them. Copus reads without asking, and you can't set reading to ask.
 
-macOS shuts these folders in your home folder to a task and to every process it starts: `.ssh`, `.aws`, `.azure`, `.gnupg`, `.kube`, `.docker`, `.gradle`, `.m2`, `.huggingface`, `.kaggle`, and `.config/gcloud` and `.config/gh`, the settings folders for the `gcloud` and `gh` command-line tools. macOS also shuts your keychain folder, `~/Library/Keychains`, which names every password your Mac keeps.
+macOS shuts these folders in your home folder to a task and to every process it starts: `.ssh`, `.aws`, `.azure`, `.gnupg`, `.kube`, `.docker`, `.gradle`, `.m2`, `.huggingface`, `.kaggle`, and `.config/gcloud` and `.config/gh`, the settings folders for the `gcloud` and `gh` command-line tools. macOS also shuts your keychain folder, `~/Library/Keychains`, which names every password your Mac keeps, except to the programs a [plugin you approve](#where-the-sandbox-stops) names.
 
 macOS shuts these files in your home folder too. `.netrc`, `.npmrc`, `.pypirc`, and `.git-credentials` hold credentials outright. Your shell startup files, `.zshrc`, `.zshenv`, `.bashrc`, `.bash_profile`, and `.profile`, routinely hold an exported API key.
 
@@ -61,16 +62,28 @@ macOS also shuts Copus's own database, under a separate rule.
   macOS binds the block to every process the task starts, as well as to Copus's own tools. A task can't get around it by asking a command-line tool to print a key.
 </Note>
 
-Copus asks you before a task reads a credential file anywhere else on your Mac, such as an `.env` file, a `.pem` or `.key` file, an `id_rsa` key file, or a file named `credentials.json`, `auth.json`, or `secrets.yaml`. Copus reads a template such as `.env.example`, `.env.sample`, or `.env.template` without asking. Copus also asks before a task reads the credentials Copus stores in `CopusData`: your Claude and ChatGPT credentials, and the sign-ins you make in Copus's browser. Copus asks every time, in every approval mode, and waits for your answer. For every name, and for what happens when nobody is there to answer, see [Approvals and permissions](/control/approvals-and-permissions).
+macOS also shuts a file that looks like it holds a password, anywhere on your Mac outside a folder you [opened by name](#open-a-shut-folder): an `.env` file, a `.pem` or `.key` file, an `id_rsa` key file, or a file named `credentials`, `credentials.json`, `auth.json`, or `secrets.yaml`. Copus refuses a task's read of one in every approval mode, without asking you. Copus reads a template such as `.env.example`, `.env.sample`, or `.env.template` as an ordinary file. Copus asks you every time, in every approval mode, before a task reads the sign-ins Copus keeps in `CopusData`, such as the sign-ins you make in Copus's browser. For every name, and for what happens when nobody is there to answer, see [Approvals and permissions](/control/approvals-and-permissions).
 
 <Warning>
   The shut folders and files are the places credentials usually sit. A secret can live in a file with any name, in any folder, so the list can't cover every secret. The list stops a task from reading a token by accident while it looks around. Treat the list as a guard against accidents rather than as a guarantee.
 </Warning>
 
+### Open a shut folder
+
+Some command-line tools need their credential folder, such as the `aws` tool, which reads your keys from `~/.aws`. A shut folder opens for a task when you add that folder by name, or a folder inside it, to your **Folders Copus can read** list, to the conversation, or to its project or AI team. Every program the task runs can then read the files in it. On your **Folders Copus can read** list the folder opens for reading only. Added to a conversation, project or team, the folder also lets a task change its files.
+
+Inside a folder you opened, the files that look like passwords open too. When a task reads one with a file tool, or names it in a command such as `cat ~/.aws/credentials`, Copus asks you first, every time, in every approval mode. With nobody there to answer, Copus refuses. Copus reads the folder's other files, such as `~/.aws/config`, without asking. A program that reads the file on its own, such as `aws`, gets no question.
+
+A broader folder you add keeps the shut places inside it shut, at both sandbox levels: the credential folders and files this page names, other tools' and AI tools' sign-ins, the cookies and storage apps and browsers keep in `Library`, and your shell history. Add `Library` and your keychain folder and Slack's sign-in stay shut. Add `~/.config` and the sign-in folders of tools such as `gcloud` and `gh` stay shut. To open one of those places, add it by name. Copus's own app folder in `Library` stays shut too, and you can't add it.
+
+<Warning>
+  A folder on your **Folders Copus can read** list opens for every task, including scheduled tasks and AI teams. Put a credential folder such as `~/.aws` on that list only if every task may use those keys. To open it for one conversation, add it to that conversation instead.
+</Warning>
+
 
 ## Websites a command can reach
 
-A command a task runs, and every program that command starts, reaches the internet only through Copus. macOS blocks every other connection off your Mac. Copus lets these sites through without asking, in every mode:
+A command a task runs, and every program that command starts, reaches the internet only through Copus. macOS blocks every other connection off your Mac, apart from the [certificate checks a plugin can open](#where-the-sandbox-stops) to its own programs. Copus lets these sites through without asking, in every mode:
 
 - Your AI provider's own sites.
 - The sites Python and Node packages come from.
@@ -83,11 +96,11 @@ For any other site, Copus asks you first, with a request that names the site. Se
 
 A task has to read your own material to do your work. A document you attached to a message, a spreadsheet in your Downloads folder, and a report in your Documents folder all sit outside the task's own folder. If Copus confined reads to that folder, a task could write files and still couldn't read the files you asked it about. So every task can read the folders on your **Folders Copus can read** list, which starts with your Desktop, Documents, Downloads and Pictures folders. You decide which folders are on that list.
 
-Copus puts each limit where a task could do damage. Writing is where a task can destroy something, so Copus confines writing to the task's own folder and the folders you add. Reading is where a task can leak something, so macOS shuts the rest of your home folder and the credential folders, and Copus asks you before a task reads a credential file anywhere else.
+Copus puts each limit where a task could do damage. Writing is where a task can destroy something, so Copus confines writing to the task's own folder and the folders you add. Reading is where a task can leak something, so macOS shuts the rest of your home folder, the credential folders, and the files that look like passwords.
 
 ## Work on code
 
-**Sandbox level** is a setting on a project or an AI team that decides how much of your Mac its tasks can read. **Standard** is the sandbox the rest of this page describes, and every project and team starts on it. **Coding** lets tasks read files across your Mac, apart from the places that hold passwords, keys and sign-ins. Choose **Coding** for a project whose tasks write, build or test code. Coding tools keep their installs, caches and settings in your home folder, which **Standard** keeps shut. At either level, tasks can also run the commands on the project's or team's [**Allowed outside the sandbox**](#allowed-outside-the-sandbox) list.
+**Sandbox level** is a setting on a project or an [AI team](/autonomous/ai-teams) that decides how much of your Mac its tasks can read. **Standard** is the sandbox the rest of this page describes, and every project and team starts on it. **Coding** lets tasks read files across your Mac, apart from the places that hold passwords, keys and sign-ins. Choose **Coding** for a project whose tasks write, build or test code. Coding tools keep their installs, caches and settings in your home folder, which **Standard** keeps shut. At either level, tasks can also run the commands on the project's or team's [**Allowed outside the sandbox**](#allowed-outside-the-sandbox) list.
 
 To change the level, open the project's **Settings** in the top bar, or the team's **Settings** panel, and choose under **Sandbox level**. Only you can change it, in Copus on your Mac. The level covers every task in the project or team.
 
@@ -99,7 +112,7 @@ At **Coding**, a task reads your whole home folder, including `Library`. macOS s
 - Other AI tools' sign-ins and conversations, and Copus's own data folders.
 - Other drives.
 
-Writing doesn't change.
+As at **Standard**, a shut place opens when you add it by name. See [Open a shut folder](#open-a-shut-folder). Writing doesn't change.
 
 <Warning>
   The list of shut places can't name every tool's sign-in file. A task at **Coding** can read a secret kept anywhere the list doesn't reach, and Copus sends whatever a task reads to your AI provider. Set **Coding** only on a project or team whose work needs it.
@@ -146,6 +159,8 @@ The sandbox controls where a task may write and what it may read. It also keeps 
 **Tasks in the same project can write each other's files.** They share the project folder by design. A task outside a project can still read another task's files, and can't write them. Two conversations you added the same folder to can both write in it.
 
 **A command you approve to run outside the sandbox has no sandbox.** A command you approve with **Run**, and a command on a project's or team's **Allowed outside the sandbox** list, runs with full access to your Mac and reaches any website. See [Allowed outside the sandbox](#allowed-outside-the-sandbox).
+
+**A plugin you approve can open your keychain or certificate checks to its own programs.** A plugin you add in **Integrations** can bring its own Claude Code. When Copus runs it, the programs the plugin names can use your Mac's keychain or check a website's certificate through macOS, and a command in that task can run those programs too. To check a certificate, macOS fetches addresses written inside it, so a check can reach websites outside the list Copus lets through.
 
 **A key you hand a program yourself can be read.** A task can read the settings any program on your Mac started with, so a key you export in a Terminal window is readable while that program runs. You can use [Secrets](/connections/secrets) to securely store and use passwords, tokens, and API keys in Copus.
 
