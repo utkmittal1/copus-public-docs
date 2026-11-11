@@ -22,7 +22,7 @@ Copus keeps what it manages in one folder called `CopusData`, inside your home f
 | Folder | What it holds |
 |---|---|
 | `sessions/` | The workspace of every conversation that doesn't belong to a project, including every task Copus starts on its own |
-| `projects/` | Project folders, and the folder of every scheduled task |
+| `projects/` | Project folders, the folder of every scheduled task, and every AI team's folder |
 | `logs/` | One log file, `copus.jsonl` |
 | `knowledge/models/` | The model Copus indexes your documents with |
 | `speech/models/` | The models Copus transcribes dictation with |
@@ -47,7 +47,7 @@ Two kinds of line carry your own words. When a turn starts, Copus logs the start
 
 ## What the database holds
 
-`copus.db` holds your tasks and their transcripts, your reminders, your memory facts, your settings, which integrations you have connected, and the indexed text of your Knowledge Sources. It also holds what Copus learns from your mail: your People list, with each person's name, addresses, and notes, and your guide to how you write, with earlier versions of both. See [What Copus learns about you](/context/what-copus-learns). For each meeting Copus looks at on your calendar, it keeps the meeting's Google Calendar ID, its start time, and a fingerprint of its title, guests, and description for 90 days, so it knows which meetings it has already looked at and which have changed.
+`copus.db` holds your tasks and their transcripts, your reminders, your memory facts, your settings, which integrations you have connected, and the indexed text of your Knowledge Sources. It also holds what Copus learns from your mail: your People list, with each person's name, addresses, and notes, and your guide to how you write, with earlier versions of both. See [What Copus learns about you](/context/what-copus-learns). For each [AI team](/autonomous/ai-teams), it holds the requirements, the teammates with their standing instructions and memory, the team's updates, the cards waiting for you, and the record of its finished work. For each meeting Copus looks at on your calendar, it keeps the meeting's Google Calendar ID, its start time, and a fingerprint of its title, guests, and description for 90 days, so it knows which meetings it has already looked at and which have changed.
 
 For a password, API key, or access token you saved under **Secrets**, and for an integration you connected, Copus stores only the name of each field. Copus saves the value itself in your keychain. For an MCP server you added yourself, Copus also saves its address and its launch config in your keychain, since either can hold a key.
 
@@ -61,7 +61,7 @@ Claude Code and Codex keep their sign-ins in files instead, both inside `CopusDa
 
 **Codex** writes its token to `.codex/auth.json`, because the Codex program reads its tokens from that file rather than from the keychain.
 
-Copus asks you before a task reads either file, every time, in every approval mode, and waits for your answer. In work Copus runs with nobody watching, including every task Copus starts on its own, Copus refuses the read instead of asking. See [Approvals and permissions](/control/approvals-and-permissions) for both rules.
+Copus refuses a task's read of either file, in every approval mode. Copus asks you before a task reads anything else in those two folders, every time, in every approval mode, and waits for your answer. In work Copus runs with nobody watching, including every task Copus starts on its own, Copus refuses that read instead of asking. See [Approvals and permissions](/control/approvals-and-permissions) for both rules.
 
 ## What leaves your Mac
 
@@ -120,6 +120,9 @@ Together these downloads come to about 1 GB.
   </Step>
   <Step title="Delete a task">
     Delete the task from the sidebar. Tick **Also delete the folder from disk** to remove its files as well, or leave it unticked and the folder stays where it is.
+  </Step>
+  <Step title="Delete a team">
+    Open the team, then select **Team actions** > **Delete team**. Copus deletes the team, its teammates, their conversations and the team folder. Folders you added to the team stay where they are.
   </Step>
   <Step title="Remove a credential">
     In **Settings**, select **Secrets**, then **Delete secret** on the entry and confirm with **Delete**. Copus removes the value from your keychain first, then the entry.

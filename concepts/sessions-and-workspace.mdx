@@ -34,7 +34,7 @@ A **scheduled task** is for a result you want again and again, such as a brief e
 
 ## Review tasks
 
-When you ask Copus to have a piece of work reviewed, or agree when Copus offers a review, Copus starts a separate task titled **Review:** followed by the file's name. Copus lists the review task with your other tasks, except a review asked for inside an AI team, which stays out of your tasks and search. While that review runs, select the **Reviewing now** card in the chat that asked to open it. Once it ends, open it from a link to it in a team chat, such as one in a teammate's reply.
+When you ask Copus to have a piece of work reviewed, or agree when Copus offers a review, Copus starts a separate task titled **Review:** followed by the file's name. Copus lists the review task with your other tasks, except a review asked for inside an [AI team](/autonomous/ai-teams), which stays out of your tasks and search. While that review runs, select the **Reviewing now** card in the chat that asked to open it. Once it ends, open it from a link to it in a team chat, such as one in a teammate's reply.
 
 Copus runs the review task on the same AI provider as the task that asked for it, with the model set for **Session review**, and starts it without that task's conversation. In the review task, Copus reads the files named in the request, checks them against the listed sources and standards, and sends its findings back to the task that asked. Copus leaves the work itself unchanged during a review. A review task runs without your standing instructions and your response style. Copus runs a review task on **Autopilot** with nobody watching, whatever mode the task that asked for it is in, and you can't switch its mode.
 
@@ -53,7 +53,7 @@ Copus gives each conversation a workspace, a folder only that conversation write
 
 A task can write files only inside its own folder, and macOS enforces that limit. For a conversation outside a project, that folder is its workspace. For a conversation in a project, that folder is the whole project folder, so conversations in a project can edit each other's files. A conversation can also write in [folders you add to it](#add-a-folder-copus-can-change).
 
-A task can read its own folder, the folders you add, the files you attach, the files other tasks made, and the folders on your **Folders Copus can read** list. That list starts with your Desktop, Documents, Downloads and Pictures folders. The rest of your home folder is closed to it. In a project or AI team set to **Coding**, a task can also read files across your Mac, apart from passwords, keys and sign-ins. See [Work on code](/control/sandbox#work-on-code). In every approval mode, Copus asks you each time a task tries to read a file that looks like a credential. [The sandbox](/control/sandbox) covers the boundary in full.
+A task can read its own folder, the folders you add, the files you attach, the files other tasks made, and the folders on your **Folders Copus can read** list. That list starts with your Desktop, Documents, Downloads and Pictures folders. The rest of your home folder is closed to it. In a project or AI team set to **Coding**, a task can also read files across your Mac, apart from passwords, keys and sign-ins. See [Work on code](/control/sandbox#work-on-code). In every approval mode, Copus refuses a task's read of a file that looks like it holds a password, such as an `.env` file. [The sandbox](/control/sandbox) covers the boundary in full.
 
 Copus puts the workspace of a conversation outside a project in `CopusData/sessions`, inside your home folder. For a conversation in a project, Copus puts the workspace in that project's `sessions/` folder. For a scheduled task, Copus creates a folder under `CopusData/projects`, and puts the workspaces of the task's runs in that folder's own `sessions/`.
 
@@ -81,8 +81,12 @@ You can't add or remove a folder while Copus is replying. To give every conversa
 ### Limitations
 
 - **A conversation holds up to 10 added folders.** Remove a folder to add another.
-- **Copus adds only folders inside your home folder or on an external drive.** In your home folder, it refuses the home folder itself, your `Library` folder, `CopusData`, and hidden folders, whose names start with a dot. It refuses anything inside those folders too.
-- **Some files stay blocked inside an added folder.** The files no task can write anywhere stay blocked in your added folders too. [The sandbox](/control/sandbox#files-no-task-can-write) lists them.
+- **Copus refuses a few folders.** You can add any folder, including a hidden one such as `~/.aws` or one outside your home folder, apart from these:
+  - your whole home folder, or a folder that holds it, such as `/`
+  - Copus's own folders, `CopusData` and its app folder in `Library/Application Support`, and anything inside them
+  - a folder that holds one of Copus's own folders, such as `Library`. Your **Folders Copus can read** list accepts one, because no task can change files there.
+  - a folder that holds the temporary files of Copus's tasks, such as `/tmp`
+- **Some places stay shut inside an added folder.** The files no task can write anywhere stay blocked in your added folders too. A folder that holds credentials, such as `~/.ssh`, stays shut inside a broader folder you add, and opens only when you add it by name. The sandbox page lists the [blocked files](/control/sandbox#files-no-task-can-write) and the [shut places](/control/sandbox#open-a-shut-folder).
 - **Scheduled tasks never get added folders.**
 - **Copus never moves, renames, or deletes an added folder.** Deleting the conversation leaves the folder where it is.
 
@@ -105,7 +109,7 @@ Two settings apply to one task alone.
 **Approval mode.** Each conversation runs in **Manual**, on **Autopilot**, or on **Full access**, set from the controls under the message box. In **Manual**, Copus asks you by default before it sends, posts, or changes anything in a connected app, and before it runs a command that changes something on your Mac. On **Autopilot**, Copus runs commands and makes most changes without asking, and still asks before it sends, posts, deletes, or shares something in a connected app. On **Full access**, Copus runs nearly everything without asking. A new task starts in **Manual**. To start every new task in another mode instead, open **Settings**, select **Built-in tools**, and change **New tasks start in**. A task in a project you pointed at a folder of your own starts in **Manual** either way. See [Approvals and permissions](/control/approvals-and-permissions).
 
 <Note>
-  A scheduled task's runs run on **Autopilot**, because nobody is there to answer. When a run tries to read a file that looks like a credential, Copus refuses for the same reason. A task's own conversation and a task Copus starts on its own also stay on **Autopilot**, and you can't switch their mode.
+  A scheduled task's runs run on **Autopilot**, because nobody is there to answer. When a run tries to read a sign-in Copus keeps, Copus refuses for the same reason. A task's own conversation and a task Copus starts on its own also stay on **Autopilot**, and you can't switch their mode.
 </Note>
 
 ## Find, rename, pin, move, or delete a task
