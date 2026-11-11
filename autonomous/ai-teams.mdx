@@ -23,7 +23,7 @@ This page covers:
 - [Start a team](#start-a-team) and approve its requirements
 - [Teammates](#teammates)
 - [Collaborate and Autonomous](#collaborate-and-autonomous)
-- [Work with the team](#work-with-the-team): **Needs you**, **Ready**, **Updates** and your conversations
+- [Work with the team](#work-with-the-team): **Needs you**, **Ready**, **Updates**, your conversations and **Items**
 - [Settings, files and deleting a team](#settings-and-permissions)
 
 ## How a team grows
@@ -43,9 +43,9 @@ This example is an illustration of one way to use a team.
 Say you keep a list of changes you want in an app's code, and you want each one designed, reviewed and built on its own branch, ready for you to merge.
 
 1. You start a team and tell the lead about the list and how you like changes designed and built. The lead writes the requirements, such as "every change gets a design you approve before anyone builds it" and "nothing merges until you review it". You approve them.
-2. In **Collaborate**, you work through the first few items with the lead. As the list grows, it proposes teammates, such as a Designer and a Developer, each with standing instructions drawn from what you told it. Later it proposes a scheduled teammate that reads the list twice a day for new items.
+2. In **Collaborate**, you work through the first few changes on the list with the lead. As the list grows, it proposes teammates, such as a Designer and a Developer, each with standing instructions drawn from what you told it. Later it proposes a scheduled teammate that reads the list twice a day for new changes.
 3. Under **Team folder**, you select **Add folder** and add the app's code folder. You set the team's **Sandbox level** to **Coding** and approve the build and test commands the team needs, so its sessions can work on the code.
-4. When the work runs the way you want, you turn on **Autonomous**. The scheduled teammate picks up new items. Each design, and a note for each finished branch saying what's left for you to do, arrives under **Ready**, read by the lead before it reaches you. When the lead needs your approval to go on, it asks under **Needs you**.
+4. When the work runs the way you want, you turn on **Autonomous**. The scheduled teammate picks up new changes from the list. Each design, and a note for each finished branch saying what's left for you to do, arrives under **Ready**, read by the lead before it reaches you. When the lead needs your approval to go on, it asks under **Needs you**.
 5. You answer questions, approve designs, and merge the branches yourself, as the requirements say. With nobody watching, the team can't push code.
 
 ## How the team holds your standard
@@ -105,6 +105,19 @@ A team does its own work with nobody watching, so its sessions run on **Autopilo
 
 The team opens on its chat with the team lead. Once you approve the requirements, select the pencil, **New conversation with the team lead**, to talk with the lead about something else while its main chat keeps working. A teammate's own sessions take no messages; you can read them on its page, and you talk with a teammate by giving feedback on its finished work.
 
+An item is one piece of the team's work, such as one chapter of a report. The team lead adds an item when it picks the work up, with a name and a line saying what it is, and completes it when the work is finished. Select **Items**, beside **Requirements**, to see each item with its status, who worked on it last, what waits for you, and when it last moved, so you can tell which work moves and which has stopped. The page opens on **Open**; select **Done** for finished items. Copus works out each status from what the team is doing:
+
+- **Needs you**: a card for the item waits under **Needs you**.
+- **Working**: a session or a review on the item is working, a session on it waits for a free place under **Sessions at once**, or the team lead is working on it right now.
+- **Ready for you**: finished work for the item waits under **Ready**, and since its latest version arrived you haven't pressed one of its buttons or answered a card about the item.
+- **Idle**: none of the above, on an item that isn't parked or done.
+- **Parked**: the team lead set the item aside, with or without a date for it to come back.
+- **Done**: the team lead completed it.
+
+Select a status above the list to see only those items, or pick a teammate to see the items that teammate worked on last. Select an item to open it beside the list, where you can answer its cards and open its finished work. To rename, park or complete an item, ask the team lead.
+
+While the team runs on its own in **Autonomous**, Copus tells the team lead when an item has been **Idle** for 2 hours, once for each stretch it sits idle, so the lead can pick the work up again, park it, or complete it. On a parked item's return date, at 9:00 AM, the item comes back and Copus tells the team lead.
+
 ## Settings and permissions
 
 Select **Settings** on the right of the team screen.
@@ -130,7 +143,9 @@ Select **Team actions** > **Delete team**. Every session in the team stops, and 
 
 ## What the team screen shows
 
-A teammate's tile shows the task it's working on, or "2 tasks at once". Otherwise it shows **Blocked**, **Waiting for review**, **Runs on schedule**, **Schedule stopped** or **Idle**. The lead's tile reads **Running the team** while the team runs on its own in **Autonomous**, and **Working with you** otherwise, including outside the team's hours. A red dot marks a reply or an approval waiting in one of your conversations with that teammate.
+A teammate's tile shows the task it's working on, or "2 tasks at once". Otherwise it shows **Blocked**, **Waiting for review**, **Runs on schedule**, **Schedule stopped** or **Idle**. The lead's tile reads **Running the team** while the team runs on its own in **Autonomous**, and **Working with you** otherwise, including outside the team's hours. A red dot marks a reply or an approval waiting in one of your conversations with that teammate. A dot on **Items** means an item needs you or has work ready for you.
+
+A card under **Needs you**, finished work under **Ready**, and a post under **Updates** each show the name of the item they belong to.
 
 The cards under **Needs you** are **Team lead asks**, **Website for the team**, **Saved secret for the team**, **Command for the team**, **Requirements ready**, **Change to the requirements**, **New teammate**, **Change to a teammate**, **Session to start**, **Something needs you**, and **Team paused**, which has **Try now** for when the team's AI provider stopped working.
 
